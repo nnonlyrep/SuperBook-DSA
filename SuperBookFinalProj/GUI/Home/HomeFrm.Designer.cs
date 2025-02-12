@@ -1,6 +1,6 @@
 ﻿namespace SuperBookFinalProj
 {
-    partial class Form1
+    partial class HomeFrm
     {
         /// <summary>
         ///  Required designer variable.
