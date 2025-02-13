@@ -44,7 +44,7 @@
             panel3 = new Panel();
             btnAudi = new Button();
             pnlBorrow = new Panel();
-            button1 = new Button();
+            btnBorrow = new Button();
             pnlAbout = new Panel();
             btnAbout = new Button();
             pnlLogOut = new Panel();
@@ -224,6 +224,7 @@
             btnClassRoom.Text = "            Class Room";
             btnClassRoom.TextAlign = ContentAlignment.MiddleLeft;
             btnClassRoom.UseVisualStyleBackColor = false;
+            btnClassRoom.Click += btnClassRoom_Click;
             // 
             // panel3
             // 
@@ -249,30 +250,32 @@
             btnAudi.Text = "            Auditorium";
             btnAudi.TextAlign = ContentAlignment.MiddleLeft;
             btnAudi.UseVisualStyleBackColor = false;
+            btnAudi.Click += btnAudi_Click;
             // 
             // pnlBorrow
             // 
-            pnlBorrow.Controls.Add(button1);
+            pnlBorrow.Controls.Add(btnBorrow);
             pnlBorrow.Location = new Point(3, 109);
             pnlBorrow.Name = "pnlBorrow";
             pnlBorrow.Size = new Size(236, 50);
             pnlBorrow.TabIndex = 6;
             // 
-            // button1
+            // btnBorrow
             // 
-            button1.BackColor = Color.FromArgb(30, 48, 64);
-            button1.Font = new Font("Work Sans Medium", 8.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = SystemColors.ButtonFace;
-            button1.Image = Properties.Resources.icons8_equipment_24__1_;
-            button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(-7, -19);
-            button1.Name = "button1";
-            button1.Padding = new Padding(10, 0, 0, 0);
-            button1.Size = new Size(266, 88);
-            button1.TabIndex = 2;
-            button1.Text = "            Borrow Equipments";
-            button1.TextAlign = ContentAlignment.MiddleLeft;
-            button1.UseVisualStyleBackColor = false;
+            btnBorrow.BackColor = Color.FromArgb(30, 48, 64);
+            btnBorrow.Font = new Font("Work Sans Medium", 8.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnBorrow.ForeColor = SystemColors.ButtonFace;
+            btnBorrow.Image = Properties.Resources.icons8_equipment_24__1_;
+            btnBorrow.ImageAlign = ContentAlignment.MiddleLeft;
+            btnBorrow.Location = new Point(-7, -19);
+            btnBorrow.Name = "btnBorrow";
+            btnBorrow.Padding = new Padding(10, 0, 0, 0);
+            btnBorrow.Size = new Size(266, 88);
+            btnBorrow.TabIndex = 2;
+            btnBorrow.Text = "            Borrow Equipments";
+            btnBorrow.TextAlign = ContentAlignment.MiddleLeft;
+            btnBorrow.UseVisualStyleBackColor = false;
+            btnBorrow.Click += button1_Click_1;
             // 
             // pnlAbout
             // 
@@ -297,6 +300,7 @@
             btnAbout.Text = "            About";
             btnAbout.TextAlign = ContentAlignment.MiddleLeft;
             btnAbout.UseVisualStyleBackColor = false;
+            btnAbout.Click += btnAbout_Click;
             // 
             // pnlLogOut
             // 
@@ -332,18 +336,20 @@
             sidebarTransition.Interval = 10;
             sidebarTransition.Tick += sidebarTransition_Tick;
             // 
-            // Form1
+            // HomeFrm
             // 
             AutoScaleMode = AutoScaleMode.None;
             BackColor = Color.FromArgb(21, 31, 40);
             ClientSize = new Size(969, 617);
             Controls.Add(flpSidebar);
             Controls.Add(panel1);
+            Font = new Font("Work Sans", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
             IsMdiContainer = true;
-            Name = "Form1";
+            Name = "HomeFrm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
+            Load += HomeFrm_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)btnHam).EndInit();
@@ -380,7 +386,7 @@
         private Panel panel3;
         private Button btnAudi;
         private Panel pnlBorrow;
-        private Button button1;
+        private Button btnBorrow;
         private System.Windows.Forms.Timer reserveTransition;
         private System.Windows.Forms.Timer sidebarTransition;
     }
