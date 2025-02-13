@@ -63,6 +63,36 @@ namespace SuperBookFinalProj.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _316255738_3451424478448628_5382283985781466224_n__1_ {
+            get {
+                object obj = ResourceManager.GetObject("316255738_3451424478448628_5382283985781466224_n (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _475651809_598054443088579_6764157696815227443_n {
+            get {
+                object obj = ResourceManager.GetObject("475651809_598054443088579_6764157696815227443_n", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _476162248_642431735124436_169922504851503215_n {
+            get {
+                object obj = ResourceManager.GetObject("476162248_642431735124436_169922504851503215_n", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_about_24 {
             get {
                 object obj = ResourceManager.GetObject("icons8-about-24", resourceCulture);
@@ -146,6 +176,16 @@ namespace SuperBookFinalProj.Properties {
         internal static System.Drawing.Bitmap icons8_reservation_24 {
             get {
                 object obj = ResourceManager.GetObject("icons8-reservation-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Super_Book__1_ {
+            get {
+                object obj = ResourceManager.GetObject("Super Book (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

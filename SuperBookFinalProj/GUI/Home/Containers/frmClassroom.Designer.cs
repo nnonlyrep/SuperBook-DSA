@@ -47,7 +47,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(21, 31, 40);
-            ClientSize = new Size(969, 617);
+            ClientSize = new Size(850, 450);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "frmClassroom";

@@ -21,5 +21,15 @@ namespace SuperBookFinalProj.GUI.Home.Containers
         {
             this.ControlBox = false;
         }
+
+        private void bigLabel2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bigLabel2_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

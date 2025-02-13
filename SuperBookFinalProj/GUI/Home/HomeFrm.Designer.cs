@@ -134,7 +134,7 @@
             flpSidebar.Location = new Point(0, 34);
             flpSidebar.Margin = new Padding(0);
             flpSidebar.Name = "flpSidebar";
-            flpSidebar.Size = new Size(236, 583);
+            flpSidebar.Size = new Size(236, 506);
             flpSidebar.TabIndex = 1;
             // 
             // pnlHome
@@ -340,7 +340,7 @@
             // 
             AutoScaleMode = AutoScaleMode.None;
             BackColor = Color.FromArgb(21, 31, 40);
-            ClientSize = new Size(969, 617);
+            ClientSize = new Size(969, 540);
             Controls.Add(flpSidebar);
             Controls.Add(panel1);
             Font = new Font("Work Sans", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
