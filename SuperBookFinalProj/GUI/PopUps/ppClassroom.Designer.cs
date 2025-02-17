@@ -45,6 +45,8 @@
             textBox5 = new TextBox();
             reserveBtn = new Button();
             button1 = new Button();
+            dateTimePicker1 = new DateTimePicker();
+            label2 = new Label();
             SuspendLayout();
             // 
             // label1
@@ -64,7 +66,7 @@
             dateTxt.BackColor = Color.FromArgb(21, 31, 40);
             dateTxt.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dateTxt.ForeColor = SystemColors.Window;
-            dateTxt.Location = new Point(145, 126);
+            dateTxt.Location = new Point(145, 125);
             dateTxt.Name = "dateTxt";
             dateTxt.Size = new Size(50, 21);
             dateTxt.TabIndex = 2;
@@ -76,7 +78,7 @@
             roomNumLbl.BackColor = Color.FromArgb(21, 31, 40);
             roomNumLbl.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
             roomNumLbl.ForeColor = SystemColors.Window;
-            roomNumLbl.Location = new Point(145, 206);
+            roomNumLbl.Location = new Point(143, 252);
             roomNumLbl.Name = "roomNumLbl";
             roomNumLbl.Size = new Size(128, 20);
             roomNumLbl.TabIndex = 3;
@@ -88,7 +90,7 @@
             purposeLbl.BackColor = Color.FromArgb(21, 31, 40);
             purposeLbl.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
             purposeLbl.ForeColor = SystemColors.Window;
-            purposeLbl.Location = new Point(145, 280);
+            purposeLbl.Location = new Point(145, 315);
             purposeLbl.Name = "purposeLbl";
             purposeLbl.Size = new Size(152, 20);
             purposeLbl.TabIndex = 4;
@@ -156,7 +158,7 @@
             roomNumtxt.BorderStyle = BorderStyle.None;
             roomNumtxt.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
             roomNumtxt.ForeColor = Color.White;
-            roomNumtxt.Location = new Point(145, 235);
+            roomNumtxt.Location = new Point(145, 277);
             roomNumtxt.Margin = new Padding(3, 2, 3, 2);
             roomNumtxt.Name = "roomNumtxt";
             roomNumtxt.Size = new Size(149, 19);
@@ -169,7 +171,7 @@
             purposeTxt.BorderStyle = BorderStyle.None;
             purposeTxt.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
             purposeTxt.ForeColor = Color.White;
-            purposeTxt.Location = new Point(145, 315);
+            purposeTxt.Location = new Point(145, 343);
             purposeTxt.Margin = new Padding(3, 2, 3, 2);
             purposeTxt.Name = "purposeTxt";
             purposeTxt.Size = new Size(257, 19);
@@ -249,12 +251,35 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Format = DateTimePickerFormat.Time;
+            dateTimePicker1.Location = new Point(201, 203);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.ShowUpDown = true;
+            dateTimePicker1.Size = new Size(144, 23);
+            dateTimePicker1.TabIndex = 25;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.FromArgb(21, 31, 40);
+            label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = SystemColors.Window;
+            label2.Location = new Point(143, 203);
+            label2.Name = "label2";
+            label2.Size = new Size(52, 21);
+            label2.TabIndex = 26;
+            label2.Text = "Time:";
+            // 
             // ppClassroom
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(21, 31, 40);
             ClientSize = new Size(850, 450);
+            Controls.Add(label2);
+            Controls.Add(dateTimePicker1);
             Controls.Add(button1);
             Controls.Add(reserveBtn);
             Controls.Add(textBox5);
@@ -299,5 +324,7 @@
         private TextBox textBox5;
         private Button reserveBtn;
         private Button button1;
+        private DateTimePicker dateTimePicker1;
+        private Label label2;
     }
 }

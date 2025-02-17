@@ -34,5 +34,10 @@ namespace SuperBookFinalProj.GUI.PopUps
             Audi.ShowDialog();
             this.Close();
         }
+
+        private void contactNoLbl_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

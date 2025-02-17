@@ -35,6 +35,8 @@
             textBox1 = new TextBox();
             btnBorrow = new Button();
             btnCancel = new Button();
+            label3 = new Label();
+            dateTimePicker2 = new DateTimePicker();
             SuspendLayout();
             // 
             // lblBorrow
@@ -110,12 +112,35 @@
             btnCancel.UseVisualStyleBackColor = false;
             btnCancel.Click += btnCancel_Click;
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.BackColor = Color.FromArgb(21, 31, 40);
+            label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = SystemColors.Window;
+            label3.Location = new Point(251, 56);
+            label3.Name = "label3";
+            label3.Size = new Size(52, 21);
+            label3.TabIndex = 38;
+            label3.Text = "Time:";
+            // 
+            // dateTimePicker2
+            // 
+            dateTimePicker2.Format = DateTimePickerFormat.Time;
+            dateTimePicker2.Location = new Point(251, 82);
+            dateTimePicker2.Name = "dateTimePicker2";
+            dateTimePicker2.ShowUpDown = true;
+            dateTimePicker2.Size = new Size(144, 23);
+            dateTimePicker2.TabIndex = 37;
+            // 
             // ppBorrow
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(21, 31, 40);
             ClientSize = new Size(506, 231);
+            Controls.Add(label3);
+            Controls.Add(dateTimePicker2);
             Controls.Add(btnCancel);
             Controls.Add(btnBorrow);
             Controls.Add(textBox1);
@@ -140,5 +165,7 @@
         private TextBox textBox1;
         private Button btnBorrow;
         private Button btnCancel;
+        private Label label3;
+        private DateTimePicker dateTimePicker2;
     }
 }
