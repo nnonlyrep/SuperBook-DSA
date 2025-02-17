@@ -21,5 +21,15 @@ namespace SuperBookFinalProj.GUI.Home.Containers
         {
             this.ControlBox = false;
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            frmAudi audi = new frmAudi();
+        }
     }
 }
