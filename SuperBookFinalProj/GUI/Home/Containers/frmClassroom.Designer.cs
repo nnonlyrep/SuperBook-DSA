@@ -105,6 +105,7 @@
             // cncBtn
             // 
             cncBtn.BackColor = Color.FromArgb(161, 181, 195);
+            cncBtn.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
             cncBtn.Location = new Point(545, 401);
             cncBtn.Margin = new Padding(3, 2, 3, 2);
             cncBtn.Name = "cncBtn";
@@ -113,10 +114,12 @@
             cncBtn.TabIndex = 13;
             cncBtn.Text = "Cancel";
             cncBtn.UseVisualStyleBackColor = false;
+            cncBtn.Click += cncBtn_Click;
             // 
             // rsrvBtn
             // 
             rsrvBtn.BackColor = Color.FromArgb(161, 181, 195);
+            rsrvBtn.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
             rsrvBtn.Location = new Point(721, 401);
             rsrvBtn.Margin = new Padding(3, 2, 3, 2);
             rsrvBtn.Name = "rsrvBtn";
@@ -124,6 +127,7 @@
             rsrvBtn.TabIndex = 14;
             rsrvBtn.Text = "Reserve";
             rsrvBtn.UseVisualStyleBackColor = false;
+            rsrvBtn.Click += rsrvBtn_Click;
             // 
             // frmClassroom
             // 
