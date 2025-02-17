@@ -1,3 +1,5 @@
+using SuperBookFinalProj.GUI.LogIn_SignUp;
+
 namespace SuperBookFinalProj
 {
     internal static class Program
@@ -11,7 +13,7 @@ namespace SuperBookFinalProj
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new HomeFrm());
+            Application.Run(new Login());
         }
     }
 }

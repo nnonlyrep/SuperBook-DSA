@@ -183,6 +183,16 @@ namespace SuperBookFinalProj.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Pa_reserve_daw_teh_ {
+            get {
+                object obj = ResourceManager.GetObject("Pa reserve daw teh!", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Super_Book__1_ {
             get {
                 object obj = ResourceManager.GetObject("Super Book (1)", resourceCulture);

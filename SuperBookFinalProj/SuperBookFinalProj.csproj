@@ -29,6 +29,7 @@
 
   <ItemGroup>
     <Folder Include="GUI\HomeAdmin\" />
+    <Folder Include="GUI\Res_Drawing\" />
   </ItemGroup>
 
 </Project>

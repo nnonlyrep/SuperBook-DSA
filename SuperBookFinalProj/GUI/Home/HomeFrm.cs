@@ -1,6 +1,7 @@
 using SuperBookFinalProj.GUI.Home;
 using SuperBookFinalProj.GUI.Home.Containers;
 using SuperBookFinalProj;
+using SuperBookFinalProj.GUI.LogIn_SignUp;
 
 namespace SuperBookFinalProj
 {
@@ -199,6 +200,14 @@ namespace SuperBookFinalProj
         private void HomeFrm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Login login = new Login();
+            login.ShowDialog();
+            this.Close();
         }
     }
 }
