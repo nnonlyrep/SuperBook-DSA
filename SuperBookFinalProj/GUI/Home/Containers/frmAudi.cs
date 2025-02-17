@@ -36,18 +36,15 @@ namespace SuperBookFinalProj.GUI.Home.Containers
 
         private void CncBtn_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            HomeFrm home_form = new HomeFrm();
-            home_form.ShowDialog();
-            this.Close();
+            
         }
 
         private void ResBtn_Click(object sender, EventArgs e)
         {
-            this.Hide();
+    
             ppAudi audi = new ppAudi();
             audi.ShowDialog();
-            this.Close();
+           
         }
     }
 }

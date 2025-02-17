@@ -25,9 +25,6 @@ namespace SuperBookFinalProj.GUI.PopUps
 
         private void CncBtn1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            frmAudi audi_form = new frmAudi();
-            audi_form.ShowDialog();
             this.Close();
         }
 
