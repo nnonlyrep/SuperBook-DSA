@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SuperBookFinalProj.GUI.PopUps;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,7 +25,8 @@ namespace SuperBookFinalProj.GUI.Home.Containers
 
         private void Borrow_Click(object sender, EventArgs e)
         {
-            frmBorrow borrow = new frmBorrow();
+            ppBorrow borrow = new ppBorrow();
+            borrow.ShowDialog();
         }
     }
 }

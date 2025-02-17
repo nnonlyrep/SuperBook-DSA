@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace SuperBookFinalProj.GUI.PopUps
 {
-    public partial class ppBorrow: Form
+    public partial class ppBorrow : Form
     {
         public ppBorrow()
         {
             InitializeComponent();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
