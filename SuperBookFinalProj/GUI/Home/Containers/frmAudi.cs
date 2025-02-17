@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SuperBookFinalProj.GUI.LogIn_SignUp;
+using SuperBookFinalProj.GUI.PopUps;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -29,7 +31,23 @@ namespace SuperBookFinalProj.GUI.Home.Containers
 
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            frmAudi audi = new frmAudi();
+
+        }
+
+        private void CncBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            HomeFrm home_form = new HomeFrm();
+            home_form.ShowDialog();
+            this.Close();
+        }
+
+        private void ResBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ppAudi audi = new ppAudi();
+            audi.ShowDialog();
+            this.Close();
         }
     }
 }

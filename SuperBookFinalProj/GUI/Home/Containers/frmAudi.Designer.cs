@@ -35,8 +35,9 @@
             Column3 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
             Column5 = new DataGridViewTextBoxColumn();
-            CncBtn = new Button();
+            BackBtn = new Button();
             ResBtn = new Button();
+            label1 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -45,19 +46,19 @@
             // 
             panel1.BackColor = Color.FromArgb(30, 48, 61);
             panel1.Controls.Add(dataGridView1);
-            panel1.Location = new Point(12, 12);
+            panel1.Location = new Point(30, 71);
             panel1.Name = "panel1";
-            panel1.Size = new Size(947, 488);
+            panel1.Size = new Size(906, 393);
             panel1.TabIndex = 1;
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5 });
-            dataGridView1.Location = new Point(21, 17);
+            dataGridView1.Location = new Point(27, 23);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(676, 188);
+            dataGridView1.Size = new Size(850, 274);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick_1;
             // 
@@ -96,25 +97,38 @@
             Column5.Name = "Column5";
             Column5.Width = 125;
             // 
-            // CncBtn
+            // BackBtn
             // 
-            CncBtn.BackColor = Color.FromArgb(161, 181, 195);
-            CncBtn.Location = new Point(727, 539);
-            CncBtn.Name = "CncBtn";
-            CncBtn.Size = new Size(94, 29);
-            CncBtn.TabIndex = 16;
-            CncBtn.Text = "Cancel";
-            CncBtn.UseVisualStyleBackColor = false;
+            BackBtn.BackColor = Color.FromArgb(161, 181, 195);
+            BackBtn.Location = new Point(42, 527);
+            BackBtn.Name = "BackBtn";
+            BackBtn.Size = new Size(105, 41);
+            BackBtn.TabIndex = 16;
+            BackBtn.Text = "Back";
+            BackBtn.UseVisualStyleBackColor = false;
+            BackBtn.Click += CncBtn_Click;
             // 
             // ResBtn
             // 
             ResBtn.BackColor = Color.FromArgb(161, 181, 195);
-            ResBtn.Location = new Point(844, 539);
+            ResBtn.Location = new Point(826, 527);
             ResBtn.Name = "ResBtn";
-            ResBtn.Size = new Size(94, 29);
+            ResBtn.Size = new Size(95, 41);
             ResBtn.TabIndex = 17;
             ResBtn.Text = "Reserve";
             ResBtn.UseVisualStyleBackColor = false;
+            ResBtn.Click += ResBtn_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Microsoft Sans Serif", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = SystemColors.ButtonFace;
+            label1.Location = new Point(30, 27);
+            label1.Name = "label1";
+            label1.Size = new Size(173, 29);
+            label1.TabIndex = 18;
+            label1.Text = "AUDITORIUM";
             // 
             // frmAudi
             // 
@@ -122,7 +136,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(21, 31, 40);
             ClientSize = new Size(971, 600);
-            Controls.Add(CncBtn);
+            Controls.Add(label1);
+            Controls.Add(BackBtn);
             Controls.Add(ResBtn);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
@@ -133,6 +148,7 @@
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -144,7 +160,8 @@
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column4;
         private DataGridViewTextBoxColumn Column5;
-        private Button CncBtn;
+        private Button BackBtn;
         private Button ResBtn;
+        private Label label1;
     }
 }
