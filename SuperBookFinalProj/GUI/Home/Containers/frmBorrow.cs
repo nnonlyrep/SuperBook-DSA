@@ -21,5 +21,10 @@ namespace SuperBookFinalProj.GUI.Home.Containers
         {
             this.ControlBox = false;
         }
+
+        private void Borrow_Click(object sender, EventArgs e)
+        {
+            frmBorrow borrow = new frmBorrow();
+        }
     }
 }
