@@ -38,7 +38,7 @@
             Column5 = new DataGridViewTextBoxColumn();
             Column6 = new DataGridViewTextBoxColumn();
             cncBtn = new Button();
-            rsrvBtn = new Button();
+            NextBtn = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -116,18 +116,18 @@
             cncBtn.UseVisualStyleBackColor = false;
             cncBtn.Click += cncBtn_Click;
             // 
-            // rsrvBtn
+            // NextBtn
             // 
-            rsrvBtn.BackColor = Color.FromArgb(161, 181, 195);
-            rsrvBtn.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
-            rsrvBtn.Location = new Point(721, 401);
-            rsrvBtn.Margin = new Padding(3, 2, 3, 2);
-            rsrvBtn.Name = "rsrvBtn";
-            rsrvBtn.Size = new Size(94, 29);
-            rsrvBtn.TabIndex = 14;
-            rsrvBtn.Text = "Reserve";
-            rsrvBtn.UseVisualStyleBackColor = false;
-            rsrvBtn.Click += rsrvBtn_Click;
+            NextBtn.BackColor = Color.FromArgb(161, 181, 195);
+            NextBtn.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
+            NextBtn.Location = new Point(721, 401);
+            NextBtn.Margin = new Padding(3, 2, 3, 2);
+            NextBtn.Name = "NextBtn";
+            NextBtn.Size = new Size(94, 29);
+            NextBtn.TabIndex = 14;
+            NextBtn.Text = "Next";
+            NextBtn.UseVisualStyleBackColor = false;
+            NextBtn.Click += rsrvBtn_Click;
             // 
             // frmClassroom
             // 
@@ -135,7 +135,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(21, 31, 40);
             ClientSize = new Size(850, 450);
-            Controls.Add(rsrvBtn);
+            Controls.Add(NextBtn);
             Controls.Add(cncBtn);
             Controls.Add(panel1);
             Controls.Add(label1);
@@ -162,6 +162,6 @@
         private DataGridViewTextBoxColumn Column5;
         private DataGridViewTextBoxColumn Column6;
         private Button cncBtn;
-        private Button rsrvBtn;
+        private Button NextBtn;
     }
 }

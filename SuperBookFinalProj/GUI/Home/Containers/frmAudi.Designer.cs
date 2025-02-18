@@ -36,8 +36,8 @@
             Column4 = new DataGridViewTextBoxColumn();
             Column5 = new DataGridViewTextBoxColumn();
             BackBtn = new Button();
-            ResBtn = new Button();
             label1 = new Label();
+            NextBtn = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -46,19 +46,21 @@
             // 
             panel1.BackColor = Color.FromArgb(30, 48, 61);
             panel1.Controls.Add(dataGridView1);
-            panel1.Location = new Point(30, 71);
+            panel1.Location = new Point(26, 53);
+            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(906, 393);
+            panel1.Size = new Size(793, 295);
             panel1.TabIndex = 1;
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5 });
-            dataGridView1.Location = new Point(27, 23);
+            dataGridView1.Location = new Point(24, 17);
+            dataGridView1.Margin = new Padding(3, 2, 3, 2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(850, 274);
+            dataGridView1.Size = new Size(744, 206);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick_1;
             // 
@@ -100,48 +102,49 @@
             // BackBtn
             // 
             BackBtn.BackColor = Color.FromArgb(161, 181, 195);
-            BackBtn.Location = new Point(42, 527);
+            BackBtn.Location = new Point(37, 395);
+            BackBtn.Margin = new Padding(3, 2, 3, 2);
             BackBtn.Name = "BackBtn";
-            BackBtn.Size = new Size(105, 41);
+            BackBtn.Size = new Size(92, 31);
             BackBtn.TabIndex = 16;
             BackBtn.Text = "Back";
             BackBtn.UseVisualStyleBackColor = false;
             BackBtn.Click += CncBtn_Click;
-            // 
-            // ResBtn
-            // 
-            ResBtn.BackColor = Color.FromArgb(161, 181, 195);
-            ResBtn.Location = new Point(826, 527);
-            ResBtn.Name = "ResBtn";
-            ResBtn.Size = new Size(95, 41);
-            ResBtn.TabIndex = 17;
-            ResBtn.Text = "Reserve";
-            ResBtn.UseVisualStyleBackColor = false;
-            ResBtn.Click += ResBtn_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft Sans Serif", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ButtonFace;
-            label1.Location = new Point(30, 27);
+            label1.Location = new Point(26, 20);
             label1.Name = "label1";
-            label1.Size = new Size(173, 29);
+            label1.Size = new Size(136, 24);
             label1.TabIndex = 18;
             label1.Text = "AUDITORIUM";
             // 
+            // NextBtn
+            // 
+            NextBtn.BackColor = Color.FromArgb(161, 181, 195);
+            NextBtn.Location = new Point(724, 395);
+            NextBtn.Margin = new Padding(3, 2, 3, 2);
+            NextBtn.Name = "NextBtn";
+            NextBtn.Size = new Size(83, 31);
+            NextBtn.TabIndex = 17;
+            NextBtn.Text = "Next";
+            NextBtn.UseVisualStyleBackColor = false;
+            NextBtn.Click += ResBtn_Click;
+            // 
             // frmAudi
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(21, 31, 40);
-            ClientSize = new Size(971, 600);
+            ClientSize = new Size(850, 450);
             Controls.Add(label1);
             Controls.Add(BackBtn);
-            Controls.Add(ResBtn);
+            Controls.Add(NextBtn);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 4, 3, 4);
             Name = "frmAudi";
             Text = "frmAudi";
             Load += frmAudi_Load;
@@ -161,7 +164,7 @@
         private DataGridViewTextBoxColumn Column4;
         private DataGridViewTextBoxColumn Column5;
         private Button BackBtn;
-        private Button ResBtn;
         private Label label1;
+        private Button NextBtn;
     }
 }

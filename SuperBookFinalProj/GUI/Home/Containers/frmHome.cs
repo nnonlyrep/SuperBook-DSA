@@ -31,5 +31,15 @@ namespace SuperBookFinalProj.GUI.Home.Containers
         {
 
         }
+
+        private void bigLabel5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bigLabel6_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
