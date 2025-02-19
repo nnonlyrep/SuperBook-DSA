@@ -47,6 +47,7 @@
             pictureBox5 = new PictureBox();
             panel6 = new ReaLTaiizor.Controls.Panel();
             button1 = new Button();
+            pictureBox6 = new PictureBox();
             bigLabel2 = new ReaLTaiizor.Controls.BigLabel();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -59,6 +60,7 @@
             panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             SuspendLayout();
             // 
             // bigLabel1
@@ -271,6 +273,7 @@
             // 
             panel6.BackColor = Color.FromArgb(30, 48, 64);
             panel6.Controls.Add(button1);
+            panel6.Controls.Add(pictureBox6);
             panel6.EdgeColor = Color.FromArgb(32, 41, 50);
             panel6.Location = new Point(480, 291);
             panel6.Name = "panel6";
@@ -285,11 +288,21 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.ForeColor = Color.FromArgb(30, 48, 64);
             button1.Image = Properties.Resources.Untitled_design__6_;
-            button1.Location = new Point(278, 76);
+            button1.Location = new Point(241, 76);
             button1.Name = "button1";
             button1.Size = new Size(126, 52);
             button1.TabIndex = 1;
             button1.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox6
+            // 
+            pictureBox6.Image = Properties.Resources.Super_Book__2_;
+            pictureBox6.Location = new Point(8, -97);
+            pictureBox6.Name = "pictureBox6";
+            pictureBox6.Size = new Size(350, 350);
+            pictureBox6.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox6.TabIndex = 2;
+            pictureBox6.TabStop = false;
             // 
             // bigLabel2
             // 
@@ -339,6 +352,7 @@
             panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -365,5 +379,6 @@
         private ReaLTaiizor.Controls.BigLabel bigLabel7;
         private ReaLTaiizor.Controls.BigLabel bigLabel8;
         private Button button1;
+        private PictureBox pictureBox6;
     }
 }

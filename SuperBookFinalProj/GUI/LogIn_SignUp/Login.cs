@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SuperBookFinalProj.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,10 +20,26 @@ namespace SuperBookFinalProj.GUI.LogIn_SignUp
 
         private void LoginBtn_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            HomeFrm home_form = new HomeFrm();
-            home_form.ShowDialog();
-            this.Close();
+            string uName = unameTxt.Text;
+            string pWord = pwordTxt.Text;
+            Admin admin = new Admin("Superbook", "admin", uName, pWord);
+
+            if (admin.validateLogin(uName,pWord))
+            {
+                MessageBox.Show("Welcome Admin");
+                this.Hide();
+                HomeFrmAdmin homeFrmAdmin = new HomeFrmAdmin();
+                homeFrmAdmin.ShowDialog();
+                this.Close();
+            }
+            else 
+            {
+                this.Hide();
+                HomeFrm home_form = new HomeFrm();
+                home_form.ShowDialog();
+                this.Close();
+            }
+            
         }
 
         private void Lblsignup_Click(object sender, EventArgs e)
