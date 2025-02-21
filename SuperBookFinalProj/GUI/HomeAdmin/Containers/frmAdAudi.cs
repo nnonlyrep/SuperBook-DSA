@@ -16,5 +16,10 @@ namespace SuperBookFinalProj.GUI.HomeAdmin.Containers
         {
             InitializeComponent();
         }
+
+        private void bigLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

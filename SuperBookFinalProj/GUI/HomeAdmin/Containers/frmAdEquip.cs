@@ -16,5 +16,10 @@ namespace SuperBookFinalProj.GUI.HomeAdmin.Containers
         {
             InitializeComponent();
         }
+
+        private void frmAdEquip_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
