@@ -45,11 +45,11 @@
             panel2 = new ReaLTaiizor.Controls.Panel();
             pictureBox2 = new PictureBox();
             panel1 = new ReaLTaiizor.Controls.Panel();
-            bigLabel5 = new ReaLTaiizor.Controls.BigLabel();
             bigLabel4 = new ReaLTaiizor.Controls.BigLabel();
             pictureBox1 = new PictureBox();
             bigLabel3 = new ReaLTaiizor.Controls.BigLabel();
             bigLabel9 = new ReaLTaiizor.Controls.BigLabel();
+            bigLabel5 = new ReaLTaiizor.Controls.BigLabel();
             panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             panel5.SuspendLayout();
@@ -269,18 +269,6 @@
             panel1.TabIndex = 10;
             panel1.Text = "panel1";
             // 
-            // bigLabel5
-            // 
-            bigLabel5.AutoSize = true;
-            bigLabel5.BackColor = Color.Transparent;
-            bigLabel5.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Bold);
-            bigLabel5.ForeColor = Color.FromArgb(200, 190, 167);
-            bigLabel5.Location = new Point(157, 46);
-            bigLabel5.Name = "bigLabel5";
-            bigLabel5.Size = new Size(180, 18);
-            bigLabel5.TabIndex = 9;
-            bigLabel5.Text = "or later hahaha okpi xd";
-            // 
             // bigLabel4
             // 
             bigLabel4.AutoSize = true;
@@ -289,9 +277,9 @@
             bigLabel4.ForeColor = Color.FromArgb(200, 190, 167);
             bigLabel4.Location = new Point(152, 14);
             bigLabel4.Name = "bigLabel4";
-            bigLabel4.Size = new Size(179, 29);
+            bigLabel4.Size = new Size(350, 29);
             bigLabel4.TabIndex = 8;
-            bigLabel4.Text = "Reserve now! ";
+            bigLabel4.Text = "Edit Rooms, and Equipments";
             // 
             // pictureBox1
             // 
@@ -323,9 +311,21 @@
             bigLabel9.ForeColor = Color.FromArgb(191, 222, 240);
             bigLabel9.Location = new Point(5, 15);
             bigLabel9.Name = "bigLabel9";
-            bigLabel9.Size = new Size(160, 25);
+            bigLabel9.Size = new Size(252, 25);
             bigLabel9.TabIndex = 8;
-            bigLabel9.Text = "SUPER BOOK";
+            bigLabel9.Text = "SUPER BOOK | ADMIN";
+            // 
+            // bigLabel5
+            // 
+            bigLabel5.AutoSize = true;
+            bigLabel5.BackColor = Color.Transparent;
+            bigLabel5.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bigLabel5.ForeColor = Color.FromArgb(200, 190, 167);
+            bigLabel5.Location = new Point(173, 43);
+            bigLabel5.Name = "bigLabel5";
+            bigLabel5.Size = new Size(120, 15);
+            bigLabel5.TabIndex = 9;
+            bigLabel5.Text = "Manage Accounts";
             // 
             // frmAdHome
             // 
@@ -385,10 +385,10 @@
         private ReaLTaiizor.Controls.Panel panel2;
         private PictureBox pictureBox2;
         private ReaLTaiizor.Controls.Panel panel1;
-        private ReaLTaiizor.Controls.BigLabel bigLabel5;
         private ReaLTaiizor.Controls.BigLabel bigLabel4;
         private PictureBox pictureBox1;
         private ReaLTaiizor.Controls.BigLabel bigLabel3;
         private ReaLTaiizor.Controls.BigLabel bigLabel9;
+        private ReaLTaiizor.Controls.BigLabel bigLabel5;
     }
 }
