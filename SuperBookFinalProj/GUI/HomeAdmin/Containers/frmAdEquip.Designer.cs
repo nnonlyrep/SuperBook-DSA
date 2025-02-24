@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.BckBtn = new Button();
+           
             UpdtBtn = new Button();
             textBox5 = new TextBox();
             textBox4 = new TextBox();
@@ -43,14 +43,7 @@
             // 
             // BckBtn
             // 
-            this.BckBtn.BackColor = Color.FromArgb(161, 181, 195);
-            this.BckBtn.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            this.BckBtn.Location = new Point(57, 515);
-            this.BckBtn.Name = "BckBtn";
-            this.BckBtn.Size = new Size(94, 43);
-            this.BckBtn.TabIndex = 43;
-            this.BckBtn.Text = "Back";
-            this.BckBtn.UseVisualStyleBackColor = false;
+
             // 
             // UpdtBtn
             // 
@@ -172,7 +165,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(21, 31, 40);
             ClientSize = new Size(914, 600);
-            Controls.Add(this.BckBtn);
             Controls.Add(UpdtBtn);
             Controls.Add(textBox5);
             Controls.Add(textBox4);

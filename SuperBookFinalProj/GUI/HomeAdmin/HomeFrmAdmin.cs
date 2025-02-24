@@ -208,7 +208,7 @@ namespace SuperBookFinalProj
             }
             else
             {
-                about.Activate();
+                rooms.Activate();
             }
         }
 
