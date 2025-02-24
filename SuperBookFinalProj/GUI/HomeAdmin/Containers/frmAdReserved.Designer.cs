@@ -28,37 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            bigLabel1 = new ReaLTaiizor.Controls.BigLabel();
             SuspendLayout();
-            // 
-            // bigLabel1
-            // 
-            bigLabel1.AutoSize = true;
-            bigLabel1.BackColor = Color.Transparent;
-            bigLabel1.Font = new Font("Segoe UI", 25F);
-            bigLabel1.ForeColor = Color.White;
-            bigLabel1.Location = new Point(341, 202);
-            bigLabel1.Name = "bigLabel1";
-            bigLabel1.Size = new Size(174, 46);
-            bigLabel1.TabIndex = 1;
-            bigLabel1.Text = "RESERVED";
             // 
             // frmAdReserved
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(21, 31, 40);
-            ClientSize = new Size(934, 454);
-            Controls.Add(bigLabel1);
+            ClientSize = new Size(1067, 605);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "frmAdReserved";
             Text = "frmAdReserved";
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-
-        private ReaLTaiizor.Controls.BigLabel bigLabel1;
     }
 }

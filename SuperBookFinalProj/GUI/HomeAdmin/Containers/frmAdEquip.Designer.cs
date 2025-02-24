@@ -28,157 +28,147 @@
         /// </summary>
         private void InitializeComponent()
         {
-            UpdtBtn = new Button();
-            textBox5 = new TextBox();
-            textBox4 = new TextBox();
-            numTblsTxt = new TextBox();
-            numChairsTxt = new TextBox();
-            label8 = new Label();
-            label5 = new Label();
-            numTblLbl = new Label();
-            numChairsLbl = new Label();
-            label1 = new Label();
+            btnDeleteRoom = new Button();
+            btnEditEq = new Button();
+            btnAddEq = new Button();
+            panel1 = new Panel();
+            dataGridView1 = new DataGridView();
+            Column1 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewTextBoxColumn();
+            Column4 = new DataGridViewTextBoxColumn();
+            Column5 = new DataGridViewTextBoxColumn();
+            Column6 = new DataGridViewTextBoxColumn();
+            label2 = new Label();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
-            // UpdtBtn
+            // btnDeleteRoom
             // 
-            UpdtBtn.BackColor = Color.FromArgb(161, 181, 195);
-            UpdtBtn.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            UpdtBtn.Location = new Point(668, 386);
-            UpdtBtn.Margin = new Padding(3, 2, 3, 2);
-            UpdtBtn.Name = "UpdtBtn";
-            UpdtBtn.Size = new Size(82, 32);
-            UpdtBtn.TabIndex = 42;
-            UpdtBtn.Text = "Update";
-            UpdtBtn.UseVisualStyleBackColor = false;
+            btnDeleteRoom.BackColor = Color.FromArgb(161, 181, 195);
+            btnDeleteRoom.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
+            btnDeleteRoom.Location = new Point(552, 519);
+            btnDeleteRoom.Name = "btnDeleteRoom";
+            btnDeleteRoom.Size = new Size(107, 39);
+            btnDeleteRoom.TabIndex = 56;
+            btnDeleteRoom.Text = "Delete Room";
+            btnDeleteRoom.UseVisualStyleBackColor = false;
             // 
-            // textBox5
+            // btnEditEq
             // 
-            textBox5.BackColor = Color.FromArgb(30, 48, 64);
-            textBox5.BorderStyle = BorderStyle.None;
-            textBox5.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
-            textBox5.ForeColor = Color.White;
-            textBox5.Location = new Point(126, 329);
-            textBox5.Margin = new Padding(3, 2, 3, 2);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(215, 19);
-            textBox5.TabIndex = 41;
+            btnEditEq.BackColor = Color.FromArgb(161, 181, 195);
+            btnEditEq.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
+            btnEditEq.Location = new Point(665, 519);
+            btnEditEq.Name = "btnEditEq";
+            btnEditEq.Size = new Size(158, 39);
+            btnEditEq.TabIndex = 55;
+            btnEditEq.Text = "Edit Equipment";
+            btnEditEq.UseVisualStyleBackColor = false;
             // 
-            // textBox4
+            // btnAddEq
             // 
-            textBox4.BackColor = Color.FromArgb(30, 48, 64);
-            textBox4.BorderStyle = BorderStyle.None;
-            textBox4.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
-            textBox4.ForeColor = Color.White;
-            textBox4.Location = new Point(126, 263);
-            textBox4.Margin = new Padding(3, 2, 3, 2);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(215, 19);
-            textBox4.TabIndex = 40;
+            btnAddEq.BackColor = Color.FromArgb(161, 181, 195);
+            btnAddEq.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
+            btnAddEq.Location = new Point(829, 519);
+            btnAddEq.Name = "btnAddEq";
+            btnAddEq.Size = new Size(155, 39);
+            btnAddEq.TabIndex = 54;
+            btnAddEq.Text = "Add Equipment ";
+            btnAddEq.UseVisualStyleBackColor = false;
             // 
-            // numTblsTxt
+            // panel1
             // 
-            numTblsTxt.BackColor = Color.FromArgb(30, 48, 64);
-            numTblsTxt.BorderStyle = BorderStyle.None;
-            numTblsTxt.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
-            numTblsTxt.ForeColor = Color.White;
-            numTblsTxt.Location = new Point(126, 202);
-            numTblsTxt.Margin = new Padding(3, 2, 3, 2);
-            numTblsTxt.Name = "numTblsTxt";
-            numTblsTxt.Size = new Size(215, 19);
-            numTblsTxt.TabIndex = 39;
+            panel1.BackColor = Color.FromArgb(30, 48, 64);
+            panel1.Controls.Add(dataGridView1);
+            panel1.Location = new Point(78, 90);
+            panel1.Margin = new Padding(3, 4, 3, 4);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(898, 389);
+            panel1.TabIndex = 53;
             // 
-            // numChairsTxt
+            // dataGridView1
             // 
-            numChairsTxt.BackColor = Color.FromArgb(30, 48, 64);
-            numChairsTxt.BorderStyle = BorderStyle.None;
-            numChairsTxt.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
-            numChairsTxt.ForeColor = Color.White;
-            numChairsTxt.Location = new Point(126, 142);
-            numChairsTxt.Margin = new Padding(3, 2, 3, 2);
-            numChairsTxt.Name = "numChairsTxt";
-            numChairsTxt.Size = new Size(215, 19);
-            numChairsTxt.TabIndex = 38;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Column6 });
+            dataGridView1.Location = new Point(24, 23);
+            dataGridView1.Margin = new Padding(3, 4, 3, 4);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.Size = new Size(858, 335);
+            dataGridView1.TabIndex = 0;
             // 
-            // label8
+            // Column1
             // 
-            label8.AutoSize = true;
-            label8.BackColor = Color.FromArgb(21, 31, 40);
-            label8.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
-            label8.ForeColor = SystemColors.Window;
-            label8.Location = new Point(126, 302);
-            label8.Name = "label8";
-            label8.Size = new Size(50, 20);
-            label8.TabIndex = 34;
-            label8.Text = "Kuan";
+            Column1.HeaderText = "Column1";
+            Column1.MinimumWidth = 6;
+            Column1.Name = "Column1";
+            Column1.Width = 125;
             // 
-            // label5
+            // Column2
             // 
-            label5.AutoSize = true;
-            label5.BackColor = Color.FromArgb(21, 31, 40);
-            label5.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
-            label5.ForeColor = SystemColors.Window;
-            label5.Location = new Point(126, 238);
-            label5.Name = "label5";
-            label5.Size = new Size(50, 20);
-            label5.TabIndex = 33;
-            label5.Text = "Kuan";
+            Column2.HeaderText = "Column2";
+            Column2.MinimumWidth = 6;
+            Column2.Name = "Column2";
+            Column2.Width = 125;
             // 
-            // numTblLbl
+            // Column3
             // 
-            numTblLbl.AutoSize = true;
-            numTblLbl.BackColor = Color.FromArgb(21, 31, 40);
-            numTblLbl.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
-            numTblLbl.ForeColor = SystemColors.Window;
-            numTblLbl.Location = new Point(126, 175);
-            numTblLbl.Name = "numTblLbl";
-            numTblLbl.Size = new Size(155, 20);
-            numTblLbl.TabIndex = 32;
-            numTblLbl.Text = "Number of Tables:";
+            Column3.HeaderText = "Column3";
+            Column3.MinimumWidth = 6;
+            Column3.Name = "Column3";
+            Column3.Width = 125;
             // 
-            // numChairsLbl
+            // Column4
             // 
-            numChairsLbl.AutoSize = true;
-            numChairsLbl.BackColor = Color.FromArgb(21, 31, 40);
-            numChairsLbl.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
-            numChairsLbl.ForeColor = SystemColors.Window;
-            numChairsLbl.Location = new Point(126, 112);
-            numChairsLbl.Name = "numChairsLbl";
-            numChairsLbl.Size = new Size(153, 20);
-            numChairsLbl.TabIndex = 31;
-            numChairsLbl.Text = "Number of Chairs:";
+            Column4.HeaderText = "Column4";
+            Column4.MinimumWidth = 6;
+            Column4.Name = "Column4";
+            Column4.Width = 125;
             // 
-            // label1
+            // Column5
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Microsoft Sans Serif", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = SystemColors.ButtonFace;
-            label1.Location = new Point(326, 32);
-            label1.Name = "label1";
-            label1.Size = new Size(144, 24);
-            label1.TabIndex = 27;
-            label1.Text = "EQUIPMENTS";
+            Column5.HeaderText = "Column5";
+            Column5.MinimumWidth = 6;
+            Column5.Name = "Column5";
+            Column5.Width = 125;
+            // 
+            // Column6
+            // 
+            Column6.HeaderText = "Column6";
+            Column6.MinimumWidth = 6;
+            Column6.Name = "Column6";
+            Column6.Width = 125;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Microsoft Sans Serif", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = SystemColors.ButtonFace;
+            label2.Location = new Point(78, 47);
+            label2.Name = "label2";
+            label2.Size = new Size(183, 29);
+            label2.TabIndex = 52;
+            label2.Text = "EQUIPMENTS";
             // 
             // frmAdEquip
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(21, 31, 40);
-            ClientSize = new Size(934, 454);
-            Controls.Add(UpdtBtn);
-            Controls.Add(textBox5);
-            Controls.Add(textBox4);
-            Controls.Add(numTblsTxt);
-            Controls.Add(numChairsTxt);
-            Controls.Add(label8);
-            Controls.Add(label5);
-            Controls.Add(numTblLbl);
-            Controls.Add(numChairsLbl);
-            Controls.Add(label1);
+            ClientSize = new Size(1067, 605);
+            Controls.Add(btnDeleteRoom);
+            Controls.Add(btnEditEq);
+            Controls.Add(btnAddEq);
+            Controls.Add(panel1);
+            Controls.Add(label2);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "frmAdEquip";
             Text = "frmAdEquip";
             Load += frmAdEquip_Load;
+            panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -188,21 +178,22 @@
         private Label label2;
         private DateTimePicker dateTimePicker1;
         private Button button1;
-        private Button UpdtBtn;
-        private TextBox textBox5;
-        private TextBox textBox4;
-        private TextBox numTblsTxt;
-        private TextBox numChairsTxt;
         private TextBox purposeTxt;
         private TextBox roomNumtxt;
         private ReaLTaiizor.Controls.PoisonDateTime poisonDateTime1;
-        private Label label8;
-        private Label label5;
-        private Label numTblLbl;
-        private Label numChairsLbl;
         private Label purposeLbl;
         private Label roomNumLbl;
         private Label dateTxt;
-        private Label label1;
+        private Button btnDeleteRoom;
+        private Button btnEditEq;
+        private Button btnAddEq;
+        private Panel panel1;
+        private DataGridView dataGridView1;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn Column3;
+        private DataGridViewTextBoxColumn Column4;
+        private DataGridViewTextBoxColumn Column5;
+        private DataGridViewTextBoxColumn Column6;
     }
 }
