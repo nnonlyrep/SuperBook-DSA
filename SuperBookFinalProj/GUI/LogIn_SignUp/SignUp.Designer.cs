@@ -44,9 +44,11 @@ namespace SuperBookFinalProj.GUI.LogIn_SignUp
             schoolIDTxt = new TextBox();
             backBtn = new Button();
             SignUpBtn = new Button();
-            label1 = new Label();
-            textBox1 = new TextBox();
+            lblpWord = new Label();
+            txtpWord = new TextBox();
             pictureBox1 = new PictureBox();
+            txtuName = new TextBox();
+            lbluName = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -57,8 +59,9 @@ namespace SuperBookFinalProj.GUI.LogIn_SignUp
             panel1.Controls.Add(nightControlBox1);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1107, 41);
+            panel1.Size = new Size(969, 31);
             panel1.TabIndex = 0;
             // 
             // nightControlBox1
@@ -75,7 +78,7 @@ namespace SuperBookFinalProj.GUI.LogIn_SignUp
             nightControlBox1.EnableMaximizeColor = Color.FromArgb(160, 160, 160);
             nightControlBox1.EnableMinimizeButton = true;
             nightControlBox1.EnableMinimizeColor = Color.FromArgb(160, 160, 160);
-            nightControlBox1.Location = new Point(968, 0);
+            nightControlBox1.Location = new Point(830, 0);
             nightControlBox1.MaximizeHoverColor = Color.FromArgb(15, 255, 255, 255);
             nightControlBox1.MaximizeHoverForeColor = Color.White;
             nightControlBox1.MinimizeHoverColor = Color.FromArgb(15, 255, 255, 255);
@@ -89,18 +92,19 @@ namespace SuperBookFinalProj.GUI.LogIn_SignUp
             firstNameTxt.BackColor = Color.FromArgb(30, 48, 64);
             firstNameTxt.Font = new Font("Segoe UI", 10F);
             firstNameTxt.ForeColor = Color.White;
-            firstNameTxt.Location = new Point(647, 164);
+            firstNameTxt.Location = new Point(566, 123);
+            firstNameTxt.Margin = new Padding(3, 2, 3, 2);
             firstNameTxt.Name = "firstNameTxt";
-            firstNameTxt.Size = new Size(139, 30);
+            firstNameTxt.Size = new Size(122, 25);
             firstNameTxt.TabIndex = 2;
             // 
             // firstNameLbl
             // 
             firstNameLbl.AutoSize = true;
             firstNameLbl.ForeColor = SystemColors.ControlLightLight;
-            firstNameLbl.Location = new Point(647, 136);
+            firstNameLbl.Location = new Point(566, 102);
             firstNameLbl.Name = "firstNameLbl";
-            firstNameLbl.Size = new Size(83, 20);
+            firstNameLbl.Size = new Size(67, 15);
             firstNameLbl.TabIndex = 3;
             firstNameLbl.Text = "First Name:";
             // 
@@ -108,9 +112,9 @@ namespace SuperBookFinalProj.GUI.LogIn_SignUp
             // 
             lastNameLbl.AutoSize = true;
             lastNameLbl.ForeColor = SystemColors.ControlLightLight;
-            lastNameLbl.Location = new Point(793, 136);
+            lastNameLbl.Location = new Point(694, 102);
             lastNameLbl.Name = "lastNameLbl";
-            lastNameLbl.Size = new Size(82, 20);
+            lastNameLbl.Size = new Size(66, 15);
             lastNameLbl.TabIndex = 4;
             lastNameLbl.Text = "Last Name:";
             lastNameLbl.Click += label2_Click;
@@ -120,18 +124,19 @@ namespace SuperBookFinalProj.GUI.LogIn_SignUp
             lastNameTxt.BackColor = Color.FromArgb(30, 48, 64);
             lastNameTxt.Font = new Font("Segoe UI", 10F);
             lastNameTxt.ForeColor = Color.White;
-            lastNameTxt.Location = new Point(793, 164);
+            lastNameTxt.Location = new Point(694, 123);
+            lastNameTxt.Margin = new Padding(3, 2, 3, 2);
             lastNameTxt.Name = "lastNameTxt";
-            lastNameTxt.Size = new Size(155, 30);
+            lastNameTxt.Size = new Size(136, 25);
             lastNameTxt.TabIndex = 5;
             // 
             // contactNoLbl
             // 
             contactNoLbl.AutoSize = true;
             contactNoLbl.ForeColor = SystemColors.ControlLightLight;
-            contactNoLbl.Location = new Point(647, 219);
+            contactNoLbl.Location = new Point(566, 164);
             contactNoLbl.Name = "contactNoLbl";
-            contactNoLbl.Size = new Size(121, 20);
+            contactNoLbl.Size = new Size(99, 15);
             contactNoLbl.TabIndex = 6;
             contactNoLbl.Text = "Contact Number:";
             contactNoLbl.Click += contactNoLbl_Click;
@@ -140,9 +145,9 @@ namespace SuperBookFinalProj.GUI.LogIn_SignUp
             // 
             emailAddLbl.AutoSize = true;
             emailAddLbl.ForeColor = SystemColors.ControlLightLight;
-            emailAddLbl.Location = new Point(647, 304);
+            emailAddLbl.Location = new Point(566, 228);
             emailAddLbl.Name = "emailAddLbl";
-            emailAddLbl.Size = new Size(106, 20);
+            emailAddLbl.Size = new Size(84, 15);
             emailAddLbl.TabIndex = 7;
             emailAddLbl.Text = "Email Address:";
             // 
@@ -150,9 +155,9 @@ namespace SuperBookFinalProj.GUI.LogIn_SignUp
             // 
             schoolIDLbl.AutoSize = true;
             schoolIDLbl.ForeColor = SystemColors.ControlLightLight;
-            schoolIDLbl.Location = new Point(647, 395);
+            schoolIDLbl.Location = new Point(566, 296);
             schoolIDLbl.Name = "schoolIDLbl";
-            schoolIDLbl.Size = new Size(76, 20);
+            schoolIDLbl.Size = new Size(60, 15);
             schoolIDLbl.TabIndex = 8;
             schoolIDLbl.Text = "School ID:";
             // 
@@ -161,9 +166,10 @@ namespace SuperBookFinalProj.GUI.LogIn_SignUp
             contactNoTxt.BackColor = Color.FromArgb(30, 48, 64);
             contactNoTxt.Font = new Font("Segoe UI", 10F);
             contactNoTxt.ForeColor = Color.White;
-            contactNoTxt.Location = new Point(647, 247);
+            contactNoTxt.Location = new Point(566, 185);
+            contactNoTxt.Margin = new Padding(3, 2, 3, 2);
             contactNoTxt.Name = "contactNoTxt";
-            contactNoTxt.Size = new Size(301, 30);
+            contactNoTxt.Size = new Size(264, 25);
             contactNoTxt.TabIndex = 9;
             // 
             // emailAddTxt
@@ -171,9 +177,10 @@ namespace SuperBookFinalProj.GUI.LogIn_SignUp
             emailAddTxt.BackColor = Color.FromArgb(30, 48, 64);
             emailAddTxt.Font = new Font("Segoe UI", 10F);
             emailAddTxt.ForeColor = Color.White;
-            emailAddTxt.Location = new Point(647, 332);
+            emailAddTxt.Location = new Point(566, 249);
+            emailAddTxt.Margin = new Padding(3, 2, 3, 2);
             emailAddTxt.Name = "emailAddTxt";
-            emailAddTxt.Size = new Size(301, 30);
+            emailAddTxt.Size = new Size(264, 25);
             emailAddTxt.TabIndex = 10;
             // 
             // schoolIDTxt
@@ -181,17 +188,19 @@ namespace SuperBookFinalProj.GUI.LogIn_SignUp
             schoolIDTxt.BackColor = Color.FromArgb(30, 48, 64);
             schoolIDTxt.Font = new Font("Segoe UI", 10F);
             schoolIDTxt.ForeColor = Color.White;
-            schoolIDTxt.Location = new Point(647, 421);
+            schoolIDTxt.Location = new Point(566, 316);
+            schoolIDTxt.Margin = new Padding(3, 2, 3, 2);
             schoolIDTxt.Name = "schoolIDTxt";
-            schoolIDTxt.Size = new Size(301, 30);
+            schoolIDTxt.Size = new Size(264, 25);
             schoolIDTxt.TabIndex = 11;
             // 
             // backBtn
             // 
             backBtn.BackColor = Color.FromArgb(161, 181, 195);
-            backBtn.Location = new Point(47, 651);
+            backBtn.Location = new Point(41, 488);
+            backBtn.Margin = new Padding(3, 2, 3, 2);
             backBtn.Name = "backBtn";
-            backBtn.Size = new Size(94, 29);
+            backBtn.Size = new Size(82, 22);
             backBtn.TabIndex = 12;
             backBtn.Text = "Back";
             backBtn.UseVisualStyleBackColor = false;
@@ -200,53 +209,79 @@ namespace SuperBookFinalProj.GUI.LogIn_SignUp
             // SignUpBtn
             // 
             SignUpBtn.BackColor = Color.FromArgb(161, 181, 195);
-            SignUpBtn.Location = new Point(968, 651);
+            SignUpBtn.Location = new Point(847, 488);
+            SignUpBtn.Margin = new Padding(3, 2, 3, 2);
             SignUpBtn.Name = "SignUpBtn";
-            SignUpBtn.Size = new Size(94, 29);
+            SignUpBtn.Size = new Size(82, 22);
             SignUpBtn.TabIndex = 13;
             SignUpBtn.Text = "Sign Up";
             SignUpBtn.UseVisualStyleBackColor = false;
             SignUpBtn.Click += SignUpBtn_Click;
             // 
-            // label1
+            // lblpWord
             // 
-            label1.AutoSize = true;
-            label1.ForeColor = SystemColors.ControlLightLight;
-            label1.Location = new Point(647, 483);
-            label1.Name = "label1";
-            label1.Size = new Size(73, 20);
-            label1.TabIndex = 14;
-            label1.Text = "Password:";
+            lblpWord.AutoSize = true;
+            lblpWord.ForeColor = SystemColors.ControlLightLight;
+            lblpWord.Location = new Point(566, 362);
+            lblpWord.Name = "lblpWord";
+            lblpWord.Size = new Size(60, 15);
+            lblpWord.TabIndex = 14;
+            lblpWord.Text = "Password:";
             // 
-            // textBox1
+            // txtpWord
             // 
-            textBox1.BackColor = Color.FromArgb(30, 48, 64);
-            textBox1.Font = new Font("Segoe UI", 10F);
-            textBox1.ForeColor = Color.White;
-            textBox1.Location = new Point(647, 511);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(301, 30);
-            textBox1.TabIndex = 15;
+            txtpWord.BackColor = Color.FromArgb(30, 48, 64);
+            txtpWord.Font = new Font("Segoe UI", 10F);
+            txtpWord.ForeColor = Color.White;
+            txtpWord.Location = new Point(566, 383);
+            txtpWord.Margin = new Padding(3, 2, 3, 2);
+            txtpWord.Name = "txtpWord";
+            txtpWord.Size = new Size(264, 25);
+            txtpWord.TabIndex = 15;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.Pa_reserve_daw_teh_;
-            pictureBox1.Location = new Point(-56, 41);
+            pictureBox1.Location = new Point(-49, 31);
+            pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(842, 639);
+            pictureBox1.Size = new Size(737, 479);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 16;
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click_1;
             // 
+            // txtuName
+            // 
+            txtuName.BackColor = Color.FromArgb(30, 48, 64);
+            txtuName.Font = new Font("Segoe UI", 10F);
+            txtuName.ForeColor = Color.White;
+            txtuName.Location = new Point(566, 75);
+            txtuName.Margin = new Padding(3, 2, 3, 2);
+            txtuName.Name = "txtuName";
+            txtuName.Size = new Size(264, 25);
+            txtuName.TabIndex = 17;
+            // 
+            // lbluName
+            // 
+            lbluName.AutoSize = true;
+            lbluName.ForeColor = SystemColors.ControlLightLight;
+            lbluName.Location = new Point(566, 58);
+            lbluName.Name = "lbluName";
+            lbluName.Size = new Size(60, 15);
+            lbluName.TabIndex = 18;
+            lbluName.Text = "Username";
+            // 
             // SignUp
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(21, 31, 40);
-            ClientSize = new Size(1107, 720);
-            Controls.Add(textBox1);
-            Controls.Add(label1);
+            ClientSize = new Size(969, 540);
+            Controls.Add(lbluName);
+            Controls.Add(txtuName);
+            Controls.Add(txtpWord);
+            Controls.Add(lblpWord);
             Controls.Add(SignUpBtn);
             Controls.Add(backBtn);
             Controls.Add(schoolIDTxt);
@@ -262,6 +297,7 @@ namespace SuperBookFinalProj.GUI.LogIn_SignUp
             Controls.Add(panel1);
             Controls.Add(pictureBox1);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 2, 3, 2);
             Name = "SignUp";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "SignUp";
@@ -288,8 +324,10 @@ namespace SuperBookFinalProj.GUI.LogIn_SignUp
         private TextBox schoolIDTxt;
         private Button backBtn;
         private Button SignUpBtn;
-        private Label label1;
-        private TextBox textBox1;
+        private Label lblpWord;
+        private TextBox txtpWord;
         private PictureBox pictureBox1;
+        private TextBox txtuName;
+        private Label lbluName;
     }
 }
