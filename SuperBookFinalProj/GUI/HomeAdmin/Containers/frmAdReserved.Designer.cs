@@ -48,7 +48,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(21, 31, 40);
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(934, 454);
             Controls.Add(bigLabel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "frmAdReserved";

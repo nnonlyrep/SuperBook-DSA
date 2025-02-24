@@ -28,149 +28,150 @@
         /// </summary>
         private void InitializeComponent()
         {
+            panel1 = new Panel();
+            dataGridView1 = new DataGridView();
+            Column1 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewTextBoxColumn();
+            Column4 = new DataGridViewTextBoxColumn();
+            Column5 = new DataGridViewTextBoxColumn();
+            Column6 = new DataGridViewTextBoxColumn();
             label2 = new Label();
-            dateTimePicker1 = new DateTimePicker();
-            BckBtn = new Button();
-            UpdtBtn = new Button();
-            roomNumtxt = new TextBox();
-            poisonDateTime1 = new ReaLTaiizor.Controls.PoisonDateTime();
-            roomNumLbl = new Label();
-            dateTxt = new Label();
-            label1 = new Label();
+            btnAddRoom = new Button();
+            btnEditRoom = new Button();
+            btnDeleteRoom = new Button();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(30, 48, 64);
+            panel1.Controls.Add(dataGridView1);
+            panel1.Location = new Point(74, 78);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(786, 292);
+            panel1.TabIndex = 29;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Column6 });
+            dataGridView1.Location = new Point(21, 17);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.Size = new Size(751, 251);
+            dataGridView1.TabIndex = 0;
+            // 
+            // Column1
+            // 
+            Column1.HeaderText = "Column1";
+            Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            Column2.HeaderText = "Column2";
+            Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            Column3.HeaderText = "Column3";
+            Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            Column4.HeaderText = "Column4";
+            Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            Column5.HeaderText = "Column5";
+            Column5.Name = "Column5";
+            // 
+            // Column6
+            // 
+            Column6.HeaderText = "Column6";
+            Column6.Name = "Column6";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.BackColor = Color.FromArgb(21, 31, 40);
-            label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = SystemColors.Window;
-            label2.Location = new Point(134, 261);
+            label2.Font = new Font("Work Sans Black", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = SystemColors.ButtonFace;
+            label2.Location = new Point(74, 26);
             label2.Name = "label2";
-            label2.Size = new Size(64, 28);
-            label2.TabIndex = 45;
-            label2.Text = "Time:";
+            label2.Size = new Size(132, 28);
+            label2.TabIndex = 28;
+            label2.Text = "CLASSROOM";
             // 
-            // dateTimePicker1
+            // btnAddRoom
             // 
-            dateTimePicker1.Format = DateTimePickerFormat.Time;
-            dateTimePicker1.Location = new Point(201, 261);
-            dateTimePicker1.Margin = new Padding(3, 4, 3, 4);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.ShowUpDown = true;
-            dateTimePicker1.Size = new Size(164, 27);
-            dateTimePicker1.TabIndex = 44;
+            btnAddRoom.BackColor = Color.FromArgb(161, 181, 195);
+            btnAddRoom.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
+            btnAddRoom.Location = new Point(778, 400);
+            btnAddRoom.Margin = new Padding(3, 2, 3, 2);
+            btnAddRoom.Name = "btnAddRoom";
+            btnAddRoom.Size = new Size(94, 29);
+            btnAddRoom.TabIndex = 30;
+            btnAddRoom.Text = "Add Room";
+            btnAddRoom.UseVisualStyleBackColor = false;
             // 
-            // BckBtn
+            // btnEditRoom
             // 
-            BckBtn.BackColor = Color.FromArgb(161, 181, 195);
-            BckBtn.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            BckBtn.Location = new Point(57, 515);
-            BckBtn.Name = "BckBtn";
-            BckBtn.Size = new Size(94, 43);
-            BckBtn.TabIndex = 43;
-            BckBtn.Text = "Back";
-            BckBtn.UseVisualStyleBackColor = false;
+            btnEditRoom.BackColor = Color.FromArgb(161, 181, 195);
+            btnEditRoom.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
+            btnEditRoom.Location = new Point(667, 400);
+            btnEditRoom.Margin = new Padding(3, 2, 3, 2);
+            btnEditRoom.Name = "btnEditRoom";
+            btnEditRoom.Size = new Size(94, 29);
+            btnEditRoom.TabIndex = 31;
+            btnEditRoom.Text = "Edit Room";
+            btnEditRoom.UseVisualStyleBackColor = false;
             // 
-            // UpdtBtn
+            // btnDeleteRoom
             // 
-            UpdtBtn.BackColor = Color.FromArgb(161, 181, 195);
-            UpdtBtn.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            UpdtBtn.Location = new Point(764, 515);
-            UpdtBtn.Name = "UpdtBtn";
-            UpdtBtn.Size = new Size(94, 43);
-            UpdtBtn.TabIndex = 42;
-            UpdtBtn.Text = "Update";
-            UpdtBtn.UseVisualStyleBackColor = false;
-            // 
-            // roomNumtxt
-            // 
-            roomNumtxt.BackColor = Color.FromArgb(30, 48, 64);
-            roomNumtxt.BorderStyle = BorderStyle.None;
-            roomNumtxt.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
-            roomNumtxt.ForeColor = Color.White;
-            roomNumtxt.Location = new Point(137, 359);
-            roomNumtxt.Name = "roomNumtxt";
-            roomNumtxt.Size = new Size(170, 23);
-            roomNumtxt.TabIndex = 36;
-            // 
-            // poisonDateTime1
-            // 
-            poisonDateTime1.Location = new Point(137, 197);
-            poisonDateTime1.Margin = new Padding(3, 4, 3, 4);
-            poisonDateTime1.MinimumSize = new Size(0, 30);
-            poisonDateTime1.Name = "poisonDateTime1";
-            poisonDateTime1.Size = new Size(228, 30);
-            poisonDateTime1.TabIndex = 35;
-            // 
-            // roomNumLbl
-            // 
-            roomNumLbl.AutoSize = true;
-            roomNumLbl.BackColor = Color.FromArgb(21, 31, 40);
-            roomNumLbl.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
-            roomNumLbl.ForeColor = SystemColors.Window;
-            roomNumLbl.Location = new Point(134, 326);
-            roomNumLbl.Name = "roomNumLbl";
-            roomNumLbl.Size = new Size(155, 25);
-            roomNumLbl.TabIndex = 29;
-            roomNumLbl.Text = "Room Number:";
-            // 
-            // dateTxt
-            // 
-            dateTxt.AutoSize = true;
-            dateTxt.BackColor = Color.FromArgb(21, 31, 40);
-            dateTxt.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dateTxt.ForeColor = SystemColors.Window;
-            dateTxt.Location = new Point(137, 157);
-            dateTxt.Name = "dateTxt";
-            dateTxt.Size = new Size(62, 28);
-            dateTxt.TabIndex = 28;
-            dateTxt.Text = "Date:";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Microsoft Sans Serif", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = SystemColors.ButtonFace;
-            label1.Location = new Point(373, 43);
-            label1.Name = "label1";
-            label1.Size = new Size(174, 29);
-            label1.TabIndex = 27;
-            label1.Text = "CLASSROOM";
+            btnDeleteRoom.BackColor = Color.FromArgb(161, 181, 195);
+            btnDeleteRoom.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
+            btnDeleteRoom.Location = new Point(557, 400);
+            btnDeleteRoom.Margin = new Padding(3, 2, 3, 2);
+            btnDeleteRoom.Name = "btnDeleteRoom";
+            btnDeleteRoom.Size = new Size(94, 29);
+            btnDeleteRoom.TabIndex = 32;
+            btnDeleteRoom.Text = "Delete Room";
+            btnDeleteRoom.UseVisualStyleBackColor = false;
             // 
             // frmAdRooms
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(21, 31, 40);
-            ClientSize = new Size(914, 600);
+            ClientSize = new Size(934, 454);
+            Controls.Add(btnDeleteRoom);
+            Controls.Add(btnEditRoom);
+            Controls.Add(btnAddRoom);
+            Controls.Add(panel1);
             Controls.Add(label2);
-            Controls.Add(dateTimePicker1);
-            Controls.Add(BckBtn);
-            Controls.Add(UpdtBtn);
-            Controls.Add(roomNumtxt);
-            Controls.Add(poisonDateTime1);
-            Controls.Add(roomNumLbl);
-            Controls.Add(dateTxt);
-            Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 4, 3, 4);
             Name = "frmAdRooms";
             Text = "frmAdRooms";
+            panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
+        private Panel panel1;
+        private DataGridView dataGridView1;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn Column3;
+        private DataGridViewTextBoxColumn Column4;
+        private DataGridViewTextBoxColumn Column5;
+        private DataGridViewTextBoxColumn Column6;
         private Label label2;
-        private DateTimePicker dateTimePicker1;
-        private Button BckBtn;
-        private Button UpdtBtn;
-        private TextBox roomNumtxt;
-        private ReaLTaiizor.Controls.PoisonDateTime poisonDateTime1;
-        private Label roomNumLbl;
-        private Label dateTxt;
-        private Label label1;
+        private Button btnAddRoom;
+        private Button btnEditRoom;
+        private Button btnDeleteRoom;
     }
 }
