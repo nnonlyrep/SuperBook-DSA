@@ -65,7 +65,7 @@
             nightControlBox1.EnableMaximizeColor = Color.FromArgb(160, 160, 160);
             nightControlBox1.EnableMinimizeButton = true;
             nightControlBox1.EnableMinimizeColor = Color.FromArgb(160, 160, 160);
-            nightControlBox1.Location = new Point(814, 5);
+            nightControlBox1.Location = new Point(814, 0);
             nightControlBox1.MaximizeHoverColor = Color.FromArgb(15, 255, 255, 255);
             nightControlBox1.MaximizeHoverForeColor = Color.White;
             nightControlBox1.MinimizeHoverColor = Color.FromArgb(15, 255, 255, 255);
@@ -77,10 +77,10 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.Pa_reserve_daw_teh_;
-            pictureBox1.Location = new Point(149, -16);
+            pictureBox1.Location = new Point(127, -19);
             pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(646, 434);
+            pictureBox1.Size = new Size(710, 434);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 2;
             pictureBox1.TabStop = false;
