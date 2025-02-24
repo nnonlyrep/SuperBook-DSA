@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SuperBookFinalProj.GUI.PopUps;
 
 namespace SuperBookFinalProj.GUI.Home.Containers
 {
@@ -39,6 +40,13 @@ namespace SuperBookFinalProj.GUI.Home.Containers
 
         private void bigLabel6_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ppHome ppHome = new ppHome();
+            ppHome.ShowDialog();
 
         }
     }

@@ -84,6 +84,7 @@
             dataGridAcc.Name = "dataGridAcc";
             dataGridAcc.Size = new Size(751, 251);
             dataGridAcc.TabIndex = 0;
+            dataGridAcc.CellContentClick += dataGridAcc_CellContentClick;
             // 
             // Column1
             // 

@@ -16,5 +16,15 @@ namespace SuperBookFinalProj.GUI.HomeAdmin.Containers
         {
             InitializeComponent();
         }
+
+        private void ClassroomLbl_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine("New");
+        }
+
+        private void dataGridAcc_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
