@@ -74,8 +74,14 @@ namespace SuperBookFinalProj.Repositories
             response.EnsureSuccessStatusCode();
 
             var responseBody = await response.Content.ReadAsStringAsync();
-            return JsonSerializer.Deserialize<List<Consumer>>(responseBody);
+            var consumers = JsonSerializer.Deserialize<List<Consumer>>(responseBody, new JsonSerializerOptions
+            {
+                PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+            });
+
+            return consumers;
         }
+
 
         // ----------------- READ BY ID -----------------
         public async Task<Consumer> GetByIdAsync(int id)
@@ -101,11 +107,46 @@ namespace SuperBookFinalProj.Repositories
         }
 
         // ----------------- DELETE -----------------
-        public async Task DeleteAsync(int id)
+        public async Task<bool> DeleteAsync(int id)
         {
             var url = $"{_baseUrl}/rest/v1/{_tableName}?id=eq.{id}";
+
             var response = await _httpClient.DeleteAsync(url);
-            response.EnsureSuccessStatusCode();
+
+            if (response.IsSuccessStatusCode)
+            {
+                return true; // ✅ Successfully deleted
+            }
+            else
+            {
+                string errorMessage = await response.Content.ReadAsStringAsync();
+                throw new Exception($"❌ Failed to delete user. Error: {errorMessage}");
+            }
         }
+
+        // ----------------- AUTHENTICATION -----------------
+        public async Task<Consumer> AuthenticateUserAsync(string username, string password)
+        {
+            var url = $"{_baseUrl}/rest/v1/{_tableName}?user_name=eq.{username}";
+
+            var response = await _httpClient.GetAsync(url);
+            response.EnsureSuccessStatusCode();
+
+            var responseBody = await response.Content.ReadAsStringAsync();
+            var users = JsonSerializer.Deserialize<List<Consumer>>(responseBody);
+
+            if (users.Count == 0)
+                return null; // ❌ No user found
+
+            Consumer user = users[0];
+
+            // 🔹 Verify hashed password
+            if (BCrypt.Net.BCrypt.Verify(password, user.password))
+                return user; // ✅ Password matches
+
+            return null; // ❌ Password incorrect
+        }
+
+
     }
 }

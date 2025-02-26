@@ -106,6 +106,7 @@
             unameTxt.Name = "unameTxt";
             unameTxt.Size = new Size(220, 25);
             unameTxt.TabIndex = 13;
+            unameTxt.TextChanged += unameTxt_TextChanged;
             // 
             // emailAddLbl
             // 

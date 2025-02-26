@@ -32,12 +32,6 @@
             btnEditAcc = new Button();
             panel1 = new Panel();
             dataGridAcc = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
-            Column5 = new DataGridViewTextBoxColumn();
-            Column6 = new DataGridViewTextBoxColumn();
             label2 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridAcc).BeginInit();
@@ -54,6 +48,7 @@
             btnDeleteAcc.TabIndex = 37;
             btnDeleteAcc.Text = "Delete Account";
             btnDeleteAcc.UseVisualStyleBackColor = false;
+            btnDeleteAcc.Click += btnDeleteAcc_Click;
             // 
             // btnEditAcc
             // 
@@ -78,43 +73,16 @@
             // 
             // dataGridAcc
             // 
+            dataGridAcc.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridAcc.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridAcc.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Column6 });
             dataGridAcc.Location = new Point(21, 17);
+            dataGridAcc.MultiSelect = false;
             dataGridAcc.Name = "dataGridAcc";
+            dataGridAcc.ReadOnly = true;
+            dataGridAcc.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridAcc.Size = new Size(751, 251);
             dataGridAcc.TabIndex = 0;
             dataGridAcc.CellContentClick += dataGridAcc_CellContentClick;
-            // 
-            // Column1
-            // 
-            Column1.HeaderText = "Column1";
-            Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            Column2.HeaderText = "Column2";
-            Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            Column3.HeaderText = "Column3";
-            Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            Column4.HeaderText = "Column4";
-            Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            Column5.HeaderText = "Column5";
-            Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            Column6.HeaderText = "Column6";
-            Column6.Name = "Column6";
             // 
             // label2
             // 
@@ -152,12 +120,6 @@
         private Button btnEditAcc;
         private Panel panel1;
         private DataGridView dataGridAcc;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column4;
-        private DataGridViewTextBoxColumn Column5;
-        private DataGridViewTextBoxColumn Column6;
         private Label label2;
     }
 }
