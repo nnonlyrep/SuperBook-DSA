@@ -123,6 +123,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "frmAdRooms";
             Text = "frmAdRooms";
+            Load += frmAdRooms_Load;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridRooms).EndInit();
             ResumeLayout(false);

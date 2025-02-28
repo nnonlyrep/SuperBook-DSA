@@ -60,7 +60,7 @@ namespace SuperBookFinalProj.GUI.PopUps.AdminPP
             lblRoomNum.ForeColor = SystemColors.ButtonFace;
             lblRoomNum.Location = new Point(12, 54);
             lblRoomNum.Name = "lblRoomNum";
-            lblRoomNum.Size = new Size(118, 22);
+            lblRoomNum.Size = new Size(119, 22);
             lblRoomNum.TabIndex = 1;
             lblRoomNum.Text = "Room Number:";
             // 
@@ -106,7 +106,7 @@ namespace SuperBookFinalProj.GUI.PopUps.AdminPP
             label2.ForeColor = SystemColors.ButtonFace;
             label2.Location = new Point(12, 204);
             label2.Name = "label2";
-            label2.Size = new Size(78, 22);
+            label2.Size = new Size(80, 22);
             label2.TabIndex = 5;
             label2.Text = "Capacity:";
             // 
@@ -125,7 +125,7 @@ namespace SuperBookFinalProj.GUI.PopUps.AdminPP
             lblLoc.ForeColor = SystemColors.ButtonFace;
             lblLoc.Location = new Point(263, 54);
             lblLoc.Name = "lblLoc";
-            lblLoc.Size = new Size(78, 22);
+            lblLoc.Size = new Size(80, 22);
             lblLoc.TabIndex = 7;
             lblLoc.Text = "Location:";
             // 
@@ -174,6 +174,7 @@ namespace SuperBookFinalProj.GUI.PopUps.AdminPP
             Name = "ppAddRoom";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ppAddRoom";
+            Load += ppAddRoom_Load;
             ResumeLayout(false);
             PerformLayout();
         }

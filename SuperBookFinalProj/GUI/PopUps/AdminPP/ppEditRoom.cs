@@ -16,6 +16,7 @@ namespace SuperBookFinalProj.GUI.PopUps.AdminPP
     {
         private readonly RoomRepository _roomRepository;
         private Room _room;
+
         public ppEditRoom(Room room)
         {
             InitializeComponent();
@@ -29,6 +30,7 @@ namespace SuperBookFinalProj.GUI.PopUps.AdminPP
             LoadRoomData();
             btnEdit.Click += BtnEdit_Click;
         }
+
         private void LoadRoomData()
         {
             txtRoomNumber.Text = _room.room_number;
@@ -41,6 +43,8 @@ namespace SuperBookFinalProj.GUI.PopUps.AdminPP
         {
             this.Close();
         }
+
+        public event Action RoomUpdated; // Event to notify the main form
 
         private async void BtnEdit_Click(object sender, EventArgs e)
         {
@@ -74,10 +78,18 @@ namespace SuperBookFinalProj.GUI.PopUps.AdminPP
                 Console.WriteLine($"Capacity: {_room.capacity}");
                 Console.WriteLine($"Location: {_room.location}");
 
-                await _roomRepository.UpdateAsync(_room);
+                bool success = await _roomRepository.UpdateAsync(_room);
 
-                MessageBox.Show("Room updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
+                if (success)
+                {
+                    MessageBox.Show("Room updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    RoomUpdated?.Invoke(); // 🔥 Notify the main form to refresh DataGridView
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Failed to update room!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             catch (Exception ex)
             {
@@ -85,5 +97,8 @@ namespace SuperBookFinalProj.GUI.PopUps.AdminPP
             }
         }
 
+        private void ppEditRoom_Load(object sender, EventArgs e)
+        {
+        }
     }
 }

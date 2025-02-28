@@ -91,7 +91,7 @@ namespace SuperBookFinalProj.Repositories
         }
 
         // ----------------- UPDATE -----------------
-        public async Task UpdateAsync(Room room)
+        public async Task<bool> UpdateAsync(Room room)
         {
             var url = $"{_baseUrl}/rest/v1/room?id=eq.{room.id}";
 
@@ -119,14 +119,16 @@ namespace SuperBookFinalProj.Repositories
             var response = await _httpClient.PatchAsync(url, content);
             string responseBody = await response.Content.ReadAsStringAsync();
 
-            Console.WriteLine($"Update Response: {response.StatusCode}, Body: {responseBody}");
+            Console.WriteLine($"Update Response: {response.StatusCode}");
+            Console.WriteLine($"Response Body: {responseBody}");
 
             if (!response.IsSuccessStatusCode)
             {
-                throw new Exception($"Supabase Update Error: {responseBody}");
+                MessageBox.Show($"Supabase Update Error: {responseBody}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
 
+            return response.IsSuccessStatusCode;
+        }
 
 
 

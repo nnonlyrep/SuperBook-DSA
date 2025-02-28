@@ -27,14 +27,21 @@ namespace SuperBookFinalProj.GUI.HomeAdmin.Containers
         {
             try
             {
+                Console.WriteLine("🔄 Refreshing DataGridView...");
                 List<Room> rooms = await _roomRepository.GetAllAsync();
-                dataGridRooms.DataSource = rooms;
+
+                dataGridRooms.DataSource = null; // 🔥 Reset first
+                dataGridRooms.DataSource = rooms; // ✅ Load new data
+                dataGridRooms.Refresh(); // ✅ Force UI update
+
+                Console.WriteLine($"✅ Data loaded. Total rooms: {rooms.Count}");
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error loading rooms: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private async void btnAddRoom_Click(object sender, EventArgs e)
         {
@@ -58,16 +65,24 @@ namespace SuperBookFinalProj.GUI.HomeAdmin.Containers
                 return;
             }
 
-            // Get selected room from DataGridView
             Room selectedRoom = (Room)dataGridRooms.SelectedRows[0].DataBoundItem;
 
-            // Open the Edit Room Form
             using (ppEditRoom editRoomForm = new ppEditRoom(selectedRoom))
             {
+                editRoomForm.RoomUpdated += async () =>
+                {
+                    Console.WriteLine("🔄 RoomUpdated event triggered. Refreshing DataGridView...");
+                    await LoadRoomsAsync();
+                };
+
                 editRoomForm.ShowDialog();
-                await LoadRoomsAsync(); // Refresh data after editing
             }
         }
 
+
+        private void frmAdRooms_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
