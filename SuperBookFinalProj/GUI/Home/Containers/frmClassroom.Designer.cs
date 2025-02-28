@@ -30,17 +30,11 @@
         {
             label1 = new Label();
             panel1 = new Panel();
-            dataGridView1 = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
-            Column5 = new DataGridViewTextBoxColumn();
-            Column6 = new DataGridViewTextBoxColumn();
             cncBtn = new Button();
             NextBtn = new Button();
+            dataGridAcc = new DataGridView();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridAcc).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -50,57 +44,18 @@
             label1.ForeColor = SystemColors.ButtonFace;
             label1.Location = new Point(29, 27);
             label1.Name = "label1";
-            label1.Size = new Size(132, 28);
+            label1.Size = new Size(83, 28);
             label1.TabIndex = 0;
-            label1.Text = "CLASSROOM";
+            label1.Text = "ROOMS";
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(30, 48, 64);
-            panel1.Controls.Add(dataGridView1);
+            panel1.Controls.Add(dataGridAcc);
             panel1.Location = new Point(29, 79);
             panel1.Name = "panel1";
             panel1.Size = new Size(786, 292);
             panel1.TabIndex = 1;
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Column6 });
-            dataGridView1.Location = new Point(21, 17);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(751, 251);
-            dataGridView1.TabIndex = 0;
-            // 
-            // Column1
-            // 
-            Column1.HeaderText = "Column1";
-            Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            Column2.HeaderText = "Column2";
-            Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            Column3.HeaderText = "Column3";
-            Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            Column4.HeaderText = "Column4";
-            Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            Column5.HeaderText = "Column5";
-            Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            Column6.HeaderText = "Column6";
-            Column6.Name = "Column6";
             // 
             // cncBtn
             // 
@@ -129,6 +84,18 @@
             NextBtn.UseVisualStyleBackColor = false;
             NextBtn.Click += rsrvBtn_Click;
             // 
+            // dataGridAcc
+            // 
+            dataGridAcc.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridAcc.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridAcc.Location = new Point(18, 21);
+            dataGridAcc.MultiSelect = false;
+            dataGridAcc.Name = "dataGridAcc";
+            dataGridAcc.ReadOnly = true;
+            dataGridAcc.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridAcc.Size = new Size(751, 251);
+            dataGridAcc.TabIndex = 1;
+            // 
             // frmClassroom
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -145,7 +112,7 @@
             Text = "frmClassroom";
             Load += frmClassroom_Load;
             panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridAcc).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -154,14 +121,8 @@
 
         private Label label1;
         private Panel panel1;
-        private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column4;
-        private DataGridViewTextBoxColumn Column5;
-        private DataGridViewTextBoxColumn Column6;
         private Button cncBtn;
         private Button NextBtn;
+        private DataGridView dataGridAcc;
     }
 }

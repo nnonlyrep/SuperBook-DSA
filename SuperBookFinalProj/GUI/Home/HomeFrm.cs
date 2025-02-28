@@ -9,7 +9,7 @@ namespace SuperBookFinalProj
     {
         frmHome home;
         frmClassroom classroom;
-        frmAudi audi;
+        
         frmBorrow borrow;
         frmAbout about;
         public HomeFrm()
@@ -50,7 +50,7 @@ namespace SuperBookFinalProj
             if (reserveExpand == false)
             {
                 reserveContainer.Height += 10;
-                if (reserveContainer.Height >= 166)
+                if (reserveContainer.Height >= 117)
                 {
                     reserveTransition.Stop();
                     reserveExpand = true;
@@ -155,27 +155,7 @@ namespace SuperBookFinalProj
             classroom = null;
         }
 
-        private void btnAudi_Click(object sender, EventArgs e)
-        {
-            if (audi == null)
-            {
-                audi = new frmAudi();
-                audi.FormClosed += Audi_FormClosed;
-                audi.MdiParent = this;
-                audi.Dock = DockStyle.Fill;
-                audi.Show();
-            }
-            else
-            {
-                audi.Activate();
-            }
-        }
-
-        private void Audi_FormClosed(object? sender, FormClosedEventArgs e)
-        {
-            audi = null;
-        }
-
+      
         private void btnAbout_Click(object sender, EventArgs e)
         {
             if (about == null)
@@ -208,6 +188,11 @@ namespace SuperBookFinalProj
             Login login = new Login();
             login.ShowDialog();
             this.Close();
+        }
+
+        private void reserveContainer_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

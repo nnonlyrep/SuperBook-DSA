@@ -33,5 +33,10 @@ namespace SuperBookFinalProj.GUI.PopUps
             this.Close();
 
         }
+
+        private void purposeTxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

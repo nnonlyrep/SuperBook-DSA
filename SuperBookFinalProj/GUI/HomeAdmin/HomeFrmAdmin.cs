@@ -12,7 +12,7 @@ namespace SuperBookFinalProj
         frmAdReserved reserved;
         frmAdEquip equipments;
         frmAdRooms rooms;
-        frmAdAudi audi;
+       
         frmAdAccounts accounts;
         frmAbout about;
         public HomeFrmAdmin()
@@ -53,7 +53,7 @@ namespace SuperBookFinalProj
             if (reserveExpand == false)
             {
                 reserveContainer.Height += 10;
-                if (reserveContainer.Height >= 222)
+                if (reserveContainer.Height >= 165)
                 {
                     reserveTransition.Stop();
                     reserveExpand = true;
@@ -217,26 +217,7 @@ namespace SuperBookFinalProj
             rooms = null;
         }
 
-        private void btnEdAudi_Click(object sender, EventArgs e)
-        {
-            if (audi == null)
-            {
-                audi = new frmAdAudi();
-                audi.FormClosed += Audi_FormClosed;
-                audi.MdiParent = this;
-                audi.Dock = DockStyle.Fill;
-                audi.Show();
-            }
-            else
-            {
-                audi.Activate();
-            }
-        }
-
-        private void Audi_FormClosed(object? sender, FormClosedEventArgs e)
-        {
-            audi = null;
-        }
+     
 
         private void btnAccounts_Click(object sender, EventArgs e)
         {

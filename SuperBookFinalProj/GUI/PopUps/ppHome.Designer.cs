@@ -30,10 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ppHome));
             roomBtn = new Button();
-            audiBtn = new Button();
             equipBtn = new Button();
             label1 = new Label();
-            label2 = new Label();
             label3 = new Label();
             panel1 = new Panel();
             nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
@@ -45,22 +43,11 @@
             roomBtn.FlatAppearance.BorderSize = 0;
             roomBtn.FlatStyle = FlatStyle.Flat;
             roomBtn.Image = (Image)resources.GetObject("roomBtn.Image");
-            roomBtn.Location = new Point(21, 84);
+            roomBtn.Location = new Point(126, 84);
             roomBtn.Name = "roomBtn";
             roomBtn.Size = new Size(237, 258);
             roomBtn.TabIndex = 0;
             roomBtn.UseVisualStyleBackColor = true;
-            // 
-            // audiBtn
-            // 
-            audiBtn.FlatAppearance.BorderSize = 0;
-            audiBtn.FlatStyle = FlatStyle.Flat;
-            audiBtn.Image = Properties.Resources._71;
-            audiBtn.Location = new Point(277, 84);
-            audiBtn.Name = "audiBtn";
-            audiBtn.Size = new Size(255, 258);
-            audiBtn.TabIndex = 1;
-            audiBtn.UseVisualStyleBackColor = true;
             // 
             // equipBtn
             // 
@@ -68,7 +55,7 @@
             equipBtn.FlatAppearance.BorderSize = 0;
             equipBtn.FlatStyle = FlatStyle.Flat;
             equipBtn.Image = Properties.Resources._82;
-            equipBtn.Location = new Point(551, 84);
+            equipBtn.Location = new Point(441, 84);
             equipBtn.Name = "equipBtn";
             equipBtn.Size = new Size(247, 258);
             equipBtn.TabIndex = 2;
@@ -79,29 +66,18 @@
             label1.AutoSize = true;
             label1.Font = new Font("Lazydog", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ButtonFace;
-            label1.Location = new Point(99, 335);
+            label1.Location = new Point(204, 335);
             label1.Name = "label1";
             label1.Size = new Size(78, 25);
             label1.TabIndex = 3;
             label1.Text = "ROOMS";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Lazydog", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = SystemColors.ButtonFace;
-            label2.Location = new Point(340, 335);
-            label2.Name = "label2";
-            label2.Size = new Size(126, 25);
-            label2.TabIndex = 4;
-            label2.Text = "AUDITORIUM";
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Lazydog", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = SystemColors.ButtonFace;
-            label3.Location = new Point(617, 335);
+            label3.Location = new Point(507, 335);
             label3.Name = "label3";
             label3.Size = new Size(131, 25);
             label3.TabIndex = 5;
@@ -150,10 +126,8 @@
             ClientSize = new Size(827, 402);
             Controls.Add(panel1);
             Controls.Add(label3);
-            Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(equipBtn);
-            Controls.Add(audiBtn);
             Controls.Add(roomBtn);
             FormBorderStyle = FormBorderStyle.None;
             Name = "ppHome";
@@ -168,10 +142,8 @@
         #endregion
 
         private Button roomBtn;
-        private Button audiBtn;
         private Button equipBtn;
         private Label label1;
-        private Label label2;
         private Label label3;
         private Panel panel1;
         private ReaLTaiizor.Controls.NightControlBox nightControlBox1;

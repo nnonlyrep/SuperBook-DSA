@@ -51,8 +51,6 @@
             btnEdEquip = new Button();
             pnlEdRooms = new Panel();
             btnEdRoom = new Button();
-            pnlEdAudi = new Panel();
-            btnEdAudi = new Button();
             reserveTransition = new System.Windows.Forms.Timer(components);
             sidebarTransition = new System.Windows.Forms.Timer(components);
             panel1.SuspendLayout();
@@ -67,7 +65,6 @@
             pnlReserve.SuspendLayout();
             pnlEdEquipments.SuspendLayout();
             pnlEdRooms.SuspendLayout();
-            pnlEdAudi.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -276,7 +273,6 @@
             reserveContainer.Controls.Add(pnlReserve);
             reserveContainer.Controls.Add(pnlEdEquipments);
             reserveContainer.Controls.Add(pnlEdRooms);
-            reserveContainer.Controls.Add(pnlEdAudi);
             reserveContainer.Location = new Point(0, 112);
             reserveContainer.Margin = new Padding(0);
             reserveContainer.Name = "reserveContainer";
@@ -359,31 +355,6 @@
             btnEdRoom.UseVisualStyleBackColor = false;
             btnEdRoom.Click += btnEdRoom_Click;
             // 
-            // pnlEdAudi
-            // 
-            pnlEdAudi.Controls.Add(btnEdAudi);
-            pnlEdAudi.Location = new Point(3, 168);
-            pnlEdAudi.Name = "pnlEdAudi";
-            pnlEdAudi.Size = new Size(236, 50);
-            pnlEdAudi.TabIndex = 9;
-            // 
-            // btnEdAudi
-            // 
-            btnEdAudi.BackColor = Color.FromArgb(30, 48, 64);
-            btnEdAudi.Font = new Font("Work Sans Medium", 8.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnEdAudi.ForeColor = SystemColors.ButtonFace;
-            btnEdAudi.Image = Properties.Resources.icons8_auditorium_241;
-            btnEdAudi.ImageAlign = ContentAlignment.MiddleLeft;
-            btnEdAudi.Location = new Point(-7, -19);
-            btnEdAudi.Name = "btnEdAudi";
-            btnEdAudi.Padding = new Padding(10, 0, 0, 0);
-            btnEdAudi.Size = new Size(266, 88);
-            btnEdAudi.TabIndex = 2;
-            btnEdAudi.Text = "            Edit Audi Rooms";
-            btnEdAudi.TextAlign = ContentAlignment.MiddleLeft;
-            btnEdAudi.UseVisualStyleBackColor = false;
-            btnEdAudi.Click += btnEdAudi_Click;
-            // 
             // reserveTransition
             // 
             reserveTransition.Interval = 10;
@@ -421,7 +392,6 @@
             pnlReserve.ResumeLayout(false);
             pnlEdEquipments.ResumeLayout(false);
             pnlEdRooms.ResumeLayout(false);
-            pnlEdAudi.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -445,13 +415,11 @@
         private Button btnClassRoom;
         private Panel pnlReserved;
         private Button btnReserved;
-        private Panel pnlEdAudi;
         private Panel pnlEdEquipments;
         private Button btnEdEquip;
         private System.Windows.Forms.Timer reserveTransition;
         private System.Windows.Forms.Timer sidebarTransition;
         private Panel panel6;
-        private Button btnEdAudi;
         private Panel pnlEdRooms;
         private Button btnEdRoom;
         private Panel pnlAccounts;
