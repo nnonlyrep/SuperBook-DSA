@@ -136,19 +136,27 @@ namespace SuperBookFinalProj.Repositories
         // ----------------- DELETE -----------------
         public async Task<bool> DeleteAsync(int id)
         {
-            var url = $"{_baseUrl}/rest/v1/{_tableName}?id=eq.{id}";
+            var url = $"{_baseUrl}/rest/v1/room?id=eq.{id}";
+
+            Console.WriteLine($"DELETE Request URL: {url}");
 
             var response = await _httpClient.DeleteAsync(url);
+            string responseBody = await response.Content.ReadAsStringAsync();
 
-            if (response.IsSuccessStatusCode)
+            Console.WriteLine($"Delete Response: {response.StatusCode}");
+            Console.WriteLine($"Response Body: {responseBody}");
+
+            if (!response.IsSuccessStatusCode)
             {
-                return true; // ✅ Successfully deleted
+                MessageBox.Show($"Supabase Delete Error: {responseBody}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false; // ❌ Deletion failed
             }
-            else
-            {
-                string errorMessage = await response.Content.ReadAsStringAsync();
-                throw new Exception($"❌ Failed to delete room. Error: {errorMessage}");
-            }
+
+            return true; // ✅ Deletion successful
         }
+
+
+
+
     }
 }

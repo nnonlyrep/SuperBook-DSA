@@ -84,5 +84,35 @@ namespace SuperBookFinalProj.GUI.HomeAdmin.Containers
         {
 
         }
+
+        private async void btnDeleteRoom_Click(object sender, EventArgs e) // ✅ Add `async`
+        {
+            if (dataGridRooms.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select a room to delete.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            Room selectedRoom = (Room)dataGridRooms.SelectedRows[0].DataBoundItem;
+
+            var confirmResult = MessageBox.Show(
+                $"Are you sure you want to delete Room {selectedRoom.room_number}?",
+                "Confirm Delete",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning
+            );
+
+            if (confirmResult == DialogResult.Yes)
+            {
+                bool success = await _roomRepository.DeleteAsync(selectedRoom.id); // ✅ Ensure DeleteAsync returns Task<bool>
+
+                if (success)
+                {
+                    MessageBox.Show("Room deleted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    await LoadRoomsAsync(); // 🔄 Refresh DataGridView after delete
+                }
+            }
+        }
+
     }
 }

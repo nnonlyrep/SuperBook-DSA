@@ -108,6 +108,7 @@
             btnDeleteRoom.TabIndex = 32;
             btnDeleteRoom.Text = "Delete Room";
             btnDeleteRoom.UseVisualStyleBackColor = false;
+            btnDeleteRoom.Click += btnDeleteRoom_Click;
             // 
             // frmAdRooms
             // 
