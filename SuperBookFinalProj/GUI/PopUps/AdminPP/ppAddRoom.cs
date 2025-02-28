@@ -61,5 +61,9 @@ namespace SuperBookFinalProj.GUI.PopUps.AdminPP
             }
         }
 
+        private void ppAddRoom_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
