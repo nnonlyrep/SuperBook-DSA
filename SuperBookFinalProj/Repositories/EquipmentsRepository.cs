@@ -1,12 +1,142 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using SuperBookFinalProj.Models;
 
 namespace SuperBookFinalProj.Repositories
 {
-    internal class EquipmentsRepository
+    public class Equipment
     {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Type { get; set; }
+        public int Quantity { get; set; }
+    }
+
+    public class EquipmentRepository
+    {
+        private readonly HttpClient _httpClient;
+        private readonly string _baseUrl = "https://tgxxkstbeetnhetjcyen.supabase.co";
+        private readonly string _apiKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRneHhrc3RiZWV0bmhldGpjeWVuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDA0MDM5MjYsImV4cCI6MjA1NTk3OTkyNn0.lMBzLb9bR2Z0wDnIDfg38_VvtgELhNZgzz0UlYCAUSQ";
+        private readonly string _tableName = "equipment";
+
+        public EquipmentRepository()
+        {
+            _httpClient = new HttpClient();
+            _httpClient.DefaultRequestHeaders.Add("apikey", _apiKey);
+            _httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {_apiKey}");
+            _httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+        }
+
+        public async Task<int> CreateAsync(Equipment equipment)
+        {
+            var url = $"{_baseUrl}/rest/v1/{_tableName}";
+            var options = new JsonSerializerOptions
+            {
+                PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+                DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingDefault
+            };
+
+            string json = JsonSerializer.Serialize(equipment, options);
+            Console.WriteLine("Request JSON: " + json);
+
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+            _httpClient.DefaultRequestHeaders.Remove("Prefer");
+            _httpClient.DefaultRequestHeaders.Add("Prefer", "return=representation");
+
+            var response = await _httpClient.PostAsync(url, content);
+            string responseBody = await response.Content.ReadAsStringAsync();
+            Console.WriteLine("Response Body: " + responseBody);
+
+            response.EnsureSuccessStatusCode();
+
+            var createdEquipments = JsonSerializer.Deserialize<List<Equipment>>(responseBody, options);
+
+            Equipment createdEquipment = createdEquipments?.FirstOrDefault();
+            return createdEquipment?.Id ?? 0;
+        }
+
+        public async Task<List<Equipment>> GetAllAsync()
+        {
+            var url = $"{_baseUrl}/rest/v1/{_tableName}";
+            var response = await _httpClient.GetAsync(url);
+            response.EnsureSuccessStatusCode();
+
+            var responseBody = await response.Content.ReadAsStringAsync();
+            var equipments = JsonSerializer.Deserialize<List<Equipment>>(responseBody, new JsonSerializerOptions
+            {
+                PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+            });
+
+            return equipments;
+        }
+
+        public async Task<Equipment> GetByIdAsync(int id)
+        {
+            var url = $"{_baseUrl}/rest/v1/{_tableName}?id=eq.{id}";
+            var response = await _httpClient.GetAsync(url);
+            response.EnsureSuccessStatusCode();
+
+            var responseBody = await response.Content.ReadAsStringAsync();
+            var equipments = JsonSerializer.Deserialize<List<Equipment>>(responseBody);
+            return equipments.Count > 0 ? equipments[0] : null;
+        }
+
+        public async Task<bool> UpdateAsync(Equipment equipment)
+        {
+            var url = $"{_baseUrl}/rest/v1/{_tableName}?id=eq.{equipment.Id}";
+
+            var updateData = new Dictionary<string, object>
+            {
+                { "name", equipment.Name },
+                { "type", equipment.Type },
+                { "quantity", equipment.Quantity }
+            };
+
+            string json = JsonSerializer.Serialize(updateData, new JsonSerializerOptions
+            {
+                PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+            });
+
+            Console.WriteLine($"PATCH Request URL: {url}");
+            Console.WriteLine($"PATCH Request JSON: {json}");
+
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+            _httpClient.DefaultRequestHeaders.Remove("Prefer");
+            _httpClient.DefaultRequestHeaders.Add("Prefer", "return=representation");
+
+            var response = await _httpClient.PatchAsync(url, content);
+            string responseBody = await response.Content.ReadAsStringAsync();
+
+            Console.WriteLine($"Update Response: {response.StatusCode}");
+            Console.WriteLine($"Response Body: {responseBody}");
+
+            return response.IsSuccessStatusCode;
+        }
+
+        public async Task<bool> DeleteAsync(int id)
+        {
+            var url = $"{_baseUrl}/rest/v1/{_tableName}?id=eq.{id}";
+
+            var response = await _httpClient.DeleteAsync(url);
+
+            if (response.IsSuccessStatusCode)
+            {
+                return true;
+            }
+            else
+            {
+                string errorMessage = await response.Content.ReadAsStringAsync();
+                throw new Exception($"❌ Failed to delete equipment. Error: {errorMessage}");
+            }
+        }
     }
 }
