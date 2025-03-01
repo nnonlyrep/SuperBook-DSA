@@ -94,11 +94,11 @@ namespace SuperBookFinalProj.Repositories
             var url = $"{_baseUrl}/rest/v1/{_tableName}?id=eq.{equipment.Id}";
 
             var updateData = new Dictionary<string, object>
-            {
-                { "name", equipment.Name },
-                { "type", equipment.Type },
-                { "quantity", equipment.Quantity }
-            };
+    {
+        { "name", equipment.Name },
+        { "type", equipment.Type },
+        { "quantity", equipment.Quantity }
+    };
 
             string json = JsonSerializer.Serialize(updateData, new JsonSerializerOptions
             {
@@ -116,10 +116,15 @@ namespace SuperBookFinalProj.Repositories
             var response = await _httpClient.PatchAsync(url, content);
             string responseBody = await response.Content.ReadAsStringAsync();
 
-            Console.WriteLine($"Update Response: {response.StatusCode}");
-            Console.WriteLine($"Response Body: {responseBody}");
+            if (!response.IsSuccessStatusCode)
+            {
+                Console.WriteLine($"❌ Update failed. Response: {response.StatusCode}");
+                Console.WriteLine($"Response Body: {responseBody}");
+                return false;
+            }
 
-            return response.IsSuccessStatusCode;
+            Console.WriteLine($"✅ Update successful!");
+            return true;
         }
 
         public async Task<bool> DeleteAsync(int id)
@@ -127,15 +132,18 @@ namespace SuperBookFinalProj.Repositories
             var url = $"{_baseUrl}/rest/v1/{_tableName}?id=eq.{id}";
 
             var response = await _httpClient.DeleteAsync(url);
+            string responseBody = await response.Content.ReadAsStringAsync();
 
             if (response.IsSuccessStatusCode)
             {
+                Console.WriteLine($"✅ Equipment with ID {id} deleted successfully.");
                 return true;
             }
             else
             {
-                string errorMessage = await response.Content.ReadAsStringAsync();
-                throw new Exception($"❌ Failed to delete equipment. Error: {errorMessage}");
+                Console.WriteLine($"❌ Delete failed. Response: {response.StatusCode}");
+                Console.WriteLine($"Response Body: {responseBody}");
+                return false;
             }
         }
     }
