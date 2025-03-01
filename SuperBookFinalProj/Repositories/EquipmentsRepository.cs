@@ -11,22 +11,15 @@ using SuperBookFinalProj.Models;
 
 namespace SuperBookFinalProj.Repositories
 {
-    public class Equipment
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Type { get; set; }
-        public int Quantity { get; set; }
-    }
 
-    public class EquipmentRepository
+    public class EquipmentsRepository
     {
         private readonly HttpClient _httpClient;
         private readonly string _baseUrl = "https://tgxxkstbeetnhetjcyen.supabase.co";
         private readonly string _apiKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRneHhrc3RiZWV0bmhldGpjeWVuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDA0MDM5MjYsImV4cCI6MjA1NTk3OTkyNn0.lMBzLb9bR2Z0wDnIDfg38_VvtgELhNZgzz0UlYCAUSQ";
         private readonly string _tableName = "equipment";
 
-        public EquipmentRepository()
+        public EquipmentsRepository()
         {
             _httpClient = new HttpClient();
             _httpClient.DefaultRequestHeaders.Add("apikey", _apiKey);
@@ -34,7 +27,7 @@ namespace SuperBookFinalProj.Repositories
             _httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
-        public async Task<int> CreateAsync(Equipment equipment)
+        public async Task<int> CreateAsync(Equipments equipment)
         {
             var url = $"{_baseUrl}/rest/v1/{_tableName}";
             var options = new JsonSerializerOptions
@@ -57,20 +50,20 @@ namespace SuperBookFinalProj.Repositories
 
             response.EnsureSuccessStatusCode();
 
-            var createdEquipments = JsonSerializer.Deserialize<List<Equipment>>(responseBody, options);
+            var createdEquipments = JsonSerializer.Deserialize<List<Equipments>>(responseBody, options);
 
-            Equipment createdEquipment = createdEquipments?.FirstOrDefault();
+            Equipments createdEquipment = createdEquipments?.FirstOrDefault();
             return createdEquipment?.Id ?? 0;
         }
 
-        public async Task<List<Equipment>> GetAllAsync()
+        public async Task<List<Equipments>> GetAllAsync()
         {
             var url = $"{_baseUrl}/rest/v1/{_tableName}";
             var response = await _httpClient.GetAsync(url);
             response.EnsureSuccessStatusCode();
 
             var responseBody = await response.Content.ReadAsStringAsync();
-            var equipments = JsonSerializer.Deserialize<List<Equipment>>(responseBody, new JsonSerializerOptions
+            var equipments = JsonSerializer.Deserialize<List<Equipments>>(responseBody, new JsonSerializerOptions
             {
                 PropertyNamingPolicy = JsonNamingPolicy.CamelCase
             });
@@ -78,18 +71,18 @@ namespace SuperBookFinalProj.Repositories
             return equipments;
         }
 
-        public async Task<Equipment> GetByIdAsync(int id)
+        public async Task<Equipments> GetByIdAsync(int id)
         {
             var url = $"{_baseUrl}/rest/v1/{_tableName}?id=eq.{id}";
             var response = await _httpClient.GetAsync(url);
             response.EnsureSuccessStatusCode();
 
             var responseBody = await response.Content.ReadAsStringAsync();
-            var equipments = JsonSerializer.Deserialize<List<Equipment>>(responseBody);
+            var equipments = JsonSerializer.Deserialize<List<Equipments>>(responseBody);
             return equipments.Count > 0 ? equipments[0] : null;
         }
 
-        public async Task<bool> UpdateAsync(Equipment equipment)
+        public async Task<bool> UpdateAsync(Equipments equipment)
         {
             var url = $"{_baseUrl}/rest/v1/{_tableName}?id=eq.{equipment.Id}";
 

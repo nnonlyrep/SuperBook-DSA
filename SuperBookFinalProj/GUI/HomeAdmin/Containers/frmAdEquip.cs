@@ -26,6 +26,11 @@ namespace SuperBookFinalProj.GUI.HomeAdmin.Containers
         {
 
         }
+
+        private void btnAddEq_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 //
