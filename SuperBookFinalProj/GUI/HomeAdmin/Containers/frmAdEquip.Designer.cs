@@ -42,21 +42,21 @@
             // 
             btnDeleteEquipment.BackColor = Color.FromArgb(161, 181, 195);
             btnDeleteEquipment.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
-            btnDeleteEquipment.Location = new Point(505, 519);
+            btnDeleteEquipment.Location = new Point(422, 389);
             btnDeleteEquipment.Name = "btnDeleteEquipment";
-            btnDeleteEquipment.Size = new Size(154, 39);
+            btnDeleteEquipment.Size = new Size(154, 29);
             btnDeleteEquipment.TabIndex = 56;
             btnDeleteEquipment.Text = "Delete Equipment";
             btnDeleteEquipment.UseVisualStyleBackColor = false;
-            btnDeleteEquipment.Click += btnDeleteRoom_Click;
+            btnDeleteEquipment.Click += btnDeleteEquipment_Click;
             // 
             // btnEditEq
             // 
             btnEditEq.BackColor = Color.FromArgb(161, 181, 195);
             btnEditEq.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
-            btnEditEq.Location = new Point(665, 519);
+            btnEditEq.Location = new Point(582, 389);
             btnEditEq.Name = "btnEditEq";
-            btnEditEq.Size = new Size(158, 39);
+            btnEditEq.Size = new Size(138, 29);
             btnEditEq.TabIndex = 55;
             btnEditEq.Text = "Edit Equipment";
             btnEditEq.UseVisualStyleBackColor = false;
@@ -66,11 +66,11 @@
             // 
             btnAddEq.BackColor = Color.FromArgb(161, 181, 195);
             btnAddEq.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
-            btnAddEq.Location = new Point(829, 519);
+            btnAddEq.Location = new Point(725, 389);
             btnAddEq.Name = "btnAddEq";
-            btnAddEq.Size = new Size(155, 39);
+            btnAddEq.Size = new Size(136, 29);
             btnAddEq.TabIndex = 54;
-            btnAddEq.Text = "Add Equipment ";
+            btnAddEq.Text = "Add Equipment";
             btnAddEq.UseVisualStyleBackColor = false;
             btnAddEq.Click += btnAddEq_Click;
             // 
@@ -79,9 +79,8 @@
             panel1.BackColor = Color.FromArgb(30, 48, 64);
             panel1.Controls.Add(dataGridEquipments);
             panel1.Location = new Point(78, 91);
-            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(898, 389);
+            panel1.Size = new Size(786, 292);
             panel1.TabIndex = 53;
             // 
             // dataGridEquipments
@@ -89,39 +88,37 @@
             dataGridEquipments.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridEquipments.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridEquipments.Location = new Point(21, 28);
-            dataGridEquipments.Margin = new Padding(3, 4, 3, 4);
             dataGridEquipments.MultiSelect = false;
             dataGridEquipments.Name = "dataGridEquipments";
             dataGridEquipments.ReadOnly = true;
             dataGridEquipments.RowHeadersWidth = 51;
             dataGridEquipments.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridEquipments.Size = new Size(858, 335);
+            dataGridEquipments.Size = new Size(751, 251);
             dataGridEquipments.TabIndex = 1;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Microsoft Sans Serif", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold);
             label2.ForeColor = SystemColors.ButtonFace;
-            label2.Location = new Point(78, 47);
+            label2.Location = new Point(68, 35);
             label2.Name = "label2";
-            label2.Size = new Size(183, 29);
+            label2.Size = new Size(144, 24);
             label2.TabIndex = 52;
             label2.Text = "EQUIPMENTS";
             // 
             // frmAdEquip
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(21, 31, 40);
-            ClientSize = new Size(1067, 605);
+            ClientSize = new Size(980, 515);
             Controls.Add(btnDeleteEquipment);
             Controls.Add(btnEditEq);
             Controls.Add(btnAddEq);
             Controls.Add(panel1);
             Controls.Add(label2);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 4, 3, 4);
             Name = "frmAdEquip";
             Text = "frmAdEquip";
             Load += frmAdEquip_Load;
@@ -131,17 +128,14 @@
             PerformLayout();
         }
 
+        private void btnDeleteEquipment_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
         #endregion
 
         private Label label2;
-        private DateTimePicker dateTimePicker1;
-        private Button button1;
-        private TextBox purposeTxt;
-        private TextBox roomNumtxt;
-        private ReaLTaiizor.Controls.PoisonDateTime poisonDateTime1;
-        private Label purposeLbl;
-        private Label roomNumLbl;
-        private Label dateTxt;
         private Button btnDeleteEquipment;
         private Button btnEditEq;
         private Button btnAddEq;
