@@ -21,5 +21,10 @@ namespace SuperBookFinalProj.GUI.HomeAdmin.Containers
         {
 
         }
+
+        private void btnDeleteRoom_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
