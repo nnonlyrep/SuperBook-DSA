@@ -77,7 +77,7 @@ namespace SuperBookFinalProj.GUI.HomeAdmin.Containers
             }
         }
 
-        private void btnEditEq_Click(object sender, EventArgs e)
+        private async void btnEditEq_Click(object sender, EventArgs e)
         {
             if (dataGridEquipments.SelectedRows.Count == 0)
             {
@@ -85,17 +85,27 @@ namespace SuperBookFinalProj.GUI.HomeAdmin.Containers
                 return;
             }
 
-            Equipments selectedEquipment = (Equipments)dataGridEquipments.SelectedRows[0].DataBoundItem;
+            // Retrieve the selected equipment from the DataGridView
+            Equipments selectedEquipment = dataGridEquipments.SelectedRows[0].DataBoundItem as Equipments;
 
+            if (selectedEquipment == null)
+            {
+                MessageBox.Show("Error: Unable to retrieve equipment data!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Pass the selectedEquipment to ppEditEquip
             using (ppEditEquip editEquipForm = new ppEditEquip(selectedEquipment))
             {
-                // Unsubscribe to avoid multiple event bindings
-                editEquipForm.EquipmentUpdated -= OnEquipmentUpdated;
-                editEquipForm.EquipmentUpdated += OnEquipmentUpdated;
+                var result = editEquipForm.ShowDialog();
 
-                editEquipForm.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    await LoadEquipmentsAsync(); // Refresh DataGridView after editing
+                }
             }
         }
+
         private async void OnEquipmentUpdated(object sender, EventArgs e)
         {
             Console.WriteLine("🛠 EquipmentUpdated event triggered. Refreshing DataGridView...");
@@ -105,9 +115,73 @@ namespace SuperBookFinalProj.GUI.HomeAdmin.Containers
         {
         }
 
-        private void btnAddEq_Click(object sender, EventArgs e)
+        private async void btnAddEq_Click(object sender, EventArgs e)
         {
-
+            using (ppAddEquip addEquipForm = new ppAddEquip())
+            {
+                var result = addEquipForm.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    await LoadEquipmentsAsync();
+                }
+            }
         }
+
+        private async void btnDeleteEq_Click(object sender, EventArgs e)
+        {
+            if (dataGridEquipments.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select an equipment to delete.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Retrieve selected equipment
+            Equipments selectedEquipment = dataGridEquipments.SelectedRows[0].DataBoundItem as Equipments;
+
+            if (selectedEquipment == null)
+            {
+                MessageBox.Show("Error: Unable to retrieve selected equipment!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Confirm deletion
+            DialogResult result = MessageBox.Show($"Are you sure you want to delete '{selectedEquipment.Name}'?",
+                                                  "Confirm Deletion",
+                                                  MessageBoxButtons.YesNo,
+                                                  MessageBoxIcon.Warning);
+
+            if (result == DialogResult.Yes)
+            {
+                try
+                {
+                    // Check if the EquipmentRepository is correctly initialized
+                    if (_equipmentRepository == null)
+                    {
+                        MessageBox.Show("Error: Equipment repository is not initialized.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    // Call the delete function
+                    bool isDeleted = await _equipmentRepository.DeleteAsync(selectedEquipment.Id);
+
+                    if (isDeleted)
+                    {
+                        MessageBox.Show("Equipment deleted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        await LoadEquipmentsAsync(); // Refresh DataGridView
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed to delete equipment from the database.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error deleting equipment: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
     }
+
 }
+
