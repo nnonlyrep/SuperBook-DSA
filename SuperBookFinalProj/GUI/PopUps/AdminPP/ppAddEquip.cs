@@ -8,13 +8,29 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SuperBookFinalProj.GUI.PopUps.AdminPP
+namespace SuperBookFinalProj.GUI.PopUps
 {
+
     public partial class ppAddEquip : Form
     {
         public ppAddEquip()
         {
             InitializeComponent();
+        }
+
+        private void ppAddEquip_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

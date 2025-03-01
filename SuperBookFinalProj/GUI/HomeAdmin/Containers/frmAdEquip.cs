@@ -16,12 +16,12 @@ namespace SuperBookFinalProj.GUI.HomeAdmin.Containers
 {
     public partial class frmAdEquip : Form
     {
-        private readonly EquipmentRepository _equipmentRepository;
+        private readonly EquipmentsRepository _equipmentRepository;
 
         public frmAdEquip()
         {
             InitializeComponent();
-            _equipmentRepository = new EquipmentRepository();
+            _equipmentRepository = new EquipmentsRepository();
             LoadEquipmentsAsync();
         }
         private async Task LoadEquipmentsAsync()
@@ -29,7 +29,7 @@ namespace SuperBookFinalProj.GUI.HomeAdmin.Containers
             try
             {
                 Console.WriteLine("🔄 Refreshing DataGridView...");
-                List<Equipment> equipments = await _equipmentRepository.GetAllAsync();
+                List<Equipments> equipments = await _equipmentRepository.GetAllAsync();
 
                 dataGridEquipments.DataSource = null;
                 dataGridEquipments.DataSource = equipments;
@@ -43,7 +43,7 @@ namespace SuperBookFinalProj.GUI.HomeAdmin.Containers
             }
         }
 
-        private void btnDeleteRoom_Click(object sender, EventArgs e)
+        private async Task btnDeleteRoom_ClickAsync(object sender, EventArgs e)
         {
             if (dataGridEquipments.SelectedRows.Count == 0)
             {
@@ -51,7 +51,7 @@ namespace SuperBookFinalProj.GUI.HomeAdmin.Containers
                 return;
             }
 
-            Equipment selectedEquipment = (Equipment)dataGridEquipments.SelectedRows[0].DataBoundItem;
+            Equipments selectedEquipment = (Equipments)dataGridEquipments.SelectedRows[0].DataBoundItem;
             DialogResult result = MessageBox.Show($"Are you sure you want to delete {selectedEquipment.Name}?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (result == DialogResult.Yes)
             {
@@ -68,9 +68,9 @@ namespace SuperBookFinalProj.GUI.HomeAdmin.Containers
             }
         }
 
-        private void btnAddEq_Click(object sender, EventArgs e)
+        private async Task btnAddEq_ClickAsync(object sender, EventArgs e)
         {
-            using (ppAddEquip addEquipForm = new ppAddEquip())
+            using (PopUps.ppAddEquip addEquipForm = new PopUps.ppAddEquip())
             {
                 addEquipForm.ShowDialog();
                 await LoadEquipmentsAsync();
@@ -85,7 +85,7 @@ namespace SuperBookFinalProj.GUI.HomeAdmin.Containers
                 return;
             }
 
-            Equipment selectedEquipment = (Equipment)dataGridEquipments.SelectedRows[0].DataBoundItem;
+            Equipments selectedEquipment = (Equipments)dataGridEquipments.SelectedRows[0].DataBoundItem;
 
             using (ppEditEquip editEquipForm = new ppEditEquip(selectedEquipment))
             {
