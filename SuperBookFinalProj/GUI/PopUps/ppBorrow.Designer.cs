@@ -68,7 +68,7 @@
             poisonDateTime1.Location = new Point(12, 76);
             poisonDateTime1.MinimumSize = new Size(0, 29);
             poisonDateTime1.Name = "poisonDateTime1";
-            poisonDateTime1.Size = new Size(200, 30);
+            poisonDateTime1.Size = new Size(200, 29);
             poisonDateTime1.TabIndex = 2;
             // 
             // label2
@@ -129,6 +129,7 @@
             // cboTime
             // 
             cboTime.FormattingEnabled = true;
+            cboTime.Items.AddRange(new object[] { "7:00AM - 9:00AM", "10:00AM - 12:00PM", "1:00PM - 3:00PM", "4:00PM - 6:00PM" });
             cboTime.Location = new Point(251, 83);
             cboTime.Name = "cboTime";
             cboTime.Size = new Size(144, 23);

@@ -162,10 +162,11 @@
             // cboTime
             // 
             cboTime.FormattingEnabled = true;
+            cboTime.Items.AddRange(new object[] { "7:00AM - 9:00AM", "10:00AM - 12:00PM", "1:00PM - 3:00PM", "4:00PM - 6:00PM" });
             cboTime.Location = new Point(151, 182);
             cboTime.Name = "cboTime";
             cboTime.Size = new Size(144, 23);
-            cboTime.TabIndex = 27;
+            cboTime.TabIndex = 40;
             // 
             // ppClassroom
             // 
@@ -173,9 +174,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(21, 31, 40);
             ClientSize = new Size(755, 387);
+            Controls.Add(cboTime);
             Controls.Add(textBox1);
             Controls.Add(label3);
-            Controls.Add(cboTime);
             Controls.Add(label2);
             Controls.Add(button1);
             Controls.Add(reserveBtn);
