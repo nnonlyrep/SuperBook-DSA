@@ -30,11 +30,11 @@
         {
             label1 = new Label();
             panel1 = new Panel();
+            dataGridClassRooms = new DataGridView();
             cncBtn = new Button();
             NextBtn = new Button();
-            dataGridAcc = new DataGridView();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridAcc).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridClassRooms).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -51,11 +51,23 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(30, 48, 64);
-            panel1.Controls.Add(dataGridAcc);
+            panel1.Controls.Add(dataGridClassRooms);
             panel1.Location = new Point(29, 79);
             panel1.Name = "panel1";
             panel1.Size = new Size(786, 292);
             panel1.TabIndex = 1;
+            // 
+            // dataGridClassRooms
+            // 
+            dataGridClassRooms.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridClassRooms.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridClassRooms.Location = new Point(18, 21);
+            dataGridClassRooms.MultiSelect = false;
+            dataGridClassRooms.Name = "dataGridClassRooms";
+            dataGridClassRooms.ReadOnly = true;
+            dataGridClassRooms.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridClassRooms.Size = new Size(751, 251);
+            dataGridClassRooms.TabIndex = 1;
             // 
             // cncBtn
             // 
@@ -84,18 +96,6 @@
             NextBtn.UseVisualStyleBackColor = false;
             NextBtn.Click += rsrvBtn_Click;
             // 
-            // dataGridAcc
-            // 
-            dataGridAcc.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridAcc.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridAcc.Location = new Point(18, 21);
-            dataGridAcc.MultiSelect = false;
-            dataGridAcc.Name = "dataGridAcc";
-            dataGridAcc.ReadOnly = true;
-            dataGridAcc.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridAcc.Size = new Size(751, 251);
-            dataGridAcc.TabIndex = 1;
-            // 
             // frmClassroom
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -112,7 +112,7 @@
             Text = "frmClassroom";
             Load += frmClassroom_Load;
             panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridAcc).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridClassRooms).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -123,6 +123,6 @@
         private Panel panel1;
         private Button cncBtn;
         private Button NextBtn;
-        private DataGridView dataGridAcc;
+        private DataGridView dataGridClassRooms;
     }
 }

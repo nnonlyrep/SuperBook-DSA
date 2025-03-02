@@ -36,29 +36,29 @@
             flpSidebar = new FlowLayoutPanel();
             pnlHome = new Panel();
             btnHome = new Button();
+            reserveContainer = new FlowLayoutPanel();
+            pnlReserve = new Panel();
+            btnReserve = new Button();
+            panel2 = new Panel();
+            btnClassRoom = new Button();
             pnlBorrow = new Panel();
             btnBorrow = new Button();
             pnlAbout = new Panel();
             btnAbout = new Button();
             pnlLogOut = new Panel();
             btnLogOut = new Button();
-            reserveContainer = new FlowLayoutPanel();
-            pnlReserve = new Panel();
-            btnReserve = new Button();
-            panel2 = new Panel();
-            btnClassRoom = new Button();
             reserveTransition = new System.Windows.Forms.Timer(components);
             sidebarTransition = new System.Windows.Forms.Timer(components);
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnHam).BeginInit();
             flpSidebar.SuspendLayout();
             pnlHome.SuspendLayout();
-            pnlBorrow.SuspendLayout();
-            pnlAbout.SuspendLayout();
-            pnlLogOut.SuspendLayout();
             reserveContainer.SuspendLayout();
             pnlReserve.SuspendLayout();
             panel2.SuspendLayout();
+            pnlBorrow.SuspendLayout();
+            pnlAbout.SuspendLayout();
+            pnlLogOut.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -159,6 +159,70 @@
             btnHome.UseVisualStyleBackColor = false;
             btnHome.Click += button1_Click;
             // 
+            // reserveContainer
+            // 
+            reserveContainer.BackColor = Color.FromArgb(30, 48, 64);
+            reserveContainer.Controls.Add(pnlReserve);
+            reserveContainer.Controls.Add(panel2);
+            reserveContainer.Location = new Point(0, 56);
+            reserveContainer.Margin = new Padding(0);
+            reserveContainer.Name = "reserveContainer";
+            reserveContainer.Size = new Size(236, 50);
+            reserveContainer.TabIndex = 3;
+            reserveContainer.Paint += reserveContainer_Paint;
+            // 
+            // pnlReserve
+            // 
+            pnlReserve.Controls.Add(btnReserve);
+            pnlReserve.Location = new Point(3, 3);
+            pnlReserve.Name = "pnlReserve";
+            pnlReserve.Size = new Size(236, 50);
+            pnlReserve.TabIndex = 4;
+            // 
+            // btnReserve
+            // 
+            btnReserve.BackColor = Color.FromArgb(30, 48, 64);
+            btnReserve.Font = new Font("Work Sans Medium", 8.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnReserve.ForeColor = SystemColors.ButtonFace;
+            btnReserve.Image = Properties.Resources.icons8_reservation_24;
+            btnReserve.ImageAlign = ContentAlignment.MiddleLeft;
+            btnReserve.Location = new Point(-7, -19);
+            btnReserve.Margin = new Padding(0);
+            btnReserve.Name = "btnReserve";
+            btnReserve.Padding = new Padding(10, 0, 0, 0);
+            btnReserve.Size = new Size(266, 88);
+            btnReserve.TabIndex = 2;
+            btnReserve.Text = "            Reserve";
+            btnReserve.TextAlign = ContentAlignment.MiddleLeft;
+            btnReserve.UseVisualStyleBackColor = false;
+            btnReserve.Click += btnReserve_Click;
+            // 
+            // panel2
+            // 
+            panel2.Controls.Add(btnClassRoom);
+            panel2.Location = new Point(3, 59);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(236, 50);
+            panel2.TabIndex = 5;
+            // 
+            // btnClassRoom
+            // 
+            btnClassRoom.BackColor = Color.FromArgb(30, 48, 64);
+            btnClassRoom.Font = new Font("Work Sans Medium", 8.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnClassRoom.ForeColor = SystemColors.ButtonFace;
+            btnClassRoom.Image = Properties.Resources.icons8_classroom_24;
+            btnClassRoom.ImageAlign = ContentAlignment.MiddleLeft;
+            btnClassRoom.Location = new Point(-7, -19);
+            btnClassRoom.Margin = new Padding(0);
+            btnClassRoom.Name = "btnClassRoom";
+            btnClassRoom.Padding = new Padding(10, 0, 0, 0);
+            btnClassRoom.Size = new Size(266, 88);
+            btnClassRoom.TabIndex = 2;
+            btnClassRoom.Text = "            Rooms";
+            btnClassRoom.TextAlign = ContentAlignment.MiddleLeft;
+            btnClassRoom.UseVisualStyleBackColor = false;
+            btnClassRoom.Click += btnClassRoom_Click;
+            // 
             // pnlBorrow
             // 
             pnlBorrow.Controls.Add(btnBorrow);
@@ -234,70 +298,6 @@
             btnLogOut.UseVisualStyleBackColor = false;
             btnLogOut.Click += btnLogOut_Click;
             // 
-            // reserveContainer
-            // 
-            reserveContainer.BackColor = Color.FromArgb(30, 48, 64);
-            reserveContainer.Controls.Add(pnlReserve);
-            reserveContainer.Controls.Add(panel2);
-            reserveContainer.Location = new Point(0, 56);
-            reserveContainer.Margin = new Padding(0);
-            reserveContainer.Name = "reserveContainer";
-            reserveContainer.Size = new Size(236, 50);
-            reserveContainer.TabIndex = 3;
-            reserveContainer.Paint += reserveContainer_Paint;
-            // 
-            // pnlReserve
-            // 
-            pnlReserve.Controls.Add(btnReserve);
-            pnlReserve.Location = new Point(3, 3);
-            pnlReserve.Name = "pnlReserve";
-            pnlReserve.Size = new Size(236, 50);
-            pnlReserve.TabIndex = 4;
-            // 
-            // btnReserve
-            // 
-            btnReserve.BackColor = Color.FromArgb(30, 48, 64);
-            btnReserve.Font = new Font("Work Sans Medium", 8.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnReserve.ForeColor = SystemColors.ButtonFace;
-            btnReserve.Image = Properties.Resources.icons8_reservation_24;
-            btnReserve.ImageAlign = ContentAlignment.MiddleLeft;
-            btnReserve.Location = new Point(-7, -19);
-            btnReserve.Margin = new Padding(0);
-            btnReserve.Name = "btnReserve";
-            btnReserve.Padding = new Padding(10, 0, 0, 0);
-            btnReserve.Size = new Size(266, 88);
-            btnReserve.TabIndex = 2;
-            btnReserve.Text = "            Reserve";
-            btnReserve.TextAlign = ContentAlignment.MiddleLeft;
-            btnReserve.UseVisualStyleBackColor = false;
-            btnReserve.Click += btnReserve_Click;
-            // 
-            // panel2
-            // 
-            panel2.Controls.Add(btnClassRoom);
-            panel2.Location = new Point(3, 59);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(236, 50);
-            panel2.TabIndex = 5;
-            // 
-            // btnClassRoom
-            // 
-            btnClassRoom.BackColor = Color.FromArgb(30, 48, 64);
-            btnClassRoom.Font = new Font("Work Sans Medium", 8.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnClassRoom.ForeColor = SystemColors.ButtonFace;
-            btnClassRoom.Image = Properties.Resources.icons8_classroom_24;
-            btnClassRoom.ImageAlign = ContentAlignment.MiddleLeft;
-            btnClassRoom.Location = new Point(-7, -19);
-            btnClassRoom.Margin = new Padding(0);
-            btnClassRoom.Name = "btnClassRoom";
-            btnClassRoom.Padding = new Padding(10, 0, 0, 0);
-            btnClassRoom.Size = new Size(266, 88);
-            btnClassRoom.TabIndex = 2;
-            btnClassRoom.Text = "            Class Room";
-            btnClassRoom.TextAlign = ContentAlignment.MiddleLeft;
-            btnClassRoom.UseVisualStyleBackColor = false;
-            btnClassRoom.Click += btnClassRoom_Click;
-            // 
             // reserveTransition
             // 
             reserveTransition.Interval = 10;
@@ -327,12 +327,12 @@
             ((System.ComponentModel.ISupportInitialize)btnHam).EndInit();
             flpSidebar.ResumeLayout(false);
             pnlHome.ResumeLayout(false);
-            pnlBorrow.ResumeLayout(false);
-            pnlAbout.ResumeLayout(false);
-            pnlLogOut.ResumeLayout(false);
             reserveContainer.ResumeLayout(false);
             pnlReserve.ResumeLayout(false);
             panel2.ResumeLayout(false);
+            pnlBorrow.ResumeLayout(false);
+            pnlAbout.ResumeLayout(false);
+            pnlLogOut.ResumeLayout(false);
             ResumeLayout(false);
         }
 
