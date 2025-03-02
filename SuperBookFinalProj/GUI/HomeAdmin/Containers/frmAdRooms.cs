@@ -16,10 +16,12 @@ namespace SuperBookFinalProj.GUI.HomeAdmin.Containers
     public partial class frmAdRooms : Form
     {
         private readonly RoomRepository _roomRepository;
+        private List<Room> _allRooms;
         public frmAdRooms()
         {
             InitializeComponent();
             _roomRepository = new RoomRepository();
+            _allRooms = new List<Room>();
             LoadRoomsAsync();
         }
         // Load rooms into DataGridView
@@ -28,19 +30,45 @@ namespace SuperBookFinalProj.GUI.HomeAdmin.Containers
             try
             {
                 Console.WriteLine("🔄 Refreshing DataGridView...");
-                List<Room> rooms = await _roomRepository.GetAllAsync();
+                _allRooms = await _roomRepository.GetAllAsync(); // Store full data
 
-                dataGridRooms.DataSource = null; // 🔥 Reset first
-                dataGridRooms.DataSource = rooms; // ✅ Load new data
-                dataGridRooms.Refresh(); // ✅ Force UI update
+                FilterRooms(txtSearchRoom.Text); // Apply filtering
 
-                Console.WriteLine($"✅ Data loaded. Total rooms: {rooms.Count}");
+                Console.WriteLine($"✅ Data loaded. Total rooms: {_allRooms.Count}");
+
+                // Hide the 'id' column if it exists
+                if (dataGridRooms.Columns["id"] != null)
+                {
+                    dataGridRooms.Columns["id"].Visible = false;
+                }
+
+                // Hide the empty row header column
+                dataGridRooms.RowHeadersVisible = false;
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error loading rooms: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        private void FilterRooms(string searchTerm)
+        {
+            if (string.IsNullOrWhiteSpace(searchTerm))
+            {
+                dataGridRooms.DataSource = _allRooms;
+            }
+            else
+            {
+                var filteredList = _allRooms
+                    .Where(room => room.room_number .IndexOf(searchTerm, StringComparison.OrdinalIgnoreCase) >= 0 ||
+                                   room.room_type.IndexOf(searchTerm, StringComparison.OrdinalIgnoreCase) >= 0) // Include Room Type in search
+                    .ToList();
+
+                dataGridRooms.DataSource = filteredList;
+            }
+
+            dataGridRooms.Refresh();
+        }
+
 
 
         private async void btnAddRoom_Click(object sender, EventArgs e)
@@ -83,6 +111,11 @@ namespace SuperBookFinalProj.GUI.HomeAdmin.Containers
         private void frmAdRooms_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtSearchRoom_TextChanged(object sender, EventArgs e)
+        {
+            FilterRooms(txtSearchRoom.Text);
         }
     }
 }

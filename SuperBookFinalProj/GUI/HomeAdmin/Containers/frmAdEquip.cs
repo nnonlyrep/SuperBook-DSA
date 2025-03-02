@@ -17,11 +17,12 @@ namespace SuperBookFinalProj.GUI.HomeAdmin.Containers
     public partial class frmAdEquip : Form
     {
         private readonly EquipmentsRepository _equipmentRepository;
-
+        private List<Equipments> _allEquipments;
         public frmAdEquip()
         {
             InitializeComponent();
             _equipmentRepository = new EquipmentsRepository();
+            _allEquipments = new List<Equipments>();
             LoadEquipmentsAsync();
         }
         private async Task LoadEquipmentsAsync()
@@ -29,19 +30,44 @@ namespace SuperBookFinalProj.GUI.HomeAdmin.Containers
             try
             {
                 Console.WriteLine("🔄 Refreshing DataGridView...");
-                List<Equipments> equipments = await _equipmentRepository.GetAllAsync();
+                _allEquipments = await _equipmentRepository.GetAllAsync();
 
-                dataGridEquipments.DataSource = null;
-                dataGridEquipments.DataSource = equipments;
-                dataGridEquipments.Refresh();
+                FilterEquipments(txtSearchEq.Text); // Apply filtering if there's search input
 
-                Console.WriteLine($"✅ Data loaded. Total equipment: {equipments.Count}");
+                Console.WriteLine($"✅ Data loaded. Total equipment: {_allEquipments.Count}");
+                dataGridEquipments.RowHeadersVisible = false;
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error loading equipment: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void FilterEquipments(string searchTerm)
+        {
+            if (string.IsNullOrWhiteSpace(searchTerm))
+            {
+                dataGridEquipments.DataSource = _allEquipments;
+            }
+            else
+            {
+                var filteredList = _allEquipments
+                    .Where(eq => eq.Name.IndexOf(searchTerm, StringComparison.OrdinalIgnoreCase) >= 0 ||
+                                 eq.Type.IndexOf(searchTerm, StringComparison.OrdinalIgnoreCase) >= 0) // Include Type in search
+                    .ToList();
+
+                dataGridEquipments.DataSource = filteredList;
+            }
+
+            // Hide the 'Id' column
+            if (dataGridEquipments.Columns["Id"] != null)
+            {
+                dataGridEquipments.Columns["Id"].Visible = false;
+            }
+
+            dataGridEquipments.Refresh();
+        }
+
 
         private async Task btnDeleteRoom_ClickAsync(object sender, EventArgs e)
         {
@@ -181,6 +207,15 @@ namespace SuperBookFinalProj.GUI.HomeAdmin.Containers
             }
         }
 
+        private void dataGridEquipments_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void txtSearchEq_TextChanged(object sender, EventArgs e)
+        {
+            FilterEquipments(txtSearchEq.Text);
+        }
     }
 
 }

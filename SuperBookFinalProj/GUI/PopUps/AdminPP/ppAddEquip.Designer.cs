@@ -42,9 +42,10 @@
             // btnCancel
             // 
             btnCancel.BackColor = Color.FromArgb(161, 181, 195);
-            btnCancel.Location = new Point(457, 362);
+            btnCancel.Location = new Point(400, 272);
+            btnCancel.Margin = new Padding(3, 2, 3, 2);
             btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(94, 29);
+            btnCancel.Size = new Size(82, 22);
             btnCancel.TabIndex = 38;
             btnCancel.Text = "Cancel";
             btnCancel.UseVisualStyleBackColor = false;
@@ -53,9 +54,10 @@
             // btnAdd
             // 
             btnAdd.BackColor = Color.FromArgb(161, 181, 195);
-            btnAdd.Location = new Point(558, 363);
+            btnAdd.Location = new Point(488, 272);
+            btnAdd.Margin = new Padding(3, 2, 3, 2);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(94, 29);
+            btnAdd.Size = new Size(82, 22);
             btnAdd.TabIndex = 37;
             btnAdd.Text = "Add";
             btnAdd.UseVisualStyleBackColor = false;
@@ -64,10 +66,10 @@
             // txtQuantity
             // 
             txtQuantity.BackColor = Color.FromArgb(30, 48, 64);
-            txtQuantity.Location = new Point(148, 365);
-            txtQuantity.Margin = new Padding(3, 4, 3, 4);
+            txtQuantity.ForeColor = SystemColors.Menu;
+            txtQuantity.Location = new Point(130, 274);
             txtQuantity.Name = "txtQuantity";
-            txtQuantity.Size = new Size(190, 27);
+            txtQuantity.Size = new Size(167, 23);
             txtQuantity.TabIndex = 36;
             // 
             // label2
@@ -75,19 +77,19 @@
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.ButtonFace;
-            label2.Location = new Point(148, 318);
+            label2.Location = new Point(130, 238);
             label2.Name = "label2";
-            label2.Size = new Size(92, 24);
+            label2.Size = new Size(75, 18);
             label2.TabIndex = 35;
             label2.Text = "Quantity:";
             // 
             // txtEquipmentType
             // 
             txtEquipmentType.BackColor = Color.FromArgb(30, 48, 64);
-            txtEquipmentType.Location = new Point(148, 263);
-            txtEquipmentType.Margin = new Padding(3, 4, 3, 4);
+            txtEquipmentType.ForeColor = SystemColors.Menu;
+            txtEquipmentType.Location = new Point(130, 197);
             txtEquipmentType.Name = "txtEquipmentType";
-            txtEquipmentType.Size = new Size(190, 27);
+            txtEquipmentType.Size = new Size(167, 23);
             txtEquipmentType.TabIndex = 34;
             // 
             // label1
@@ -95,19 +97,19 @@
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ButtonFace;
-            label1.Location = new Point(148, 217);
+            label1.Location = new Point(130, 163);
             label1.Name = "label1";
-            label1.Size = new Size(170, 24);
+            label1.Size = new Size(133, 18);
             label1.TabIndex = 33;
             label1.Text = "Equipment Type:";
             // 
             // txtEquipmentName
             // 
             txtEquipmentName.BackColor = Color.FromArgb(30, 48, 64);
-            txtEquipmentName.Location = new Point(148, 165);
-            txtEquipmentName.Margin = new Padding(3, 4, 3, 4);
+            txtEquipmentName.ForeColor = SystemColors.Menu;
+            txtEquipmentName.Location = new Point(130, 124);
             txtEquipmentName.Name = "txtEquipmentName";
-            txtEquipmentName.Size = new Size(190, 27);
+            txtEquipmentName.Size = new Size(167, 23);
             txtEquipmentName.TabIndex = 32;
             // 
             // lblRoomNum
@@ -115,9 +117,9 @@
             lblRoomNum.AutoSize = true;
             lblRoomNum.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             lblRoomNum.ForeColor = SystemColors.ButtonFace;
-            lblRoomNum.Location = new Point(148, 118);
+            lblRoomNum.Location = new Point(130, 88);
             lblRoomNum.Name = "lblRoomNum";
-            lblRoomNum.Size = new Size(178, 24);
+            lblRoomNum.Size = new Size(141, 18);
             lblRoomNum.TabIndex = 31;
             lblRoomNum.Text = "Equipment Name:";
             // 
@@ -126,18 +128,18 @@
             lblEditEq.AutoSize = true;
             lblEditEq.Font = new Font("Microsoft Sans Serif", 15.7499981F, FontStyle.Italic, GraphicsUnit.Point, 0);
             lblEditEq.ForeColor = SystemColors.ButtonFace;
-            lblEditEq.Location = new Point(148, 58);
+            lblEditEq.Location = new Point(130, 44);
             lblEditEq.Name = "lblEditEq";
-            lblEditEq.Size = new Size(198, 31);
+            lblEditEq.Size = new Size(158, 25);
             lblEditEq.TabIndex = 30;
             lblEditEq.Text = "Add Equipment";
             // 
             // ppAddEquip
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(21, 31, 40);
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(700, 338);
             Controls.Add(btnCancel);
             Controls.Add(btnAdd);
             Controls.Add(txtQuantity);
@@ -148,6 +150,7 @@
             Controls.Add(lblRoomNum);
             Controls.Add(lblEditEq);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 2, 3, 2);
             Name = "ppAddEquip";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ppAddEquip";

@@ -14,9 +14,11 @@ namespace SuperBookFinalProj.GUI.HomeAdmin.Containers
 {
     public partial class frmAdAccounts : Form
     {
+        private List<Consumer> _allConsumers;
         public frmAdAccounts()
         {
             InitializeComponent();
+            _allConsumers = new List<Consumer>();
             LoadConsumers();
         }
 
@@ -34,10 +36,18 @@ namespace SuperBookFinalProj.GUI.HomeAdmin.Containers
             try
             {
                 ConsumerRepository repo = new ConsumerRepository();
-                List<Consumer> consumers = await repo.GetAllAsync();
+                _allConsumers = await repo.GetAllAsync(); // Store full data
 
-                // ✅ Bind the list to the DataGridView
-                dataGridAcc.DataSource = consumers;
+                FilterConsumers(txtSearchAcc.Text); // Apply filtering
+
+                // Hide the 'id' column
+                if (dataGridAcc.Columns["id"] != null)
+                {
+                    dataGridAcc.Columns["id"].Visible = false;
+                }
+
+                // Hide the empty row header column
+                dataGridAcc.RowHeadersVisible = false;
             }
             catch (HttpRequestException ex)
             {
@@ -47,6 +57,27 @@ namespace SuperBookFinalProj.GUI.HomeAdmin.Containers
             {
                 MessageBox.Show($"Error: {ex.Message}");
             }
+        }
+
+
+        private void FilterConsumers(string searchTerm)
+        {
+            if (string.IsNullOrWhiteSpace(searchTerm))
+            {
+                dataGridAcc.DataSource = _allConsumers;
+            }
+            else
+            {
+                var filteredList = _allConsumers
+                    .Where(consumer => consumer.user_name.IndexOf(searchTerm, StringComparison.OrdinalIgnoreCase) >= 0 ||
+                                       consumer.email_add.IndexOf(searchTerm, StringComparison.OrdinalIgnoreCase) >= 0 ||
+                                       consumer.full_name.IndexOf(searchTerm, StringComparison.OrdinalIgnoreCase) >= 0)
+                    .ToList();
+
+                dataGridAcc.DataSource = filteredList;
+            }
+
+            dataGridAcc.Refresh();
         }
 
         private async void btnDeleteAcc_Click(object sender, EventArgs e)
@@ -88,5 +119,9 @@ namespace SuperBookFinalProj.GUI.HomeAdmin.Containers
             }
         }
 
+        private void txtSearchEq_TextChanged(object sender, EventArgs e)
+        {
+            FilterConsumers(txtSearchAcc.Text);
+        }
     }
 }

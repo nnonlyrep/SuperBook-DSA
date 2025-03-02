@@ -34,8 +34,11 @@
             btnAddRoom = new Button();
             btnEditRoom = new Button();
             btnDeleteRoom = new Button();
+            pBoxSearch = new PictureBox();
+            txtSearchRoom = new TextBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridRooms).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pBoxSearch).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -65,7 +68,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft Sans Serif", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.ButtonFace;
-            label2.Location = new Point(74, 46);
+            label2.Location = new Point(74, 19);
             label2.Name = "label2";
             label2.Size = new Size(86, 24);
             label2.TabIndex = 28;
@@ -109,12 +112,32 @@
             btnDeleteRoom.Text = "Delete Room";
             btnDeleteRoom.UseVisualStyleBackColor = false;
             // 
+            // pBoxSearch
+            // 
+            pBoxSearch.Image = Properties.Resources.icons8_search_64;
+            pBoxSearch.Location = new Point(89, 46);
+            pBoxSearch.Name = "pBoxSearch";
+            pBoxSearch.Size = new Size(25, 23);
+            pBoxSearch.SizeMode = PictureBoxSizeMode.StretchImage;
+            pBoxSearch.TabIndex = 60;
+            pBoxSearch.TabStop = false;
+            // 
+            // txtSearchRoom
+            // 
+            txtSearchRoom.Location = new Point(120, 46);
+            txtSearchRoom.Name = "txtSearchRoom";
+            txtSearchRoom.Size = new Size(181, 23);
+            txtSearchRoom.TabIndex = 59;
+            txtSearchRoom.TextChanged += txtSearchRoom_TextChanged;
+            // 
             // frmAdRooms
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(21, 31, 40);
             ClientSize = new Size(934, 454);
+            Controls.Add(pBoxSearch);
+            Controls.Add(txtSearchRoom);
             Controls.Add(btnDeleteRoom);
             Controls.Add(btnEditRoom);
             Controls.Add(btnAddRoom);
@@ -126,6 +149,7 @@
             Load += frmAdRooms_Load;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridRooms).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pBoxSearch).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -138,5 +162,7 @@
         private Button btnEditRoom;
         private Button btnDeleteRoom;
         private DataGridView dataGridRooms;
+        private PictureBox pBoxSearch;
+        private TextBox txtSearchRoom;
     }
 }

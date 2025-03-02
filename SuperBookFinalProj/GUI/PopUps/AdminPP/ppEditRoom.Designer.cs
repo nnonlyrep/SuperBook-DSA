@@ -60,13 +60,14 @@ namespace SuperBookFinalProj.GUI.PopUps.AdminPP
             lblRoomNum.ForeColor = SystemColors.ButtonFace;
             lblRoomNum.Location = new Point(12, 54);
             lblRoomNum.Name = "lblRoomNum";
-            lblRoomNum.Size = new Size(119, 22);
+            lblRoomNum.Size = new Size(118, 22);
             lblRoomNum.TabIndex = 1;
             lblRoomNum.Text = "Room Number:";
             // 
             // txtRoomNumber
             // 
             txtRoomNumber.BackColor = Color.FromArgb(30, 48, 64);
+            txtRoomNumber.ForeColor = SystemColors.Menu;
             txtRoomNumber.Location = new Point(12, 89);
             txtRoomNumber.Name = "txtRoomNumber";
             txtRoomNumber.Size = new Size(167, 23);
@@ -75,6 +76,7 @@ namespace SuperBookFinalProj.GUI.PopUps.AdminPP
             // txtRoomType
             // 
             txtRoomType.BackColor = Color.FromArgb(30, 48, 64);
+            txtRoomType.ForeColor = SystemColors.Menu;
             txtRoomType.Location = new Point(12, 163);
             txtRoomType.Name = "txtRoomType";
             txtRoomType.Size = new Size(167, 23);
@@ -94,6 +96,7 @@ namespace SuperBookFinalProj.GUI.PopUps.AdminPP
             // txtCapacity
             // 
             txtCapacity.BackColor = Color.FromArgb(30, 48, 64);
+            txtCapacity.ForeColor = SystemColors.Menu;
             txtCapacity.Location = new Point(12, 239);
             txtCapacity.Name = "txtCapacity";
             txtCapacity.Size = new Size(167, 23);
@@ -106,13 +109,14 @@ namespace SuperBookFinalProj.GUI.PopUps.AdminPP
             label2.ForeColor = SystemColors.ButtonFace;
             label2.Location = new Point(12, 204);
             label2.Name = "label2";
-            label2.Size = new Size(80, 22);
+            label2.Size = new Size(78, 22);
             label2.TabIndex = 5;
             label2.Text = "Capacity:";
             // 
             // txtLoc
             // 
             txtLoc.BackColor = Color.FromArgb(30, 48, 64);
+            txtLoc.ForeColor = SystemColors.Menu;
             txtLoc.Location = new Point(263, 89);
             txtLoc.Name = "txtLoc";
             txtLoc.Size = new Size(167, 23);
@@ -125,7 +129,7 @@ namespace SuperBookFinalProj.GUI.PopUps.AdminPP
             lblLoc.ForeColor = SystemColors.ButtonFace;
             lblLoc.Location = new Point(263, 54);
             lblLoc.Name = "lblLoc";
-            lblLoc.Size = new Size(80, 22);
+            lblLoc.Size = new Size(78, 22);
             lblLoc.TabIndex = 7;
             lblLoc.Text = "Location:";
             // 

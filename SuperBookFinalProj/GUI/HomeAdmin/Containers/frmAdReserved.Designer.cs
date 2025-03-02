@@ -29,22 +29,37 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            dataGridAcc = new DataGridView();
             label1 = new Label();
             CnclResBtn = new Button();
-            dataGridAcc = new DataGridView();
+            pBoxSearch = new PictureBox();
+            txtSearchEq = new TextBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridAcc).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pBoxSearch).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(30, 48, 64);
             panel1.Controls.Add(dataGridAcc);
-            panel1.Location = new Point(34, 78);
+            panel1.Location = new Point(34, 92);
             panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
             panel1.Size = new Size(868, 303);
             panel1.TabIndex = 0;
+            // 
+            // dataGridAcc
+            // 
+            dataGridAcc.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridAcc.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridAcc.Location = new Point(59, 26);
+            dataGridAcc.MultiSelect = false;
+            dataGridAcc.Name = "dataGridAcc";
+            dataGridAcc.ReadOnly = true;
+            dataGridAcc.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridAcc.Size = new Size(751, 251);
+            dataGridAcc.TabIndex = 1;
             // 
             // label1
             // 
@@ -69,17 +84,22 @@
             CnclResBtn.Text = "Cancel Reservation";
             CnclResBtn.UseVisualStyleBackColor = false;
             // 
-            // dataGridAcc
+            // pBoxSearch
             // 
-            dataGridAcc.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridAcc.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridAcc.Location = new Point(59, 26);
-            dataGridAcc.MultiSelect = false;
-            dataGridAcc.Name = "dataGridAcc";
-            dataGridAcc.ReadOnly = true;
-            dataGridAcc.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridAcc.Size = new Size(751, 251);
-            dataGridAcc.TabIndex = 1;
+            pBoxSearch.Image = Properties.Resources.icons8_search_64;
+            pBoxSearch.Location = new Point(62, 64);
+            pBoxSearch.Name = "pBoxSearch";
+            pBoxSearch.Size = new Size(25, 23);
+            pBoxSearch.SizeMode = PictureBoxSizeMode.StretchImage;
+            pBoxSearch.TabIndex = 60;
+            pBoxSearch.TabStop = false;
+            // 
+            // txtSearchEq
+            // 
+            txtSearchEq.Location = new Point(93, 64);
+            txtSearchEq.Name = "txtSearchEq";
+            txtSearchEq.Size = new Size(181, 23);
+            txtSearchEq.TabIndex = 59;
             // 
             // frmAdReserved
             // 
@@ -87,6 +107,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(21, 31, 40);
             ClientSize = new Size(934, 454);
+            Controls.Add(pBoxSearch);
+            Controls.Add(txtSearchEq);
             Controls.Add(CnclResBtn);
             Controls.Add(label1);
             Controls.Add(panel1);
@@ -95,6 +117,7 @@
             Text = "frmAdReserved";
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridAcc).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pBoxSearch).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -105,5 +128,7 @@
         private Label label1;
         private Button CnclResBtn;
         private DataGridView dataGridAcc;
+        private PictureBox pBoxSearch;
+        private TextBox txtSearchEq;
     }
 }
