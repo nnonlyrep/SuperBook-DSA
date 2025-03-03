@@ -31,13 +31,13 @@
             label1 = new Label();
             dateTxt = new Label();
             purposeLbl = new Label();
-            poisonDateTime1 = new ReaLTaiizor.Controls.PoisonDateTime();
+            dateBox = new ReaLTaiizor.Controls.PoisonDateTime();
             purposeTxt = new TextBox();
             reserveBtn = new Button();
             button1 = new Button();
             label2 = new Label();
             label3 = new Label();
-            textBox1 = new TextBox();
+            txtOccupants = new TextBox();
             cboTime = new ComboBox();
             SuspendLayout();
             // 
@@ -76,13 +76,13 @@
             purposeLbl.TabIndex = 4;
             purposeLbl.Text = "Purpose/Program:";
             // 
-            // poisonDateTime1
+            // dateBox
             // 
-            poisonDateTime1.Location = new Point(95, 134);
-            poisonDateTime1.MinimumSize = new Size(0, 29);
-            poisonDateTime1.Name = "poisonDateTime1";
-            poisonDateTime1.Size = new Size(200, 29);
-            poisonDateTime1.TabIndex = 10;
+            dateBox.Location = new Point(95, 134);
+            dateBox.MinimumSize = new Size(0, 29);
+            dateBox.Name = "dateBox";
+            dateBox.Size = new Size(200, 29);
+            dateBox.TabIndex = 10;
             // 
             // purposeTxt
             // 
@@ -95,7 +95,6 @@
             purposeTxt.Name = "purposeTxt";
             purposeTxt.Size = new Size(257, 19);
             purposeTxt.TabIndex = 18;
-            purposeTxt.TextChanged += purposeTxt_TextChanged;
             // 
             // reserveBtn
             // 
@@ -147,17 +146,17 @@
             label3.TabIndex = 28;
             label3.Text = "Number of Occupants:";
             // 
-            // textBox1
+            // txtOccupants
             // 
-            textBox1.BackColor = Color.FromArgb(30, 48, 64);
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
-            textBox1.ForeColor = Color.White;
-            textBox1.Location = new Point(382, 201);
-            textBox1.Margin = new Padding(3, 2, 3, 2);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(257, 19);
-            textBox1.TabIndex = 29;
+            txtOccupants.BackColor = Color.FromArgb(30, 48, 64);
+            txtOccupants.BorderStyle = BorderStyle.None;
+            txtOccupants.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
+            txtOccupants.ForeColor = Color.White;
+            txtOccupants.Location = new Point(382, 201);
+            txtOccupants.Margin = new Padding(3, 2, 3, 2);
+            txtOccupants.Name = "txtOccupants";
+            txtOccupants.Size = new Size(257, 19);
+            txtOccupants.TabIndex = 29;
             // 
             // cboTime
             // 
@@ -175,13 +174,13 @@
             BackColor = Color.FromArgb(21, 31, 40);
             ClientSize = new Size(755, 387);
             Controls.Add(cboTime);
-            Controls.Add(textBox1);
+            Controls.Add(txtOccupants);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(button1);
             Controls.Add(reserveBtn);
             Controls.Add(purposeTxt);
-            Controls.Add(poisonDateTime1);
+            Controls.Add(dateBox);
             Controls.Add(purposeLbl);
             Controls.Add(dateTxt);
             Controls.Add(label1);
@@ -189,6 +188,7 @@
             Name = "ppClassroom";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ppClassroom";
+            Load += ppClassroom_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -198,13 +198,13 @@
         private Label label1;
         private Label dateTxt;
         private Label purposeLbl;
-        private ReaLTaiizor.Controls.PoisonDateTime poisonDateTime1;
+        private ReaLTaiizor.Controls.PoisonDateTime dateBox;
         private TextBox purposeTxt;
         private Button reserveBtn;
         private Button button1;
         private Label label2;
         private Label label3;
-        private TextBox textBox1;
+        private TextBox txtOccupants;
         private ComboBox cboTime;
     }
 }

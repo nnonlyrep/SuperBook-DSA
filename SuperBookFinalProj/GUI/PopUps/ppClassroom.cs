@@ -1,42 +1,36 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Newtonsoft.Json;
+using Supabase.Postgrest.Exceptions;
+using SuperBookFinalProj.Models;
+using SuperBookFinalProj.Repositories; // Import the repository
 
 namespace SuperBookFinalProj.GUI.PopUps
 {
     public partial class ppClassroom : Form
     {
-        public ppClassroom()
+       
+
+        public ppClassroom(string roomNumber)
         {
             InitializeComponent();
         }
 
-        private void firstNameTxt_TextChanged(object sender, EventArgs e)
+        private async void reserveBtn_Click(object sender, EventArgs e)
         {
+           
 
         }
 
-        private void reserveBtn_Click(object sender, EventArgs e)
-        {
-
-
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
-
         }
 
-        private void purposeTxt_TextChanged(object sender, EventArgs e)
+        private void ppClassroom_Load(object sender, EventArgs e)
         {
-
         }
     }
 }

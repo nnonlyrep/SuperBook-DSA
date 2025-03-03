@@ -59,9 +59,19 @@ namespace SuperBookFinalProj.GUI.Home.Containers
 
         private void rsrvBtn_Click(object sender, EventArgs e)
         {
-            ppClassroom classroom = new ppClassroom();
-            classroom.ShowDialog();
-    
+            if (dataGridClassRooms.SelectedRows.Count > 0)
+            {
+                string selectedRoomNumber = dataGridClassRooms.SelectedRows[0].Cells["room_number"].Value.ToString();
+
+                // Open the reservation form and pass the selected room number
+                ppClassroom reservationForm = new ppClassroom(selectedRoomNumber);
+                reservationForm.Show();
+            }
+            else
+            {
+                MessageBox.Show("Please select a room before proceeding.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
         }
 
         private void cncBtn_Click(object sender, EventArgs e)
