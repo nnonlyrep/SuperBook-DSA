@@ -81,6 +81,7 @@ namespace SuperBookFinalProj.GUI.Home.Containers
                 MessageBox.Show("Please select an equipment before borrowing.", "Selection Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+<<<<<<< HEAD
         public async void RefreshDataGrid()
         {
             try
@@ -104,5 +105,17 @@ namespace SuperBookFinalProj.GUI.Home.Containers
 
 
 
+=======
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cncButton_Click(object sender, EventArgs e)
+        {   
+            this.Close();
+        }
+>>>>>>> Buttons
     }
 }

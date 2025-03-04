@@ -91,5 +91,28 @@ namespace SuperBookFinalProj.GUI.LogIn_SignUp
         {
             // No modifications needed here
         }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void showBtn_Click(object sender, EventArgs e)
+        {
+            if (pwordTxt.PasswordChar == '*')
+            {
+                hideBtn.BringToFront();
+                pwordTxt.PasswordChar = '\0';
+            }
+        }
+
+        private void hideBtn_Click(object sender, EventArgs e)
+        {
+            if (pwordTxt.PasswordChar == '\0')
+            {
+                showBtn.BringToFront();
+                pwordTxt.PasswordChar = '*';
+            }
+        }
     }
 }

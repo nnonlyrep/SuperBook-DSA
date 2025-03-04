@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             panel1 = new Panel();
             nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
             pictureBox1 = new PictureBox();
@@ -37,6 +38,8 @@
             usrnLbl = new Label();
             LoginBtn = new Button();
             Lblsignup = new Label();
+            showBtn = new Button();
+            hideBtn = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -47,8 +50,9 @@
             panel1.Controls.Add(nightControlBox1);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(953, 36);
+            panel1.Size = new Size(1089, 48);
             panel1.TabIndex = 0;
             // 
             // nightControlBox1
@@ -65,7 +69,7 @@
             nightControlBox1.EnableMaximizeColor = Color.FromArgb(160, 160, 160);
             nightControlBox1.EnableMinimizeButton = true;
             nightControlBox1.EnableMinimizeColor = Color.FromArgb(160, 160, 160);
-            nightControlBox1.Location = new Point(814, 0);
+            nightControlBox1.Location = new Point(950, 0);
             nightControlBox1.MaximizeHoverColor = Color.FromArgb(15, 255, 255, 255);
             nightControlBox1.MaximizeHoverForeColor = Color.White;
             nightControlBox1.MinimizeHoverColor = Color.FromArgb(15, 255, 255, 255);
@@ -77,10 +81,9 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.Pa_reserve_daw_teh_;
-            pictureBox1.Location = new Point(127, -19);
-            pictureBox1.Margin = new Padding(3, 2, 3, 2);
+            pictureBox1.Location = new Point(145, -25);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(710, 434);
+            pictureBox1.Size = new Size(811, 579);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 2;
             pictureBox1.TabStop = false;
@@ -90,10 +93,10 @@
             pwordTxt.BackColor = Color.FromArgb(30, 48, 64);
             pwordTxt.Font = new Font("Segoe UI", 10F);
             pwordTxt.ForeColor = Color.White;
-            pwordTxt.Location = new Point(372, 409);
-            pwordTxt.Margin = new Padding(3, 2, 3, 2);
+            pwordTxt.Location = new Point(425, 545);
             pwordTxt.Name = "pwordTxt";
-            pwordTxt.Size = new Size(220, 25);
+            pwordTxt.PasswordChar = '*';
+            pwordTxt.Size = new Size(251, 30);
             pwordTxt.TabIndex = 14;
             // 
             // unameTxt
@@ -101,10 +104,9 @@
             unameTxt.BackColor = Color.FromArgb(30, 48, 64);
             unameTxt.Font = new Font("Segoe UI", 10F);
             unameTxt.ForeColor = Color.White;
-            unameTxt.Location = new Point(373, 356);
-            unameTxt.Margin = new Padding(3, 2, 3, 2);
+            unameTxt.Location = new Point(426, 475);
             unameTxt.Name = "unameTxt";
-            unameTxt.Size = new Size(220, 25);
+            unameTxt.Size = new Size(251, 30);
             unameTxt.TabIndex = 13;
             unameTxt.TextChanged += unameTxt_TextChanged;
             // 
@@ -112,9 +114,9 @@
             // 
             emailAddLbl.AutoSize = true;
             emailAddLbl.ForeColor = SystemColors.ControlLightLight;
-            emailAddLbl.Location = new Point(453, 390);
+            emailAddLbl.Location = new Point(518, 520);
             emailAddLbl.Name = "emailAddLbl";
-            emailAddLbl.Size = new Size(57, 15);
+            emailAddLbl.Size = new Size(70, 20);
             emailAddLbl.TabIndex = 12;
             emailAddLbl.Text = "Password";
             // 
@@ -122,19 +124,18 @@
             // 
             usrnLbl.AutoSize = true;
             usrnLbl.ForeColor = SystemColors.ControlLightLight;
-            usrnLbl.Location = new Point(451, 335);
+            usrnLbl.Location = new Point(515, 447);
             usrnLbl.Name = "usrnLbl";
-            usrnLbl.Size = new Size(60, 15);
+            usrnLbl.Size = new Size(75, 20);
             usrnLbl.TabIndex = 11;
             usrnLbl.Text = "Username";
             // 
             // LoginBtn
             // 
             LoginBtn.BackColor = Color.FromArgb(161, 181, 195);
-            LoginBtn.Location = new Point(443, 447);
-            LoginBtn.Margin = new Padding(3, 2, 3, 2);
+            LoginBtn.Location = new Point(506, 596);
             LoginBtn.Name = "LoginBtn";
-            LoginBtn.Size = new Size(82, 22);
+            LoginBtn.Size = new Size(94, 29);
             LoginBtn.TabIndex = 15;
             LoginBtn.Text = "Login";
             LoginBtn.UseVisualStyleBackColor = false;
@@ -145,19 +146,42 @@
             Lblsignup.AutoSize = true;
             Lblsignup.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point, 0);
             Lblsignup.ForeColor = SystemColors.ControlLightLight;
-            Lblsignup.Location = new Point(461, 472);
+            Lblsignup.Location = new Point(527, 629);
             Lblsignup.Name = "Lblsignup";
-            Lblsignup.Size = new Size(47, 15);
+            Lblsignup.Size = new Size(59, 20);
             Lblsignup.TabIndex = 16;
             Lblsignup.Text = "Sign up";
             Lblsignup.Click += Lblsignup_Click;
             // 
+            // showBtn
+            // 
+            showBtn.FlatStyle = FlatStyle.Flat;
+            showBtn.Image = (Image)resources.GetObject("showBtn.Image");
+            showBtn.Location = new Point(682, 540);
+            showBtn.Name = "showBtn";
+            showBtn.Size = new Size(34, 29);
+            showBtn.TabIndex = 17;
+            showBtn.UseVisualStyleBackColor = true;
+            showBtn.Click += showBtn_Click;
+            // 
+            // hideBtn
+            // 
+            hideBtn.FlatStyle = FlatStyle.Flat;
+            hideBtn.Image = (Image)resources.GetObject("hideBtn.Image");
+            hideBtn.Location = new Point(682, 542);
+            hideBtn.Name = "hideBtn";
+            hideBtn.Size = new Size(34, 29);
+            hideBtn.TabIndex = 18;
+            hideBtn.UseVisualStyleBackColor = true;
+            hideBtn.Click += hideBtn_Click;
+            // 
             // Login
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(21, 31, 40);
-            ClientSize = new Size(953, 515);
+            ClientSize = new Size(1089, 687);
+            Controls.Add(showBtn);
             Controls.Add(Lblsignup);
             Controls.Add(LoginBtn);
             Controls.Add(pwordTxt);
@@ -166,10 +190,14 @@
             Controls.Add(usrnLbl);
             Controls.Add(panel1);
             Controls.Add(pictureBox1);
+            Controls.Add(hideBtn);
+            ForeColor = Color.FromArgb(21, 31, 40);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Login";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
+            Load += Login_Load;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
@@ -187,5 +215,7 @@
         private Label usrnLbl;
         private Button LoginBtn;
         private Label Lblsignup;
+        private Button showBtn;
+        private Button hideBtn;
     }
 }

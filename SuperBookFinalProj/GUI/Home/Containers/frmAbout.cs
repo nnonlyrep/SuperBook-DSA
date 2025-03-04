@@ -21,5 +21,10 @@ namespace SuperBookFinalProj.GUI.Home.Containers
         {
             this.ControlBox = false;
         }
+
+        private void BckHomeButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -90,7 +90,12 @@ namespace SuperBookFinalProj.GUI.Home.Containers
 
         private void dataGridClassRooms_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-           
+
+        }
+
+        private void cncButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
