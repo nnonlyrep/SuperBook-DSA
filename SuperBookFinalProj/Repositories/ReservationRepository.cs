@@ -117,6 +117,24 @@ namespace SuperBookFinalProj.Repositories
 
             return reservations;
         }
+        public async Task<bool> DeleteByRoomIdAsync(int roomId)
+        {
+            var url = $"{_baseUrl}/rest/v1/{_tableName}?room_id=eq.{roomId}";
+
+            var response = await _httpClient.DeleteAsync(url);
+
+            if (response.IsSuccessStatusCode)
+            {
+                Console.WriteLine($"✅ Successfully deleted all reservations for Room ID {roomId}");
+                return true;
+            }
+            else
+            {
+                string errorMessage = await response.Content.ReadAsStringAsync();
+                throw new Exception($"❌ Failed to delete reservations. Error: {errorMessage}");
+            }
+        }
+
 
     }
 }

@@ -45,24 +45,22 @@
             // 
             panel1.BackColor = Color.FromArgb(30, 48, 64);
             panel1.Controls.Add(dataGridRooms);
-            panel1.Location = new Point(85, 104);
-            panel1.Margin = new Padding(3, 4, 3, 4);
+            panel1.Location = new Point(74, 78);
             panel1.Name = "panel1";
-            panel1.Size = new Size(898, 389);
+            panel1.Size = new Size(786, 292);
             panel1.TabIndex = 29;
             // 
             // dataGridRooms
             // 
             dataGridRooms.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridRooms.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridRooms.Location = new Point(21, 28);
-            dataGridRooms.Margin = new Padding(3, 4, 3, 4);
+            dataGridRooms.Location = new Point(18, 21);
             dataGridRooms.MultiSelect = false;
             dataGridRooms.Name = "dataGridRooms";
             dataGridRooms.ReadOnly = true;
             dataGridRooms.RowHeadersWidth = 51;
             dataGridRooms.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridRooms.Size = new Size(858, 335);
+            dataGridRooms.Size = new Size(751, 251);
             dataGridRooms.TabIndex = 1;
             dataGridRooms.CellContentClick += dataGridRooms_CellContentClick;
             // 
@@ -71,9 +69,9 @@
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft Sans Serif", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.ButtonFace;
-            label2.Location = new Point(85, 25);
+            label2.Location = new Point(74, 19);
             label2.Name = "label2";
-            label2.Size = new Size(109, 29);
+            label2.Size = new Size(86, 24);
             label2.TabIndex = 28;
             label2.Text = "ROOMS";
             // 
@@ -81,9 +79,10 @@
             // 
             btnAddRoom.BackColor = Color.FromArgb(161, 181, 195);
             btnAddRoom.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnAddRoom.Location = new Point(864, 500);
+            btnAddRoom.Location = new Point(756, 375);
+            btnAddRoom.Margin = new Padding(3, 2, 3, 2);
             btnAddRoom.Name = "btnAddRoom";
-            btnAddRoom.Size = new Size(119, 48);
+            btnAddRoom.Size = new Size(104, 36);
             btnAddRoom.TabIndex = 30;
             btnAddRoom.Text = "Add Room";
             btnAddRoom.UseVisualStyleBackColor = false;
@@ -93,9 +92,10 @@
             // 
             btnEditRoom.BackColor = Color.FromArgb(161, 181, 195);
             btnEditRoom.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnEditRoom.Location = new Point(737, 500);
+            btnEditRoom.Location = new Point(645, 375);
+            btnEditRoom.Margin = new Padding(3, 2, 3, 2);
             btnEditRoom.Name = "btnEditRoom";
-            btnEditRoom.Size = new Size(121, 48);
+            btnEditRoom.Size = new Size(106, 36);
             btnEditRoom.TabIndex = 31;
             btnEditRoom.Text = "Edit Room";
             btnEditRoom.UseVisualStyleBackColor = false;
@@ -105,39 +105,39 @@
             // 
             btnDeleteRoom.BackColor = Color.FromArgb(161, 181, 195);
             btnDeleteRoom.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnDeleteRoom.Location = new Point(593, 500);
+            btnDeleteRoom.Location = new Point(519, 375);
+            btnDeleteRoom.Margin = new Padding(3, 2, 3, 2);
             btnDeleteRoom.Name = "btnDeleteRoom";
-            btnDeleteRoom.Size = new Size(138, 48);
+            btnDeleteRoom.Size = new Size(121, 36);
             btnDeleteRoom.TabIndex = 32;
             btnDeleteRoom.Text = "Delete Room";
             btnDeleteRoom.UseVisualStyleBackColor = false;
+            btnDeleteRoom.Click += btnDeleteRoom_Click;
             // 
             // pBoxSearch
             // 
             pBoxSearch.Image = Properties.Resources.icons8_search_64;
-            pBoxSearch.Location = new Point(102, 61);
-            pBoxSearch.Margin = new Padding(3, 4, 3, 4);
+            pBoxSearch.Location = new Point(89, 46);
             pBoxSearch.Name = "pBoxSearch";
-            pBoxSearch.Size = new Size(29, 31);
+            pBoxSearch.Size = new Size(25, 23);
             pBoxSearch.SizeMode = PictureBoxSizeMode.StretchImage;
             pBoxSearch.TabIndex = 60;
             pBoxSearch.TabStop = false;
             // 
             // txtSearchRoom
             // 
-            txtSearchRoom.Location = new Point(137, 61);
-            txtSearchRoom.Margin = new Padding(3, 4, 3, 4);
+            txtSearchRoom.Location = new Point(120, 46);
             txtSearchRoom.Name = "txtSearchRoom";
-            txtSearchRoom.Size = new Size(206, 27);
+            txtSearchRoom.Size = new Size(181, 23);
             txtSearchRoom.TabIndex = 59;
             txtSearchRoom.TextChanged += txtSearchRoom_TextChanged;
             // 
             // frmAdRooms
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(21, 31, 40);
-            ClientSize = new Size(1067, 605);
+            ClientSize = new Size(934, 454);
             Controls.Add(pBoxSearch);
             Controls.Add(txtSearchRoom);
             Controls.Add(btnDeleteRoom);
@@ -146,7 +146,6 @@
             Controls.Add(panel1);
             Controls.Add(label2);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 4, 3, 4);
             Name = "frmAdRooms";
             Text = "frmAdRooms";
             Load += frmAdRooms_Load;

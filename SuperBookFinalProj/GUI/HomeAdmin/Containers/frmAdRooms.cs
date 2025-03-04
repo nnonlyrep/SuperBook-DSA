@@ -59,7 +59,7 @@ namespace SuperBookFinalProj.GUI.HomeAdmin.Containers
             else
             {
                 var filteredList = _allRooms
-                    .Where(room => room.room_number .IndexOf(searchTerm, StringComparison.OrdinalIgnoreCase) >= 0 ||
+                    .Where(room => room.room_number.IndexOf(searchTerm, StringComparison.OrdinalIgnoreCase) >= 0 ||
                                    room.room_type.IndexOf(searchTerm, StringComparison.OrdinalIgnoreCase) >= 0) // Include Room Type in search
                     .ToList();
 
@@ -117,6 +117,48 @@ namespace SuperBookFinalProj.GUI.HomeAdmin.Containers
         {
             FilterRooms(txtSearchRoom.Text);
         }
+
+        private async void btnDeleteRoom_Click(object sender, EventArgs e)
+        {
+            if (dataGridRooms.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select a room to delete.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            Room selectedRoom = (Room)dataGridRooms.SelectedRows[0].DataBoundItem;
+
+            var confirmResult = MessageBox.Show(
+                $"Are you sure you want to delete room {selectedRoom.room_number}? All associated reservations will also be deleted.",
+                "Confirm Delete",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning
+            );
+
+            if (confirmResult == DialogResult.Yes)
+            {
+                try
+                {
+                    bool deleted = await _roomRepository.DeleteAsync(selectedRoom.id);
+
+                    if (deleted)
+                    {
+                        MessageBox.Show("Room and associated reservations deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        await LoadRoomsAsync(); // Refresh DataGridView
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed to delete the room.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error deleting room: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+
     }
 }
 

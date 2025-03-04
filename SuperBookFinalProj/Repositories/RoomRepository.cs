@@ -134,21 +134,38 @@ namespace SuperBookFinalProj.Repositories
 
 
         // ----------------- DELETE -----------------
-        public async Task<bool> DeleteAsync(int id)
+        public async Task<bool> DeleteAsync(int roomId)
         {
-            var url = $"{_baseUrl}/rest/v1/{_tableName}?id=eq.{id}";
-
-            var response = await _httpClient.DeleteAsync(url);
-
-            if (response.IsSuccessStatusCode)
+            try
             {
-                return true; // ✅ Successfully deleted
+                var reservationRepo = new ReservationRepository();
+
+                // Step 1: Delete all reservations for this room
+                Console.WriteLine($"🔄 Deleting reservations for Room ID: {roomId}...");
+                await reservationRepo.DeleteByRoomIdAsync(roomId);
+                Console.WriteLine("✅ All related reservations deleted.");
+
+                // Step 2: Delete the room itself
+                var url = $"{_baseUrl}/rest/v1/{_tableName}?id=eq.{roomId}";
+                var response = await _httpClient.DeleteAsync(url);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    Console.WriteLine($"✅ Room {roomId} deleted successfully.");
+                    return true;
+                }
+                else
+                {
+                    string errorMessage = await response.Content.ReadAsStringAsync();
+                    throw new Exception($"❌ Failed to delete room. Error: {errorMessage}");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                string errorMessage = await response.Content.ReadAsStringAsync();
-                throw new Exception($"❌ Failed to delete room. Error: {errorMessage}");
+                Console.WriteLine($"❌ Error deleting room: {ex.Message}");
+                throw;
             }
         }
+
     }
 }
