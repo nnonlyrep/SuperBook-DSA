@@ -31,17 +31,16 @@
             panel1 = new Panel();
             dataGridEq = new DataGridView();
             Borrow = new Button();
-<<<<<<< HEAD
-            pBoxSearch = new PictureBox();
-            txtSearchBor = new TextBox();
-=======
             cncButton = new Button();
             label1 = new Label();
->>>>>>> Buttons
+            pBoxSearch = new PictureBox();
+            txtSearchBor = new TextBox();
+
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridEq).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pBoxSearch).BeginInit();
             SuspendLayout();
+
             // 
             // panel1
             // 
@@ -52,6 +51,7 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(858, 455);
             panel1.TabIndex = 1;
+
             // 
             // dataGridEq
             // 
@@ -66,6 +66,7 @@
             dataGridEq.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridEq.Size = new Size(808, 409);
             dataGridEq.TabIndex = 1;
+
             // 
             // Borrow
             // 
@@ -79,25 +80,10 @@
             Borrow.Text = "Borrow";
             Borrow.UseVisualStyleBackColor = false;
             Borrow.Click += Borrow_Click;
+
             // 
-            // pBoxSearch
+            // cncButton
             // 
-<<<<<<< HEAD
-            pBoxSearch.Image = Properties.Resources.icons8_search_64;
-            pBoxSearch.Location = new Point(79, 19);
-            pBoxSearch.Name = "pBoxSearch";
-            pBoxSearch.Size = new Size(25, 23);
-            pBoxSearch.SizeMode = PictureBoxSizeMode.StretchImage;
-            pBoxSearch.TabIndex = 67;
-            pBoxSearch.TabStop = false;
-            // 
-            // txtSearchBor
-            // 
-            txtSearchBor.Location = new Point(110, 19);
-            txtSearchBor.Name = "txtSearchBor";
-            txtSearchBor.Size = new Size(181, 23);
-            txtSearchBor.TabIndex = 66;
-=======
             cncButton.BackColor = Color.FromArgb(161, 181, 195);
             cncButton.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             cncButton.Location = new Point(667, 527);
@@ -108,11 +94,31 @@
             cncButton.Text = "Cancel";
             cncButton.UseVisualStyleBackColor = false;
             cncButton.Click += cncButton_Click;
+
+            // 
+            // pBoxSearch
+            // 
+            pBoxSearch.Image = Properties.Resources.icons8_search_64;
+            pBoxSearch.Location = new Point(79, 19);
+            pBoxSearch.Name = "pBoxSearch";
+            pBoxSearch.Size = new Size(25, 23);
+            pBoxSearch.SizeMode = PictureBoxSizeMode.StretchImage;
+            pBoxSearch.TabIndex = 67;
+            pBoxSearch.TabStop = false;
+
+            // 
+            // txtSearchBor
+            // 
+            txtSearchBor.Location = new Point(110, 19);
+            txtSearchBor.Name = "txtSearchBor";
+            txtSearchBor.Size = new Size(181, 23);
+            txtSearchBor.TabIndex = 66;
+
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Microsoft Sans Serif", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ButtonFace;
             label1.Location = new Point(56, 20);
             label1.Name = "label1";
@@ -120,30 +126,27 @@
             label1.TabIndex = 15;
             label1.Text = "EQUIPMENTS";
             label1.Click += label1_Click;
->>>>>>> Buttons
+
             // 
             // frmBorrow
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(21, 31, 40);
-<<<<<<< HEAD
-            ClientSize = new Size(850, 450);
-            Controls.Add(pBoxSearch);
-            Controls.Add(txtSearchBor);
-=======
             ClientSize = new Size(979, 606);
             Controls.Add(label1);
             Controls.Add(cncButton);
->>>>>>> Buttons
             Controls.Add(Borrow);
             Controls.Add(panel1);
+            Controls.Add(pBoxSearch);
+            Controls.Add(txtSearchBor);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(3, 4, 3, 4);
             Name = "frmBorrow";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "frmBorrow";
             Load += frmBorrow_Load;
+
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridEq).EndInit();
             ((System.ComponentModel.ISupportInitialize)pBoxSearch).EndInit();
@@ -155,11 +158,9 @@
         private Panel panel1;
         private Button Borrow;
         private DataGridView dataGridEq;
-<<<<<<< HEAD
         private PictureBox pBoxSearch;
         private TextBox txtSearchBor;
-=======
+        private Button cncButton;
         private Label label1;
->>>>>>> Buttons
     }
 }
