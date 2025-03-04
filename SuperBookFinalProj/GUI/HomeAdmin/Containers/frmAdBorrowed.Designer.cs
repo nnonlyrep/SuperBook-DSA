@@ -42,29 +42,29 @@
             // pBoxSearch
             // 
             pBoxSearch.Image = Properties.Resources.icons8_search_64;
-            pBoxSearch.Location = new Point(70, 77);
-            pBoxSearch.Margin = new Padding(3, 4, 3, 4);
+            pBoxSearch.Location = new Point(61, 58);
             pBoxSearch.Name = "pBoxSearch";
-            pBoxSearch.Size = new Size(29, 31);
+            pBoxSearch.Size = new Size(25, 23);
             pBoxSearch.SizeMode = PictureBoxSizeMode.StretchImage;
             pBoxSearch.TabIndex = 65;
             pBoxSearch.TabStop = false;
             // 
             // txtSearchBor
             // 
-            txtSearchBor.Location = new Point(105, 77);
-            txtSearchBor.Margin = new Padding(3, 4, 3, 4);
+            txtSearchBor.Location = new Point(92, 58);
             txtSearchBor.Name = "txtSearchBor";
-            txtSearchBor.Size = new Size(206, 27);
+            txtSearchBor.Size = new Size(181, 23);
             txtSearchBor.TabIndex = 64;
+            txtSearchBor.TextChanged += txtSearchBor_TextChanged;
             // 
             // btnCancel
             // 
             btnCancel.BackColor = Color.FromArgb(161, 181, 195);
             btnCancel.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnCancel.Location = new Point(849, 527);
+            btnCancel.Location = new Point(743, 395);
+            btnCancel.Margin = new Padding(3, 2, 3, 2);
             btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(181, 45);
+            btnCancel.Size = new Size(158, 34);
             btnCancel.TabIndex = 63;
             btnCancel.Text = "Cancel Borrow";
             btnCancel.UseVisualStyleBackColor = false;
@@ -75,9 +75,9 @@
             lblBorrowed.AutoSize = true;
             lblBorrowed.Font = new Font("Microsoft Sans Serif", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblBorrowed.ForeColor = SystemColors.ButtonFace;
-            lblBorrowed.Location = new Point(38, 43);
+            lblBorrowed.Location = new Point(33, 32);
             lblBorrowed.Name = "lblBorrowed";
-            lblBorrowed.Size = new Size(164, 29);
+            lblBorrowed.Size = new Size(130, 24);
             lblBorrowed.TabIndex = 62;
             lblBorrowed.Text = "BORROWED";
             // 
@@ -85,9 +85,10 @@
             // 
             panel1.BackColor = Color.FromArgb(30, 48, 64);
             panel1.Controls.Add(dgvBorrowed);
-            panel1.Location = new Point(38, 115);
+            panel1.Location = new Point(33, 86);
+            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(992, 404);
+            panel1.Size = new Size(868, 303);
             panel1.TabIndex = 61;
             panel1.Paint += panel1_Paint;
             // 
@@ -95,29 +96,27 @@
             // 
             dgvBorrowed.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvBorrowed.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvBorrowed.Location = new Point(67, 35);
-            dgvBorrowed.Margin = new Padding(3, 4, 3, 4);
+            dgvBorrowed.Location = new Point(59, 26);
             dgvBorrowed.MultiSelect = false;
             dgvBorrowed.Name = "dgvBorrowed";
             dgvBorrowed.ReadOnly = true;
             dgvBorrowed.RowHeadersWidth = 51;
             dgvBorrowed.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvBorrowed.Size = new Size(858, 335);
+            dgvBorrowed.Size = new Size(751, 251);
             dgvBorrowed.TabIndex = 1;
             // 
             // frmAdBorrowed
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(21, 31, 40);
-            ClientSize = new Size(1067, 605);
+            ClientSize = new Size(934, 454);
             Controls.Add(pBoxSearch);
             Controls.Add(txtSearchBor);
             Controls.Add(btnCancel);
             Controls.Add(lblBorrowed);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 4, 3, 4);
             Name = "frmAdBorrowed";
             Text = "frmAdBorrowed";
             Load += frmAdBorrowed_Load;

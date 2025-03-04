@@ -4,11 +4,7 @@ using SuperBookFinalProj.Models;
 using SuperBookFinalProj.Repositories;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -18,24 +14,28 @@ namespace SuperBookFinalProj.GUI.HomeAdmin.Containers
     {
         private readonly EquipmentsRepository _equipmentRepository;
         private List<Equipments> _allEquipments;
+        private List<Equipments> _filteredEquipments; // Store filtered results
+
         public frmAdEquip()
         {
             InitializeComponent();
             _equipmentRepository = new EquipmentsRepository();
             _allEquipments = new List<Equipments>();
+            _filteredEquipments = new List<Equipments>();
             LoadEquipmentsAsync();
         }
+
         private async Task LoadEquipmentsAsync()
         {
             try
             {
-                Console.WriteLine("🔄 Refreshing DataGridView...");
+                Console.WriteLine("🔄 Fetching Equipment...");
                 _allEquipments = await _equipmentRepository.GetAllAsync();
+                _filteredEquipments = new List<Equipments>(_allEquipments); // Copy for filtering
 
-                FilterEquipments(txtSearchEq.Text); // Apply filtering if there's search input
+                BindDataToGrid();
 
-                Console.WriteLine($"✅ Data loaded. Total equipment: {_allEquipments.Count}");
-                dataGridEquipments.RowHeadersVisible = false;
+                Console.WriteLine($"✅ Loaded {_allEquipments.Count} equipments.");
             }
             catch (Exception ex)
             {
@@ -43,21 +43,11 @@ namespace SuperBookFinalProj.GUI.HomeAdmin.Containers
             }
         }
 
-        private void FilterEquipments(string searchTerm)
+        private void BindDataToGrid()
         {
-            if (string.IsNullOrWhiteSpace(searchTerm))
-            {
-                dataGridEquipments.DataSource = _allEquipments;
-            }
-            else
-            {
-                var filteredList = _allEquipments
-                    .Where(eq => eq.Name.IndexOf(searchTerm, StringComparison.OrdinalIgnoreCase) >= 0 ||
-                                 eq.Type.IndexOf(searchTerm, StringComparison.OrdinalIgnoreCase) >= 0) // Include Type in search
-                    .ToList();
-
-                dataGridEquipments.DataSource = filteredList;
-            }
+            dataGridEquipments.DataSource = null; // Reset before binding
+            dataGridEquipments.DataSource = _filteredEquipments;
+            dataGridEquipments.Refresh();
 
             // Hide the 'Id' column
             if (dataGridEquipments.Columns["Id"] != null)
@@ -65,95 +55,31 @@ namespace SuperBookFinalProj.GUI.HomeAdmin.Containers
                 dataGridEquipments.Columns["Id"].Visible = false;
             }
 
-            dataGridEquipments.Refresh();
+            // Hide row headers to remove empty column
+            dataGridEquipments.RowHeadersVisible = false;
         }
 
-
-        private async Task btnDeleteRoom_ClickAsync(object sender, EventArgs e)
+        // ✅ Fixed Search Function (Filters by Equipment Name and Type)
+        private void txtSearchEq_TextChanged(object sender, EventArgs e)
         {
-            if (dataGridEquipments.SelectedRows.Count == 0)
+            string searchText = txtSearchEq.Text.Trim().ToLower();
+
+            if (string.IsNullOrWhiteSpace(searchText))
             {
-                MessageBox.Show("Please select equipment to delete.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                _filteredEquipments = new List<Equipments>(_allEquipments); // Reset to original list
+            }
+            else
+            {
+                _filteredEquipments = _allEquipments
+                    .Where(eq => eq.Name.ToLower().Contains(searchText) ||
+                                 eq.Type.ToLower().Contains(searchText)) // Include Type in search
+                    .ToList();
             }
 
-            Equipments selectedEquipment = (Equipments)dataGridEquipments.SelectedRows[0].DataBoundItem;
-            DialogResult result = MessageBox.Show($"Are you sure you want to delete {selectedEquipment.Name}?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (result == DialogResult.Yes)
-            {
-                try
-                {
-                    await _equipmentRepository.DeleteAsync(selectedEquipment.Id);
-                    MessageBox.Show("Equipment deleted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    await LoadEquipmentsAsync();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Error deleting equipment: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
+            BindDataToGrid();
         }
 
-        private async Task btnAddEq_ClickAsync(object sender, EventArgs e)
-        {
-            using (PopUps.ppAddEquip addEquipForm = new PopUps.ppAddEquip())
-            {
-                addEquipForm.ShowDialog();
-                await LoadEquipmentsAsync();
-            }
-        }
-
-        private async void btnEditEq_Click(object sender, EventArgs e)
-        {
-            if (dataGridEquipments.SelectedRows.Count == 0)
-            {
-                MessageBox.Show("Please select equipment to edit.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            // Retrieve the selected equipment from the DataGridView
-            Equipments selectedEquipment = dataGridEquipments.SelectedRows[0].DataBoundItem as Equipments;
-
-            if (selectedEquipment == null)
-            {
-                MessageBox.Show("Error: Unable to retrieve equipment data!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            // Pass the selectedEquipment to ppEditEquip
-            using (ppEditEquip editEquipForm = new ppEditEquip(selectedEquipment))
-            {
-                var result = editEquipForm.ShowDialog();
-
-                if (result == DialogResult.OK)
-                {
-                    await LoadEquipmentsAsync(); // Refresh DataGridView after editing
-                }
-            }
-        }
-
-        private async void OnEquipmentUpdated(object sender, EventArgs e)
-        {
-            Console.WriteLine("🛠 EquipmentUpdated event triggered. Refreshing DataGridView...");
-            await LoadEquipmentsAsync();
-        }
-        private void frmAdEquip_Load(object sender, EventArgs e)
-        {
-        }
-
-        private async void btnAddEq_Click(object sender, EventArgs e)
-        {
-            using (ppAddEquip addEquipForm = new ppAddEquip())
-            {
-                var result = addEquipForm.ShowDialog();
-                if (result == DialogResult.OK)
-                {
-                    await LoadEquipmentsAsync();
-                }
-            }
-        }
-
-        private async void btnDeleteEq_Click(object sender, EventArgs e)
+        private async Task btnDeleteEq_ClickAsync(object sender, EventArgs e)
         {
             if (dataGridEquipments.SelectedRows.Count == 0)
             {
@@ -161,7 +87,6 @@ namespace SuperBookFinalProj.GUI.HomeAdmin.Containers
                 return;
             }
 
-            // Retrieve selected equipment
             Equipments selectedEquipment = dataGridEquipments.SelectedRows[0].DataBoundItem as Equipments;
 
             if (selectedEquipment == null)
@@ -170,7 +95,6 @@ namespace SuperBookFinalProj.GUI.HomeAdmin.Containers
                 return;
             }
 
-            // Confirm deletion
             DialogResult result = MessageBox.Show($"Are you sure you want to delete '{selectedEquipment.Name}'?",
                                                   "Confirm Deletion",
                                                   MessageBoxButtons.YesNo,
@@ -180,14 +104,6 @@ namespace SuperBookFinalProj.GUI.HomeAdmin.Containers
             {
                 try
                 {
-                    // Check if the EquipmentRepository is correctly initialized
-                    if (_equipmentRepository == null)
-                    {
-                        MessageBox.Show("Error: Equipment repository is not initialized.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-
-                    // Call the delete function
                     bool isDeleted = await _equipmentRepository.DeleteAsync(selectedEquipment.Id);
 
                     if (isDeleted)
@@ -209,14 +125,6 @@ namespace SuperBookFinalProj.GUI.HomeAdmin.Containers
 
         private void dataGridEquipments_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
-        }
-
-        private void txtSearchEq_TextChanged(object sender, EventArgs e)
-        {
-            FilterEquipments(txtSearchEq.Text);
         }
     }
-
 }
-

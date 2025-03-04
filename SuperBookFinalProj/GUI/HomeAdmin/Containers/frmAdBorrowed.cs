@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,7 +12,8 @@ namespace SuperBookFinalProj.GUI.HomeAdmin.Containers
     {
         private readonly BorrowRepository _borrowRepo;
         private readonly ConsumerRepository _consumerRepo;
-        private List<BorrowView> _allBorrows; // Store all borrowed items as BorrowView
+        private List<BorrowView> _allBorrows;
+        private List<BorrowView> _filteredBorrows; // Store filtered results
 
         public frmAdBorrowed()
         {
@@ -32,6 +32,7 @@ namespace SuperBookFinalProj.GUI.HomeAdmin.Containers
         {
             try
             {
+                Console.WriteLine("🔄 Fetching Borrowed Records...");
                 var borrows = await _borrowRepo.GetAllAsync();
                 var consumers = await _consumerRepo.GetAllAsync();
 
@@ -41,35 +42,23 @@ namespace SuperBookFinalProj.GUI.HomeAdmin.Containers
                     return;
                 }
 
-                // ✅ Convert Borrow objects to BorrowView (EXCLUDING Status column)
                 _allBorrows = borrows.Select(borrow => new BorrowView
                 {
                     Id = borrow.Id,
                     BorrowedBy = consumers.FirstOrDefault(c => c.id == borrow.ConsumerId)?.full_name ?? "Unknown",
                     EquipmentName = borrow.EquipmentName,
-                    EquipmentId = borrow.EquipmentId,  // Ensure EquipmentId is included for updates
+                    EquipmentId = borrow.EquipmentId,
                     BorrowDate = borrow.BorrowDate,
-                    TimeSlot = borrow.time, // Added Time Slot
+                    TimeSlot = borrow.time,
                     Purpose = borrow.Purpose,
                     Quantity = borrow.Quantity
-                    // ❌ Removed Status field
                 }).ToList();
 
-                // ✅ Bind formatted data to DataGridView
-                dgvBorrowed.DataSource = null;
-                dgvBorrowed.DataSource = _allBorrows;
+                _filteredBorrows = new List<BorrowView>(_allBorrows); // Copy for filtering
 
-                // ✅ Remove row headers for a cleaner UI
-                dgvBorrowed.RowHeadersVisible = false;
+                BindDataToGrid();
 
-                // ✅ Auto-size columns to fit content
-                dgvBorrowed.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
-                // ✅ Hide status column if it exists (Failsafe, if still there)
-                if (dgvBorrowed.Columns["Status"] != null)
-                {
-                    dgvBorrowed.Columns["Status"].Visible = false;
-                }
+                Console.WriteLine($"✅ Loaded {_allBorrows.Count} borrowed records.");
             }
             catch (Exception ex)
             {
@@ -77,42 +66,43 @@ namespace SuperBookFinalProj.GUI.HomeAdmin.Containers
             }
         }
 
-        // ✅ Refresh function
-        // ✅ Change return type from void to Task
-        private async Task RefreshBorrowedData()
+        private void BindDataToGrid()
         {
-            Console.WriteLine("🔄 Refreshing borrowed records...");
-            await LoadBorrowedData(); // Load fresh data
-
-            // ✅ Force UI Refresh
             dgvBorrowed.DataSource = null;
-            dgvBorrowed.DataSource = _allBorrows;
+            dgvBorrowed.DataSource = _filteredBorrows;
             dgvBorrowed.Refresh();
+
+            dgvBorrowed.RowHeadersVisible = false;
         }
 
-
-
         // ✅ Search Function (Filters by BorrowedBy, Equipment Name, and Purpose)
-        private void txtSearchEq_TextChanged(object sender, EventArgs e)
+        private void txtSearchBor_TextChanged(object sender, EventArgs e)
         {
             string searchText = txtSearchBor.Text.Trim().ToLower();
 
             if (string.IsNullOrWhiteSpace(searchText))
             {
-                dgvBorrowed.DataSource = _allBorrows;
-                return;
+                _filteredBorrows = new List<BorrowView>(_allBorrows); // Reset to original list
+            }
+            else
+            {
+                _filteredBorrows = _allBorrows
+                    .Where(borrow => borrow.BorrowedBy.ToLower().Contains(searchText) ||
+                                     borrow.EquipmentName.ToLower().Contains(searchText) ||
+                                     borrow.Purpose.ToLower().Contains(searchText))
+                    .ToList();
             }
 
-            var filteredBorrows = _allBorrows
-                .Where(borrow => borrow.BorrowedBy.ToLower().Contains(searchText) ||
-                                 borrow.EquipmentName.ToLower().Contains(searchText) ||
-                                 borrow.Purpose.ToLower().Contains(searchText))
-                .ToList();
-
-            dgvBorrowed.DataSource = filteredBorrows;
+            BindDataToGrid();
         }
 
-        // ✅ Cancel Borrow Function
+        private async Task RefreshBorrowedData()
+        {
+            Console.WriteLine("🔄 Refreshing borrowed records...");
+            await LoadBorrowedData();
+            BindDataToGrid();
+        }
+
         private async void btnCancelBorrow_Click(object sender, EventArgs e)
         {
             if (dgvBorrowed.SelectedRows.Count == 0)
@@ -123,12 +113,11 @@ namespace SuperBookFinalProj.GUI.HomeAdmin.Containers
 
             int borrowId = Convert.ToInt32(dgvBorrowed.SelectedRows[0].Cells["Id"].Value);
 
-            // ✅ Double-check if the borrow ID exists before attempting to delete
             var borrowRecord = await _borrowRepo.GetByIdAsync(borrowId);
             if (borrowRecord == null)
             {
                 MessageBox.Show("The borrow record no longer exists.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                await RefreshBorrowedData(); // ✅ Refresh DataGridView if record not found
+                await RefreshBorrowedData();
                 return;
             }
 
@@ -148,7 +137,7 @@ namespace SuperBookFinalProj.GUI.HomeAdmin.Containers
                     if (isDeleted)
                     {
                         MessageBox.Show("Borrow record successfully deleted.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        await RefreshBorrowedData(); // ✅ Call refresh after deletion
+                        await RefreshBorrowedData();
                     }
                     else
                     {
@@ -162,15 +151,12 @@ namespace SuperBookFinalProj.GUI.HomeAdmin.Containers
             }
         }
 
-
         private void btnCancel_Click(object sender, EventArgs e)
         {
-
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-
         }
     }
 }

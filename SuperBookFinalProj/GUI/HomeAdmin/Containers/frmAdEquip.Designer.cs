@@ -52,7 +52,7 @@
             btnDeleteEquipment.TabIndex = 56;
             btnDeleteEquipment.Text = "Delete Equipment";
             btnDeleteEquipment.UseVisualStyleBackColor = false;
-            btnDeleteEquipment.Click += btnDeleteEq_Click;
+            //btnDeleteEquipment.Click += btnDeleteEq_Click;
             // 
             // btnEditEq
             // 
@@ -65,7 +65,7 @@
             btnEditEq.TabIndex = 55;
             btnEditEq.Text = "Edit Equipment";
             btnEditEq.UseVisualStyleBackColor = false;
-            btnEditEq.Click += btnEditEq_Click;
+            //btnEditEq.Click += btnEditEq_Click;
             // 
             // btnAddEq
             // 
@@ -78,7 +78,7 @@
             btnAddEq.TabIndex = 54;
             btnAddEq.Text = "Add Equipment";
             btnAddEq.UseVisualStyleBackColor = false;
-            btnAddEq.Click += btnAddEq_Click;
+            //btnAddEq.Click += btnAddEq_Click;
             // 
             // panel1
             // 
@@ -153,7 +153,7 @@
             Margin = new Padding(3, 4, 3, 4);
             Name = "frmAdEquip";
             Text = "frmAdEquip";
-            Load += frmAdEquip_Load;
+            // Load += frmAdEquip_Load;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridEquipments).EndInit();
             ((System.ComponentModel.ISupportInitialize)pBoxSearch).EndInit();
