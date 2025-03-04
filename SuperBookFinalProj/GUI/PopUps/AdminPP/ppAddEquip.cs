@@ -54,6 +54,7 @@ namespace SuperBookFinalProj.GUI.PopUps
                     MessageBox.Show("Equipment added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.DialogResult = DialogResult.OK; // Notify parent form
                     this.Close(); // Close pop-up
+                    
                 }
                 else
                 {

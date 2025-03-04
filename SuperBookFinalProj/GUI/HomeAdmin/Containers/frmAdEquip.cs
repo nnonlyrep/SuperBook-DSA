@@ -126,5 +126,43 @@ namespace SuperBookFinalProj.GUI.HomeAdmin.Containers
         private void dataGridEquipments_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
         }
+
+        private async void btnAddEq_Click(object sender, EventArgs e)
+        {
+            ppAddEquip ppAddEquip = new ppAddEquip();
+            if (ppAddEquip.ShowDialog() == DialogResult.OK)
+            {
+                await LoadEquipmentsAsync(); // Refresh DataGridView after adding
+            }
+        }
+
+
+        private async void btnEditEq_Click(object sender, EventArgs e)
+        {
+            if (dataGridEquipments.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select an equipment to edit.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            Equipments selectedEquipment = dataGridEquipments.SelectedRows[0].DataBoundItem as Equipments;
+
+            if (selectedEquipment == null)
+            {
+                MessageBox.Show("Error: Unable to retrieve selected equipment!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            ppEditEquip ppEditEquip = new ppEditEquip(selectedEquipment);
+            if (ppEditEquip.ShowDialog() == DialogResult.OK)
+            {
+                await LoadEquipmentsAsync();
+            }
+        }
+
+        private async void btnDeleteEquipment_Click(object sender, EventArgs e)
+        {
+            await btnDeleteEq_ClickAsync(sender, e);
+        }
     }
 }
