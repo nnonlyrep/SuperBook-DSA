@@ -59,15 +59,38 @@ namespace SuperBookFinalProj.GUI.Home.Containers
 
         private void rsrvBtn_Click(object sender, EventArgs e)
         {
-            ppClassroom classroom = new ppClassroom();
-            classroom.ShowDialog();
-    
+            if (dataGridClassRooms.SelectedRows.Count > 0) // Ensure a room is selected
+            {
+                // Retrieve the selected room object
+                Room selectedRoom = (Room)dataGridClassRooms.SelectedRows[0].DataBoundItem as Room;
+
+                if (selectedRoom != null)
+                {
+                    // Pass room details to ppClassroom
+                    ppClassroom classroom = new ppClassroom(selectedRoom);
+                    classroom.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Invalid selection. Please select a valid room.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a room before proceeding.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
+
 
         private void cncBtn_Click(object sender, EventArgs e)
         {
-   
 
+
+        }
+
+        private void dataGridClassRooms_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+           
         }
     }
 }

@@ -31,8 +31,7 @@
             label1 = new Label();
             panel1 = new Panel();
             dataGridClassRooms = new DataGridView();
-            cncBtn = new Button();
-            NextBtn = new Button();
+            btnNext = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridClassRooms).BeginInit();
             SuspendLayout();
@@ -68,33 +67,20 @@
             dataGridClassRooms.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridClassRooms.Size = new Size(751, 251);
             dataGridClassRooms.TabIndex = 1;
+            dataGridClassRooms.CellContentClick += dataGridClassRooms_CellContentClick;
             // 
-            // cncBtn
+            // btnNext
             // 
-            cncBtn.BackColor = Color.FromArgb(161, 181, 195);
-            cncBtn.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
-            cncBtn.Location = new Point(545, 401);
-            cncBtn.Margin = new Padding(3, 2, 3, 2);
-            cncBtn.Name = "cncBtn";
-            cncBtn.RightToLeft = RightToLeft.No;
-            cncBtn.Size = new Size(106, 29);
-            cncBtn.TabIndex = 13;
-            cncBtn.Text = "Cancel";
-            cncBtn.UseVisualStyleBackColor = false;
-            cncBtn.Click += cncBtn_Click;
-            // 
-            // NextBtn
-            // 
-            NextBtn.BackColor = Color.FromArgb(161, 181, 195);
-            NextBtn.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
-            NextBtn.Location = new Point(721, 401);
-            NextBtn.Margin = new Padding(3, 2, 3, 2);
-            NextBtn.Name = "NextBtn";
-            NextBtn.Size = new Size(94, 29);
-            NextBtn.TabIndex = 14;
-            NextBtn.Text = "Next";
-            NextBtn.UseVisualStyleBackColor = false;
-            NextBtn.Click += rsrvBtn_Click;
+            btnNext.BackColor = Color.FromArgb(161, 181, 195);
+            btnNext.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
+            btnNext.Location = new Point(721, 401);
+            btnNext.Margin = new Padding(3, 2, 3, 2);
+            btnNext.Name = "btnNext";
+            btnNext.Size = new Size(94, 29);
+            btnNext.TabIndex = 14;
+            btnNext.Text = "Next";
+            btnNext.UseVisualStyleBackColor = false;
+            btnNext.Click += rsrvBtn_Click;
             // 
             // frmClassroom
             // 
@@ -102,8 +88,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(21, 31, 40);
             ClientSize = new Size(850, 450);
-            Controls.Add(NextBtn);
-            Controls.Add(cncBtn);
+            Controls.Add(btnNext);
             Controls.Add(panel1);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
@@ -121,8 +106,7 @@
 
         private Label label1;
         private Panel panel1;
-        private Button cncBtn;
-        private Button NextBtn;
+        private Button btnNext;
         private DataGridView dataGridClassRooms;
     }
 }

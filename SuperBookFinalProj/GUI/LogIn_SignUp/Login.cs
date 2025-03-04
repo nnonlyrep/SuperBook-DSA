@@ -33,15 +33,17 @@ namespace SuperBookFinalProj.GUI.LogIn_SignUp
 
             try
             {
-                // 🔹 Check if the user is Admin
+                // 🔹 Check if the user is an Admin
                 Admin admin = new Admin("Superbook", "admin", uName, pWord);
                 if (admin.validateLogin(uName, pWord))
                 {
                     MessageBox.Show("✅ Welcome, Admin!", "Login Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Hide();
-                    HomeFrmAdmin homeFrmAdmin = new HomeFrmAdmin();
-                    homeFrmAdmin.ShowDialog();
-                    this.Close();
+                    using (HomeFrmAdmin homeFrmAdmin = new HomeFrmAdmin())
+                    {
+                        homeFrmAdmin.ShowDialog();
+                    }
+                    this.Dispose();
                     return;
                 }
 
@@ -51,11 +53,18 @@ namespace SuperBookFinalProj.GUI.LogIn_SignUp
 
                 if (user != null)
                 {
+                    // ✅ Store logged-in user session
+                    SessionManager.SetLoggedInUser(user);
+
                     MessageBox.Show($"✅ Welcome, {user.full_name}!", "Login Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Hide();
-                    HomeFrm home_form = new HomeFrm();
-                    home_form.ShowDialog();
-                    this.Close();
+
+                    using (HomeFrm home_form = new HomeFrm())
+                    {
+                        home_form.ShowDialog();
+                    }
+
+                    this.Dispose();
                 }
                 else
                 {
@@ -64,21 +73,23 @@ namespace SuperBookFinalProj.GUI.LogIn_SignUp
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"❌ Error: {ex.Message}", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"❌ Login Error: {ex.Message}", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void Lblsignup_Click(object sender, EventArgs e)
         {
             this.Hide();
-            SignUp signup = new SignUp();
-            signup.ShowDialog();
-            this.Close();
+            using (SignUp signup = new SignUp())
+            {
+                signup.ShowDialog();
+            }
+            this.Dispose();
         }
 
         private void unameTxt_TextChanged(object sender, EventArgs e)
         {
-
+            // No modifications needed here
         }
     }
 }

@@ -31,14 +31,18 @@
             label1 = new Label();
             dateTxt = new Label();
             purposeLbl = new Label();
-            poisonDateTime1 = new ReaLTaiizor.Controls.PoisonDateTime();
+            dateTimePicker = new ReaLTaiizor.Controls.PoisonDateTime();
             purposeTxt = new TextBox();
             reserveBtn = new Button();
             button1 = new Button();
             label2 = new Label();
             label3 = new Label();
-            textBox1 = new TextBox();
+            txtOccupants = new TextBox();
             cboTime = new ComboBox();
+            lblRoomName = new Label();
+            lblRoomCapacity = new Label();
+            label5 = new Label();
+            label6 = new Label();
             SuspendLayout();
             // 
             // label1
@@ -76,13 +80,13 @@
             purposeLbl.TabIndex = 4;
             purposeLbl.Text = "Purpose/Program:";
             // 
-            // poisonDateTime1
+            // dateTimePicker
             // 
-            poisonDateTime1.Location = new Point(95, 134);
-            poisonDateTime1.MinimumSize = new Size(0, 29);
-            poisonDateTime1.Name = "poisonDateTime1";
-            poisonDateTime1.Size = new Size(200, 29);
-            poisonDateTime1.TabIndex = 10;
+            dateTimePicker.Location = new Point(95, 134);
+            dateTimePicker.MinimumSize = new Size(0, 29);
+            dateTimePicker.Name = "dateTimePicker";
+            dateTimePicker.Size = new Size(200, 29);
+            dateTimePicker.TabIndex = 10;
             // 
             // purposeTxt
             // 
@@ -108,7 +112,7 @@
             reserveBtn.TabIndex = 23;
             reserveBtn.Text = "Reserve";
             reserveBtn.UseVisualStyleBackColor = false;
-            reserveBtn.Click += reserveBtn_Click;
+            reserveBtn.Click += reserveBtn_Click_1;
             // 
             // button1
             // 
@@ -147,17 +151,17 @@
             label3.TabIndex = 28;
             label3.Text = "Number of Occupants:";
             // 
-            // textBox1
+            // txtOccupants
             // 
-            textBox1.BackColor = Color.FromArgb(30, 48, 64);
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
-            textBox1.ForeColor = Color.White;
-            textBox1.Location = new Point(382, 201);
-            textBox1.Margin = new Padding(3, 2, 3, 2);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(257, 19);
-            textBox1.TabIndex = 29;
+            txtOccupants.BackColor = Color.FromArgb(30, 48, 64);
+            txtOccupants.BorderStyle = BorderStyle.None;
+            txtOccupants.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
+            txtOccupants.ForeColor = Color.White;
+            txtOccupants.Location = new Point(382, 201);
+            txtOccupants.Margin = new Padding(3, 2, 3, 2);
+            txtOccupants.Name = "txtOccupants";
+            txtOccupants.Size = new Size(257, 19);
+            txtOccupants.TabIndex = 29;
             // 
             // cboTime
             // 
@@ -168,20 +172,66 @@
             cboTime.Size = new Size(144, 23);
             cboTime.TabIndex = 40;
             // 
+            // lblRoomName
+            // 
+            lblRoomName.AutoSize = true;
+            lblRoomName.Font = new Font("Work Sans Medium", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblRoomName.ForeColor = SystemColors.ButtonHighlight;
+            lblRoomName.Location = new Point(105, 53);
+            lblRoomName.Name = "lblRoomName";
+            lblRoomName.Size = new Size(56, 22);
+            lblRoomName.TabIndex = 41;
+            lblRoomName.Text = "Room:";
+            // 
+            // lblRoomCapacity
+            // 
+            lblRoomCapacity.AutoSize = true;
+            lblRoomCapacity.Font = new Font("Work Sans Medium", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblRoomCapacity.ForeColor = SystemColors.ButtonHighlight;
+            lblRoomCapacity.Location = new Point(104, 81);
+            lblRoomCapacity.Name = "lblRoomCapacity";
+            lblRoomCapacity.Size = new Size(82, 22);
+            lblRoomCapacity.TabIndex = 42;
+            lblRoomCapacity.Text = "Capacity: ";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.ForeColor = SystemColors.ButtonHighlight;
+            label5.Location = new Point(45, 86);
+            label5.Name = "label5";
+            label5.Size = new Size(59, 15);
+            label5.TabIndex = 43;
+            label5.Text = "Capacity: ";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.ForeColor = SystemColors.ButtonHighlight;
+            label6.Location = new Point(45, 57);
+            label6.Name = "label6";
+            label6.Size = new Size(42, 15);
+            label6.TabIndex = 44;
+            label6.Text = "Room:";
+            // 
             // ppClassroom
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(21, 31, 40);
             ClientSize = new Size(755, 387);
+            Controls.Add(label6);
+            Controls.Add(label5);
+            Controls.Add(lblRoomCapacity);
+            Controls.Add(lblRoomName);
             Controls.Add(cboTime);
-            Controls.Add(textBox1);
+            Controls.Add(txtOccupants);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(button1);
             Controls.Add(reserveBtn);
             Controls.Add(purposeTxt);
-            Controls.Add(poisonDateTime1);
+            Controls.Add(dateTimePicker);
             Controls.Add(purposeLbl);
             Controls.Add(dateTxt);
             Controls.Add(label1);
@@ -189,6 +239,7 @@
             Name = "ppClassroom";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ppClassroom";
+            Load += ppClassroom_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -198,13 +249,17 @@
         private Label label1;
         private Label dateTxt;
         private Label purposeLbl;
-        private ReaLTaiizor.Controls.PoisonDateTime poisonDateTime1;
+        private ReaLTaiizor.Controls.PoisonDateTime dateTimePicker;
         private TextBox purposeTxt;
         private Button reserveBtn;
         private Button button1;
         private Label label2;
         private Label label3;
-        private TextBox textBox1;
+        private TextBox txtOccupants;
         private ComboBox cboTime;
+        private Label lblRoomName;
+        private Label lblRoomCapacity;
+        private Label label5;
+        private Label label6;
     }
 }
