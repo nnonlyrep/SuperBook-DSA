@@ -87,6 +87,7 @@
             cncButton.TabIndex = 3;
             cncButton.Text = "Cancel";
             cncButton.UseVisualStyleBackColor = true;
+            cncButton.Click += cncButton_Click;
             // 
             // frmBorrow
             // 
@@ -100,6 +101,7 @@
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "frmBorrow";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "frmBorrow";
             Load += frmBorrow_Load;
             panel1.ResumeLayout(false);

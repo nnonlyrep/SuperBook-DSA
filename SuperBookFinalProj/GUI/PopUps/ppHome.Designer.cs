@@ -33,9 +33,7 @@
             equipBtn = new Button();
             label1 = new Label();
             label3 = new Label();
-            panel1 = new Panel();
-            nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
-            panel1.SuspendLayout();
+            btnCancel = new Button();
             SuspendLayout();
             // 
             // roomBtn
@@ -48,6 +46,7 @@
             roomBtn.Size = new Size(237, 258);
             roomBtn.TabIndex = 0;
             roomBtn.UseVisualStyleBackColor = true;
+            roomBtn.Click += roomBtn_Click;
             // 
             // equipBtn
             // 
@@ -60,6 +59,7 @@
             equipBtn.Size = new Size(247, 258);
             equipBtn.TabIndex = 2;
             equipBtn.UseVisualStyleBackColor = true;
+            equipBtn.Click += equipBtn_Click;
             // 
             // label1
             // 
@@ -83,39 +83,18 @@
             label3.TabIndex = 5;
             label3.Text = "EQUIPMENTS";
             // 
-            // panel1
+            // btnCancel
             // 
-            panel1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            panel1.BackColor = Color.FromArgb(30, 48, 64);
-            panel1.Controls.Add(nightControlBox1);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(827, 29);
-            panel1.TabIndex = 6;
-            // 
-            // nightControlBox1
-            // 
-            nightControlBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            nightControlBox1.BackColor = Color.Transparent;
-            nightControlBox1.CloseHoverColor = Color.FromArgb(199, 80, 80);
-            nightControlBox1.CloseHoverForeColor = Color.White;
-            nightControlBox1.DefaultLocation = true;
-            nightControlBox1.DisableMaximizeColor = Color.FromArgb(105, 105, 105);
-            nightControlBox1.DisableMinimizeColor = Color.FromArgb(105, 105, 105);
-            nightControlBox1.EnableCloseColor = Color.FromArgb(160, 160, 160);
-            nightControlBox1.EnableMaximizeButton = true;
-            nightControlBox1.EnableMaximizeColor = Color.FromArgb(160, 160, 160);
-            nightControlBox1.EnableMinimizeButton = true;
-            nightControlBox1.EnableMinimizeColor = Color.FromArgb(160, 160, 160);
-            nightControlBox1.Location = new Point(688, 0);
-            nightControlBox1.MaximizeHoverColor = Color.FromArgb(15, 255, 255, 255);
-            nightControlBox1.MaximizeHoverForeColor = Color.White;
-            nightControlBox1.MinimizeHoverColor = Color.FromArgb(15, 255, 255, 255);
-            nightControlBox1.MinimizeHoverForeColor = Color.White;
-            nightControlBox1.Name = "nightControlBox1";
-            nightControlBox1.Size = new Size(139, 31);
-            nightControlBox1.TabIndex = 0;
+            btnCancel.BackColor = Color.FromArgb(161, 181, 195);
+            btnCancel.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
+            btnCancel.Location = new Point(24, 21);
+            btnCancel.Margin = new Padding(3, 2, 3, 2);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(94, 29);
+            btnCancel.TabIndex = 15;
+            btnCancel.Text = "Cancel";
+            btnCancel.UseVisualStyleBackColor = false;
+            btnCancel.Click += btnCancel_Click;
             // 
             // ppHome
             // 
@@ -124,7 +103,7 @@
             AutoValidate = AutoValidate.EnableAllowFocusChange;
             BackColor = Color.FromArgb(21, 31, 40);
             ClientSize = new Size(827, 402);
-            Controls.Add(panel1);
+            Controls.Add(btnCancel);
             Controls.Add(label3);
             Controls.Add(label1);
             Controls.Add(equipBtn);
@@ -134,7 +113,6 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ppHome";
             Load += ppHome_Load;
-            panel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -145,7 +123,6 @@
         private Button equipBtn;
         private Label label1;
         private Label label3;
-        private Panel panel1;
-        private ReaLTaiizor.Controls.NightControlBox nightControlBox1;
+        private Button btnCancel;
     }
 }

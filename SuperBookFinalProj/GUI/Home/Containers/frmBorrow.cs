@@ -62,5 +62,12 @@ namespace SuperBookFinalProj.GUI.Home.Containers
             ppBorrow borrow = new ppBorrow();
             borrow.ShowDialog();
         }
+
+        private void cncButton_Click(object sender, EventArgs e)
+        {
+            frmHome frmHome = new frmHome();
+            frmHome.ShowDialog();
+            this.Hide();
+        }
     }
 }
