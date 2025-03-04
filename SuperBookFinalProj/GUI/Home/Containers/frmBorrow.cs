@@ -62,5 +62,15 @@ namespace SuperBookFinalProj.GUI.Home.Containers
             ppBorrow borrow = new ppBorrow();
             borrow.ShowDialog();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cncButton_Click(object sender, EventArgs e)
+        {   
+            this.Close();
+        }
     }
 }

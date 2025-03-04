@@ -28,73 +28,113 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblTitle = new System.Windows.Forms.Label();
-            this.lblConsumerName = new System.Windows.Forms.Label();
-            this.lblRoomNumber = new System.Windows.Forms.Label();
-            this.lblRoomCapacity = new System.Windows.Forms.Label();
-            this.lblDate = new System.Windows.Forms.Label();
-            this.lblTime = new System.Windows.Forms.Label();
-            this.lblPurpose = new System.Windows.Forms.Label();
-            this.lblOccupants = new System.Windows.Forms.Label();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.SuspendLayout();
-
+            lblTitle = new Label();
+            lblConsumerName = new Label();
+            lblRoomNumber = new Label();
+            lblRoomCapacity = new Label();
+            lblDate = new Label();
+            lblTime = new Label();
+            lblPurpose = new Label();
+            lblOccupants = new Label();
+            btnClose = new Button();
+            SuspendLayout();
             // 
             // lblTitle
             // 
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.lblTitle.Location = new System.Drawing.Point(60, 15);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(187, 25);
-            this.lblTitle.TabIndex = 0;
-            this.lblTitle.Text = "Reservation Receipt";
-
+            lblTitle.AutoSize = true;
+            lblTitle.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            lblTitle.ForeColor = Color.FromArgb(21, 31, 40);
+            lblTitle.Location = new Point(69, 20);
+            lblTitle.Name = "lblTitle";
+            lblTitle.Size = new Size(240, 32);
+            lblTitle.TabIndex = 0;
+            lblTitle.Text = "Reservation Receipt";
             // 
-            // Labels Configuration
+            // lblConsumerName
             // 
-            ConfigureLabel(lblConsumerName, "Consumer:", new System.Drawing.Point(20, 60));
-            ConfigureLabel(lblRoomNumber, "Room:", new System.Drawing.Point(20, 90));
-            ConfigureLabel(lblRoomCapacity, "Capacity:", new System.Drawing.Point(20, 120));
-            ConfigureLabel(lblDate, "Date:", new System.Drawing.Point(20, 150));
-            ConfigureLabel(lblTime, "Time:", new System.Drawing.Point(20, 180));
-            ConfigureLabel(lblPurpose, "Purpose:", new System.Drawing.Point(20, 210));
-            ConfigureLabel(lblOccupants, "Occupants:", new System.Drawing.Point(20, 240));
-
+            lblConsumerName.Location = new Point(0, 0);
+            lblConsumerName.Name = "lblConsumerName";
+            lblConsumerName.Size = new Size(114, 31);
+            lblConsumerName.TabIndex = 1;
+            // 
+            // lblRoomNumber
+            // 
+            lblRoomNumber.Location = new Point(0, 0);
+            lblRoomNumber.Name = "lblRoomNumber";
+            lblRoomNumber.Size = new Size(114, 31);
+            lblRoomNumber.TabIndex = 2;
+            // 
+            // lblRoomCapacity
+            // 
+            lblRoomCapacity.Location = new Point(0, 0);
+            lblRoomCapacity.Name = "lblRoomCapacity";
+            lblRoomCapacity.Size = new Size(114, 31);
+            lblRoomCapacity.TabIndex = 3;
+            // 
+            // lblDate
+            // 
+            lblDate.Location = new Point(0, 0);
+            lblDate.Name = "lblDate";
+            lblDate.Size = new Size(114, 31);
+            lblDate.TabIndex = 4;
+            // 
+            // lblTime
+            // 
+            lblTime.Location = new Point(0, 0);
+            lblTime.Name = "lblTime";
+            lblTime.Size = new Size(114, 31);
+            lblTime.TabIndex = 5;
+            // 
+            // lblPurpose
+            // 
+            lblPurpose.Location = new Point(0, 0);
+            lblPurpose.Name = "lblPurpose";
+            lblPurpose.Size = new Size(114, 31);
+            lblPurpose.TabIndex = 6;
+            // 
+            // lblOccupants
+            // 
+            lblOccupants.Location = new Point(0, 0);
+            lblOccupants.Name = "lblOccupants";
+            lblOccupants.Size = new Size(114, 31);
+            lblOccupants.TabIndex = 7;
             // 
             // btnClose
             // 
-            this.btnClose.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.btnClose.Location = new System.Drawing.Point(100, 280);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(100, 35);
-            this.btnClose.TabIndex = 8;
-            this.btnClose.Text = "Close";
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-
+            btnClose.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnClose.ForeColor = Color.FromArgb(21, 31, 40);
+            btnClose.Location = new Point(114, 386);
+            btnClose.Margin = new Padding(3, 4, 3, 4);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(114, 47);
+            btnClose.TabIndex = 8;
+            btnClose.Text = "Close";
+            btnClose.UseVisualStyleBackColor = true;
+            btnClose.Click += btnClose_Click;
             // 
             // frmReceipt
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(320, 350);
-            this.Controls.Add(this.lblTitle);
-            this.Controls.Add(this.lblConsumerName);
-            this.Controls.Add(this.lblRoomNumber);
-            this.Controls.Add(this.lblRoomCapacity);
-            this.Controls.Add(this.lblDate);
-            this.Controls.Add(this.lblTime);
-            this.Controls.Add(this.lblPurpose);
-            this.Controls.Add(this.lblOccupants);
-            this.Controls.Add(this.btnClose);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Name = "frmReceipt";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Reservation Receipt";
-            this.Load += new System.EventHandler(this.frmReceipt_Load);
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(161, 181, 195);
+            ClientSize = new Size(366, 467);
+            Controls.Add(lblTitle);
+            Controls.Add(lblConsumerName);
+            Controls.Add(lblRoomNumber);
+            Controls.Add(lblRoomCapacity);
+            Controls.Add(lblDate);
+            Controls.Add(lblTime);
+            Controls.Add(lblPurpose);
+            Controls.Add(lblOccupants);
+            Controls.Add(btnClose);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            Margin = new Padding(3, 4, 3, 4);
+            Name = "frmReceipt";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Reservation Receipt";
+            Load += frmReceipt_Load;
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         private void ConfigureLabel(System.Windows.Forms.Label label, string text, System.Drawing.Point location)

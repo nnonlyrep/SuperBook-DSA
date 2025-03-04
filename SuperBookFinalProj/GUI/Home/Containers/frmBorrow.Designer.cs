@@ -28,78 +28,91 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
             panel1 = new Panel();
             dataGridEq = new DataGridView();
             Borrow = new Button();
             cncButton = new Button();
+            label1 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridEq).BeginInit();
             SuspendLayout();
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Work Sans Black", 8.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = SystemColors.ButtonFace;
-            label1.Location = new Point(12, 9);
-            label1.Name = "label1";
-            label1.Size = new Size(62, 17);
-            label1.TabIndex = 0;
-            label1.Text = "BORROW";
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(30, 48, 64);
             panel1.Controls.Add(dataGridEq);
-            panel1.Location = new Point(49, 48);
+            panel1.Location = new Point(56, 64);
+            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(751, 341);
+            panel1.Size = new Size(858, 455);
             panel1.TabIndex = 1;
             // 
             // dataGridEq
             // 
             dataGridEq.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridEq.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridEq.Location = new Point(23, 17);
+            dataGridEq.Location = new Point(26, 23);
+            dataGridEq.Margin = new Padding(3, 4, 3, 4);
             dataGridEq.MultiSelect = false;
             dataGridEq.Name = "dataGridEq";
             dataGridEq.ReadOnly = true;
+            dataGridEq.RowHeadersWidth = 51;
             dataGridEq.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridEq.Size = new Size(707, 307);
+            dataGridEq.Size = new Size(808, 409);
             dataGridEq.TabIndex = 1;
             // 
             // Borrow
             // 
-            Borrow.Location = new Point(719, 415);
+            Borrow.BackColor = Color.FromArgb(161, 181, 195);
+            Borrow.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Borrow.Location = new Point(792, 527);
+            Borrow.Margin = new Padding(3, 4, 3, 4);
             Borrow.Name = "Borrow";
-            Borrow.Size = new Size(91, 23);
-            Borrow.TabIndex = 2;
+            Borrow.Size = new Size(122, 43);
+            Borrow.TabIndex = 14;
             Borrow.Text = "Borrow";
-            Borrow.UseVisualStyleBackColor = true;
+            Borrow.UseVisualStyleBackColor = false;
             Borrow.Click += Borrow_Click;
             // 
             // cncButton
             // 
-            cncButton.Location = new Point(607, 415);
+            cncButton.BackColor = Color.FromArgb(161, 181, 195);
+            cncButton.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            cncButton.Location = new Point(667, 527);
+            cncButton.Margin = new Padding(3, 4, 3, 4);
             cncButton.Name = "cncButton";
-            cncButton.Size = new Size(91, 23);
+            cncButton.Size = new Size(119, 43);
             cncButton.TabIndex = 3;
             cncButton.Text = "Cancel";
-            cncButton.UseVisualStyleBackColor = true;
+            cncButton.UseVisualStyleBackColor = false;
+            cncButton.Click += cncButton_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Microsoft Sans Serif", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = SystemColors.ButtonFace;
+            label1.Location = new Point(56, 20);
+            label1.Name = "label1";
+            label1.Size = new Size(183, 29);
+            label1.TabIndex = 15;
+            label1.Text = "EQUIPMENTS";
+            label1.Click += label1_Click;
             // 
             // frmBorrow
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(21, 31, 40);
-            ClientSize = new Size(850, 450);
+            ClientSize = new Size(979, 606);
+            Controls.Add(label1);
             Controls.Add(cncButton);
             Controls.Add(Borrow);
             Controls.Add(panel1);
-            Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "frmBorrow";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "frmBorrow";
             Load += frmBorrow_Load;
             panel1.ResumeLayout(false);
@@ -109,11 +122,10 @@
         }
 
         #endregion
-
-        private Label label1;
         private Panel panel1;
         private Button Borrow;
         private Button cncButton;
         private DataGridView dataGridEq;
+        private Label label1;
     }
 }

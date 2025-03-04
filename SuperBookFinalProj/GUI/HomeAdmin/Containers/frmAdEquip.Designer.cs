@@ -44,10 +44,11 @@
             // btnDeleteEquipment
             // 
             btnDeleteEquipment.BackColor = Color.FromArgb(161, 181, 195);
-            btnDeleteEquipment.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
-            btnDeleteEquipment.Location = new Point(422, 389);
+            btnDeleteEquipment.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnDeleteEquipment.Location = new Point(485, 523);
+            btnDeleteEquipment.Margin = new Padding(3, 4, 3, 4);
             btnDeleteEquipment.Name = "btnDeleteEquipment";
-            btnDeleteEquipment.Size = new Size(154, 29);
+            btnDeleteEquipment.Size = new Size(176, 44);
             btnDeleteEquipment.TabIndex = 56;
             btnDeleteEquipment.Text = "Delete Equipment";
             btnDeleteEquipment.UseVisualStyleBackColor = false;
@@ -56,10 +57,11 @@
             // btnEditEq
             // 
             btnEditEq.BackColor = Color.FromArgb(161, 181, 195);
-            btnEditEq.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
-            btnEditEq.Location = new Point(582, 389);
+            btnEditEq.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnEditEq.Location = new Point(668, 523);
+            btnEditEq.Margin = new Padding(3, 4, 3, 4);
             btnEditEq.Name = "btnEditEq";
-            btnEditEq.Size = new Size(138, 29);
+            btnEditEq.Size = new Size(158, 44);
             btnEditEq.TabIndex = 55;
             btnEditEq.Text = "Edit Equipment";
             btnEditEq.UseVisualStyleBackColor = false;
@@ -68,10 +70,11 @@
             // btnAddEq
             // 
             btnAddEq.BackColor = Color.FromArgb(161, 181, 195);
-            btnAddEq.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
-            btnAddEq.Location = new Point(725, 389);
+            btnAddEq.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAddEq.Location = new Point(832, 523);
+            btnAddEq.Margin = new Padding(3, 4, 3, 4);
             btnAddEq.Name = "btnAddEq";
-            btnAddEq.Size = new Size(136, 29);
+            btnAddEq.Size = new Size(155, 44);
             btnAddEq.TabIndex = 54;
             btnAddEq.Text = "Add Equipment";
             btnAddEq.UseVisualStyleBackColor = false;
@@ -81,22 +84,24 @@
             // 
             panel1.BackColor = Color.FromArgb(30, 48, 64);
             panel1.Controls.Add(dataGridEquipments);
-            panel1.Location = new Point(78, 91);
+            panel1.Location = new Point(89, 121);
+            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(786, 292);
+            panel1.Size = new Size(898, 389);
             panel1.TabIndex = 53;
             // 
             // dataGridEquipments
             // 
             dataGridEquipments.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridEquipments.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridEquipments.Location = new Point(21, 28);
+            dataGridEquipments.Location = new Point(24, 37);
+            dataGridEquipments.Margin = new Padding(3, 4, 3, 4);
             dataGridEquipments.MultiSelect = false;
             dataGridEquipments.Name = "dataGridEquipments";
             dataGridEquipments.ReadOnly = true;
             dataGridEquipments.RowHeadersWidth = 51;
             dataGridEquipments.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridEquipments.Size = new Size(751, 251);
+            dataGridEquipments.Size = new Size(858, 335);
             dataGridEquipments.TabIndex = 1;
             dataGridEquipments.CellContentClick += dataGridEquipments_CellContentClick;
             // 
@@ -105,36 +110,38 @@
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold);
             label2.ForeColor = SystemColors.ButtonFace;
-            label2.Location = new Point(68, 35);
+            label2.Location = new Point(78, 47);
             label2.Name = "label2";
-            label2.Size = new Size(144, 24);
+            label2.Size = new Size(183, 29);
             label2.TabIndex = 52;
             label2.Text = "EQUIPMENTS";
             // 
             // txtSearchEq
             // 
-            txtSearchEq.Location = new Point(130, 62);
+            txtSearchEq.Location = new Point(149, 83);
+            txtSearchEq.Margin = new Padding(3, 4, 3, 4);
             txtSearchEq.Name = "txtSearchEq";
-            txtSearchEq.Size = new Size(181, 23);
+            txtSearchEq.Size = new Size(206, 27);
             txtSearchEq.TabIndex = 57;
             txtSearchEq.TextChanged += txtSearchEq_TextChanged;
             // 
             // pBoxSearch
             // 
             pBoxSearch.Image = Properties.Resources.icons8_search_64;
-            pBoxSearch.Location = new Point(99, 62);
+            pBoxSearch.Location = new Point(113, 83);
+            pBoxSearch.Margin = new Padding(3, 4, 3, 4);
             pBoxSearch.Name = "pBoxSearch";
-            pBoxSearch.Size = new Size(25, 23);
+            pBoxSearch.Size = new Size(29, 31);
             pBoxSearch.SizeMode = PictureBoxSizeMode.StretchImage;
             pBoxSearch.TabIndex = 58;
             pBoxSearch.TabStop = false;
             // 
             // frmAdEquip
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(21, 31, 40);
-            ClientSize = new Size(980, 515);
+            ClientSize = new Size(1120, 687);
             Controls.Add(pBoxSearch);
             Controls.Add(txtSearchEq);
             Controls.Add(btnDeleteEquipment);
@@ -143,6 +150,7 @@
             Controls.Add(panel1);
             Controls.Add(label2);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "frmAdEquip";
             Text = "frmAdEquip";
             Load += frmAdEquip_Load;
