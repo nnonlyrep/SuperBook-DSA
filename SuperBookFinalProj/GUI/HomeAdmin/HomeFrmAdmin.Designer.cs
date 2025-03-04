@@ -36,14 +36,10 @@
             flpSidebar = new FlowLayoutPanel();
             pnlHome = new Panel();
             btnHome = new Button();
+            pnlBorrowed = new Panel();
+            btnBorrowed = new Button();
             pnlReserved = new Panel();
             btnReserved = new Button();
-            pnlAccounts = new Panel();
-            btnAccounts = new Button();
-            pnlAbout = new Panel();
-            btnAbout = new Button();
-            pnlLogOut = new Panel();
-            btnLogOut = new Button();
             reserveContainer = new FlowLayoutPanel();
             pnlReserve = new Panel();
             btnReserve = new Button();
@@ -51,20 +47,27 @@
             btnEdEquip = new Button();
             pnlEdRooms = new Panel();
             btnEdRoom = new Button();
+            pnlAccounts = new Panel();
+            btnAccounts = new Button();
+            pnlAbout = new Panel();
+            btnAbout = new Button();
+            pnlLogOut = new Panel();
+            btnLogOut = new Button();
             reserveTransition = new System.Windows.Forms.Timer(components);
             sidebarTransition = new System.Windows.Forms.Timer(components);
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnHam).BeginInit();
             flpSidebar.SuspendLayout();
             pnlHome.SuspendLayout();
+            pnlBorrowed.SuspendLayout();
             pnlReserved.SuspendLayout();
-            pnlAccounts.SuspendLayout();
-            pnlAbout.SuspendLayout();
-            pnlLogOut.SuspendLayout();
             reserveContainer.SuspendLayout();
             pnlReserve.SuspendLayout();
             pnlEdEquipments.SuspendLayout();
             pnlEdRooms.SuspendLayout();
+            pnlAccounts.SuspendLayout();
+            pnlAbout.SuspendLayout();
+            pnlLogOut.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -128,6 +131,7 @@
             // 
             flpSidebar.BackColor = Color.FromArgb(30, 48, 64);
             flpSidebar.Controls.Add(pnlHome);
+            flpSidebar.Controls.Add(pnlBorrowed);
             flpSidebar.Controls.Add(pnlReserved);
             flpSidebar.Controls.Add(reserveContainer);
             flpSidebar.Controls.Add(pnlAccounts);
@@ -166,10 +170,35 @@
             btnHome.UseVisualStyleBackColor = false;
             btnHome.Click += button1_Click;
             // 
+            // pnlBorrowed
+            // 
+            pnlBorrowed.Controls.Add(btnBorrowed);
+            pnlBorrowed.Location = new Point(3, 59);
+            pnlBorrowed.Name = "pnlBorrowed";
+            pnlBorrowed.Size = new Size(236, 50);
+            pnlBorrowed.TabIndex = 6;
+            // 
+            // btnBorrowed
+            // 
+            btnBorrowed.BackColor = Color.FromArgb(30, 48, 64);
+            btnBorrowed.Font = new Font("Work Sans Medium", 8.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnBorrowed.ForeColor = SystemColors.ButtonFace;
+            btnBorrowed.Image = Properties.Resources.icons8_equipment_24__1_;
+            btnBorrowed.ImageAlign = ContentAlignment.MiddleLeft;
+            btnBorrowed.Location = new Point(-7, -19);
+            btnBorrowed.Name = "btnBorrowed";
+            btnBorrowed.Padding = new Padding(10, 0, 0, 0);
+            btnBorrowed.Size = new Size(266, 88);
+            btnBorrowed.TabIndex = 2;
+            btnBorrowed.Text = "            Borrowed";
+            btnBorrowed.TextAlign = ContentAlignment.MiddleLeft;
+            btnBorrowed.UseVisualStyleBackColor = false;
+            btnBorrowed.Click += btnBorrowed_Click;
+            // 
             // pnlReserved
             // 
             pnlReserved.Controls.Add(btnReserved);
-            pnlReserved.Location = new Point(3, 59);
+            pnlReserved.Location = new Point(3, 115);
             pnlReserved.Name = "pnlReserved";
             pnlReserved.Size = new Size(236, 50);
             pnlReserved.TabIndex = 6;
@@ -192,88 +221,13 @@
             btnReserved.UseVisualStyleBackColor = false;
             btnReserved.Click += btnAudi_Click;
             // 
-            // pnlAccounts
-            // 
-            pnlAccounts.Controls.Add(btnAccounts);
-            pnlAccounts.Location = new Point(3, 170);
-            pnlAccounts.Name = "pnlAccounts";
-            pnlAccounts.Size = new Size(236, 50);
-            pnlAccounts.TabIndex = 10;
-            // 
-            // btnAccounts
-            // 
-            btnAccounts.BackColor = Color.FromArgb(30, 48, 64);
-            btnAccounts.Font = new Font("Work Sans Medium", 8.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnAccounts.ForeColor = SystemColors.ButtonFace;
-            btnAccounts.Image = Properties.Resources.icons8_account_24;
-            btnAccounts.ImageAlign = ContentAlignment.MiddleLeft;
-            btnAccounts.Location = new Point(-7, -19);
-            btnAccounts.Name = "btnAccounts";
-            btnAccounts.Padding = new Padding(10, 0, 0, 0);
-            btnAccounts.Size = new Size(266, 88);
-            btnAccounts.TabIndex = 2;
-            btnAccounts.Text = "            Accounts";
-            btnAccounts.TextAlign = ContentAlignment.MiddleLeft;
-            btnAccounts.UseVisualStyleBackColor = false;
-            btnAccounts.Click += btnAccounts_Click;
-            // 
-            // pnlAbout
-            // 
-            pnlAbout.Controls.Add(btnAbout);
-            pnlAbout.Location = new Point(3, 226);
-            pnlAbout.Name = "pnlAbout";
-            pnlAbout.Size = new Size(236, 50);
-            pnlAbout.TabIndex = 4;
-            // 
-            // btnAbout
-            // 
-            btnAbout.BackColor = Color.FromArgb(30, 48, 64);
-            btnAbout.Font = new Font("Work Sans Medium", 8.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnAbout.ForeColor = SystemColors.ButtonFace;
-            btnAbout.Image = Properties.Resources.icons8_about_24;
-            btnAbout.ImageAlign = ContentAlignment.MiddleLeft;
-            btnAbout.Location = new Point(-7, -19);
-            btnAbout.Name = "btnAbout";
-            btnAbout.Padding = new Padding(10, 0, 0, 0);
-            btnAbout.Size = new Size(266, 88);
-            btnAbout.TabIndex = 2;
-            btnAbout.Text = "            About";
-            btnAbout.TextAlign = ContentAlignment.MiddleLeft;
-            btnAbout.UseVisualStyleBackColor = false;
-            btnAbout.Click += btnAbout_Click;
-            // 
-            // pnlLogOut
-            // 
-            pnlLogOut.Controls.Add(btnLogOut);
-            pnlLogOut.Location = new Point(3, 282);
-            pnlLogOut.Name = "pnlLogOut";
-            pnlLogOut.Size = new Size(236, 50);
-            pnlLogOut.TabIndex = 5;
-            // 
-            // btnLogOut
-            // 
-            btnLogOut.BackColor = Color.FromArgb(30, 48, 64);
-            btnLogOut.Font = new Font("Work Sans Medium", 8.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnLogOut.ForeColor = SystemColors.ButtonFace;
-            btnLogOut.Image = Properties.Resources.icons8_logout_241;
-            btnLogOut.ImageAlign = ContentAlignment.MiddleLeft;
-            btnLogOut.Location = new Point(-7, -19);
-            btnLogOut.Name = "btnLogOut";
-            btnLogOut.Padding = new Padding(10, 0, 0, 0);
-            btnLogOut.Size = new Size(266, 88);
-            btnLogOut.TabIndex = 2;
-            btnLogOut.Text = "            Logout";
-            btnLogOut.TextAlign = ContentAlignment.MiddleLeft;
-            btnLogOut.UseVisualStyleBackColor = false;
-            btnLogOut.Click += btnLogOut_Click;
-            // 
             // reserveContainer
             // 
             reserveContainer.BackColor = Color.FromArgb(30, 48, 64);
             reserveContainer.Controls.Add(pnlReserve);
             reserveContainer.Controls.Add(pnlEdEquipments);
             reserveContainer.Controls.Add(pnlEdRooms);
-            reserveContainer.Location = new Point(0, 112);
+            reserveContainer.Location = new Point(0, 168);
             reserveContainer.Margin = new Padding(0);
             reserveContainer.Name = "reserveContainer";
             reserveContainer.Size = new Size(236, 55);
@@ -355,6 +309,81 @@
             btnEdRoom.UseVisualStyleBackColor = false;
             btnEdRoom.Click += btnEdRoom_Click;
             // 
+            // pnlAccounts
+            // 
+            pnlAccounts.Controls.Add(btnAccounts);
+            pnlAccounts.Location = new Point(3, 226);
+            pnlAccounts.Name = "pnlAccounts";
+            pnlAccounts.Size = new Size(236, 50);
+            pnlAccounts.TabIndex = 10;
+            // 
+            // btnAccounts
+            // 
+            btnAccounts.BackColor = Color.FromArgb(30, 48, 64);
+            btnAccounts.Font = new Font("Work Sans Medium", 8.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAccounts.ForeColor = SystemColors.ButtonFace;
+            btnAccounts.Image = Properties.Resources.icons8_account_24;
+            btnAccounts.ImageAlign = ContentAlignment.MiddleLeft;
+            btnAccounts.Location = new Point(-7, -19);
+            btnAccounts.Name = "btnAccounts";
+            btnAccounts.Padding = new Padding(10, 0, 0, 0);
+            btnAccounts.Size = new Size(266, 88);
+            btnAccounts.TabIndex = 2;
+            btnAccounts.Text = "            Accounts";
+            btnAccounts.TextAlign = ContentAlignment.MiddleLeft;
+            btnAccounts.UseVisualStyleBackColor = false;
+            btnAccounts.Click += btnAccounts_Click;
+            // 
+            // pnlAbout
+            // 
+            pnlAbout.Controls.Add(btnAbout);
+            pnlAbout.Location = new Point(3, 282);
+            pnlAbout.Name = "pnlAbout";
+            pnlAbout.Size = new Size(236, 50);
+            pnlAbout.TabIndex = 4;
+            // 
+            // btnAbout
+            // 
+            btnAbout.BackColor = Color.FromArgb(30, 48, 64);
+            btnAbout.Font = new Font("Work Sans Medium", 8.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAbout.ForeColor = SystemColors.ButtonFace;
+            btnAbout.Image = Properties.Resources.icons8_about_24;
+            btnAbout.ImageAlign = ContentAlignment.MiddleLeft;
+            btnAbout.Location = new Point(-7, -19);
+            btnAbout.Name = "btnAbout";
+            btnAbout.Padding = new Padding(10, 0, 0, 0);
+            btnAbout.Size = new Size(266, 88);
+            btnAbout.TabIndex = 2;
+            btnAbout.Text = "            About";
+            btnAbout.TextAlign = ContentAlignment.MiddleLeft;
+            btnAbout.UseVisualStyleBackColor = false;
+            btnAbout.Click += btnAbout_Click;
+            // 
+            // pnlLogOut
+            // 
+            pnlLogOut.Controls.Add(btnLogOut);
+            pnlLogOut.Location = new Point(3, 338);
+            pnlLogOut.Name = "pnlLogOut";
+            pnlLogOut.Size = new Size(236, 50);
+            pnlLogOut.TabIndex = 5;
+            // 
+            // btnLogOut
+            // 
+            btnLogOut.BackColor = Color.FromArgb(30, 48, 64);
+            btnLogOut.Font = new Font("Work Sans Medium", 8.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnLogOut.ForeColor = SystemColors.ButtonFace;
+            btnLogOut.Image = Properties.Resources.icons8_logout_241;
+            btnLogOut.ImageAlign = ContentAlignment.MiddleLeft;
+            btnLogOut.Location = new Point(-7, -19);
+            btnLogOut.Name = "btnLogOut";
+            btnLogOut.Padding = new Padding(10, 0, 0, 0);
+            btnLogOut.Size = new Size(266, 88);
+            btnLogOut.TabIndex = 2;
+            btnLogOut.Text = "            Logout";
+            btnLogOut.TextAlign = ContentAlignment.MiddleLeft;
+            btnLogOut.UseVisualStyleBackColor = false;
+            btnLogOut.Click += btnLogOut_Click;
+            // 
             // reserveTransition
             // 
             reserveTransition.Interval = 10;
@@ -384,14 +413,15 @@
             ((System.ComponentModel.ISupportInitialize)btnHam).EndInit();
             flpSidebar.ResumeLayout(false);
             pnlHome.ResumeLayout(false);
+            pnlBorrowed.ResumeLayout(false);
             pnlReserved.ResumeLayout(false);
-            pnlAccounts.ResumeLayout(false);
-            pnlAbout.ResumeLayout(false);
-            pnlLogOut.ResumeLayout(false);
             reserveContainer.ResumeLayout(false);
             pnlReserve.ResumeLayout(false);
             pnlEdEquipments.ResumeLayout(false);
             pnlEdRooms.ResumeLayout(false);
+            pnlAccounts.ResumeLayout(false);
+            pnlAbout.ResumeLayout(false);
+            pnlLogOut.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -425,5 +455,7 @@
         private Panel pnlAccounts;
         private Panel panel7;
         private Button btnAccounts;
+        private Panel pnlBorrowed;
+        private Button btnBorrowed;
     }
 }

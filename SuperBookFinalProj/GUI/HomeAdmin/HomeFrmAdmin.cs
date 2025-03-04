@@ -12,7 +12,8 @@ namespace SuperBookFinalProj
         frmAdReserved reserved;
         frmAdEquip equipments;
         frmAdRooms rooms;
-       
+        frmAdBorrowed borrowed;
+
         frmAdAccounts accounts;
         frmAbout about;
         public HomeFrmAdmin()
@@ -139,7 +140,7 @@ namespace SuperBookFinalProj
 
         private void btnClassRoom_Click(object sender, EventArgs e)
         {
-          
+
         }
         private void btnAudi_Click(object sender, EventArgs e)
         {
@@ -217,7 +218,7 @@ namespace SuperBookFinalProj
             rooms = null;
         }
 
-     
+
 
         private void btnAccounts_Click(object sender, EventArgs e)
         {
@@ -238,6 +239,28 @@ namespace SuperBookFinalProj
         private void Accounts_FormClosed(object? sender, FormClosedEventArgs e)
         {
             accounts = null;
+        }
+
+        private void btnBorrowed_Click(object sender, EventArgs e)
+        {
+
+            if (borrowed == null)
+            {
+                borrowed = new frmAdBorrowed();
+                borrowed.FormClosed += Borrowed_FormClosed;
+                borrowed.MdiParent = this;
+                borrowed.Dock = DockStyle.Fill;
+                borrowed.Show();
+            }
+            else
+            {
+                borrowed.Activate();
+            }
+        }
+
+        private void Borrowed_FormClosed(object? sender, FormClosedEventArgs e)
+        {
+            borrowed = null;
         }
     }
 }

@@ -30,8 +30,8 @@
         {
             panel1 = new Panel();
             dgvReserved = new DataGridView();
-            label1 = new Label();
-            CnclResBtn = new Button();
+            lblReserved = new Label();
+            btnCancel = new Button();
             pBoxSearch = new PictureBox();
             txtSearchEq = new TextBox();
             panel1.SuspendLayout();
@@ -61,29 +61,29 @@
             dgvReserved.Size = new Size(751, 251);
             dgvReserved.TabIndex = 1;
             // 
-            // label1
+            // lblReserved
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Microsoft Sans Serif", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = SystemColors.ButtonFace;
-            label1.Location = new Point(34, 38);
-            label1.Name = "label1";
-            label1.Size = new Size(121, 24);
-            label1.TabIndex = 19;
-            label1.Text = "RESERVED";
+            lblReserved.AutoSize = true;
+            lblReserved.Font = new Font("Microsoft Sans Serif", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblReserved.ForeColor = SystemColors.ButtonFace;
+            lblReserved.Location = new Point(34, 38);
+            lblReserved.Name = "lblReserved";
+            lblReserved.Size = new Size(121, 24);
+            lblReserved.TabIndex = 19;
+            lblReserved.Text = "RESERVED";
             // 
-            // CnclResBtn
+            // btnCancel
             // 
-            CnclResBtn.BackColor = Color.FromArgb(161, 181, 195);
-            CnclResBtn.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
-            CnclResBtn.Location = new Point(745, 399);
-            CnclResBtn.Margin = new Padding(3, 2, 3, 2);
-            CnclResBtn.Name = "CnclResBtn";
-            CnclResBtn.Size = new Size(158, 29);
-            CnclResBtn.TabIndex = 50;
-            CnclResBtn.Text = "Cancel Reservation";
-            CnclResBtn.UseVisualStyleBackColor = false;
-            CnclResBtn.Click += CnclResBtn_Click;
+            btnCancel.BackColor = Color.FromArgb(161, 181, 195);
+            btnCancel.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
+            btnCancel.Location = new Point(745, 399);
+            btnCancel.Margin = new Padding(3, 2, 3, 2);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(158, 29);
+            btnCancel.TabIndex = 50;
+            btnCancel.Text = "Cancel Borrow";
+            btnCancel.UseVisualStyleBackColor = false;
+            btnCancel.Click += CnclResBtn_Click;
             // 
             // pBoxSearch
             // 
@@ -111,8 +111,8 @@
             ClientSize = new Size(934, 454);
             Controls.Add(pBoxSearch);
             Controls.Add(txtSearchEq);
-            Controls.Add(CnclResBtn);
-            Controls.Add(label1);
+            Controls.Add(btnCancel);
+            Controls.Add(lblReserved);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "frmAdReserved";
@@ -128,8 +128,8 @@
         #endregion
 
         private Panel panel1;
-        private Label label1;
-        private Button CnclResBtn;
+        private Label lblReserved;
+        private Button btnCancel;
         private DataGridView dgvReserved;
         private PictureBox pBoxSearch;
         private TextBox txtSearchEq;
