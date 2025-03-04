@@ -59,8 +59,50 @@ namespace SuperBookFinalProj.GUI.Home.Containers
 
         private void Borrow_Click(object sender, EventArgs e)
         {
-            ppBorrow borrow = new ppBorrow();
-            borrow.ShowDialog();
+            if (dataGridEq.SelectedRows.Count > 0)
+            {
+                var selectedRow = dataGridEq.SelectedRows[0];
+
+                int equipmentId = Convert.ToInt32(selectedRow.Cells["Id"].Value);
+                string equipmentName = selectedRow.Cells["Name"].Value.ToString();
+                int quantity = Convert.ToInt32(selectedRow.Cells["Quantity"].Value);
+
+                // ✅ Retrieve consumer details (assuming user is logged in)
+                int consumerId = SessionManager.LoggedInUser.id;
+                string consumerName = SessionManager.LoggedInUser.full_name;
+
+                // ✅ Open borrow popup and listen for `OnBorrowSuccess` event
+                ppBorrow borrowPopup = new ppBorrow(consumerId, consumerName, equipmentId, equipmentName, quantity);
+                borrowPopup.OnBorrowSuccess += RefreshDataGrid; // Register event
+                borrowPopup.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Please select an equipment before borrowing.", "Selection Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
+        public async void RefreshDataGrid()
+        {
+            try
+            {
+                Console.WriteLine("🔄 Refreshing DataGridView...");
+                _allEquipments = await _equipmentRepository.GetAllAsync(); // Fetch latest data
+
+                dataGridEq.DataSource = null; // Reset before binding
+                dataGridEq.DataSource = _allEquipments;
+                dataGridEq.Refresh();
+
+                Console.WriteLine("✅ DataGridView refreshed with updated quantities!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error refreshing data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+
+
+
     }
 }

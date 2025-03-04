@@ -67,6 +67,7 @@
             btnCancel.TabIndex = 63;
             btnCancel.Text = "Cancel Borrow";
             btnCancel.UseVisualStyleBackColor = false;
+            btnCancel.Click += btnCancel_Click;
             // 
             // lblBorrowed
             // 
@@ -88,6 +89,7 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(868, 303);
             panel1.TabIndex = 61;
+            panel1.Paint += panel1_Paint;
             // 
             // dgvBorrowed
             // 
@@ -115,6 +117,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "frmAdBorrowed";
             Text = "frmAdBorrowed";
+            Load += frmAdBorrowed_Load;
             ((System.ComponentModel.ISupportInitialize)pBoxSearch).EndInit();
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvBorrowed).EndInit();

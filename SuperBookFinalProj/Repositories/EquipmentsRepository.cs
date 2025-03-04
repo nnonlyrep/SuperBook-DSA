@@ -139,5 +139,63 @@ namespace SuperBookFinalProj.Repositories
                 return false;
             }
         }
+        // ✅ Add the missing method to update equipment quantity
+        public async Task UpdateQuantityAsync(int equipmentId, int newQuantity)
+        {
+            var url = $"{_baseUrl}/rest/v1/{_tableName}?id=eq.{equipmentId}";
+
+            var json = JsonSerializer.Serialize(new { quantity = newQuantity }); // Prepare JSON body
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+            // ✅ Ensure headers are correctly set
+            _httpClient.DefaultRequestHeaders.Remove("Prefer");
+            _httpClient.DefaultRequestHeaders.Add("Prefer", "return=minimal");
+
+            var response = await _httpClient.PatchAsync(url, content);
+
+            if (!response.IsSuccessStatusCode)
+            {
+                string errorMessage = await response.Content.ReadAsStringAsync();
+                throw new Exception($"Failed to update quantity. Error: {errorMessage}");
+            }
+        }
+
+        public async Task<bool> RestoreQuantityAsync(int equipmentId, int quantityToRestore)
+        {
+            if (equipmentId == 0)
+            {
+                Console.WriteLine("⚠️ Invalid Equipment ID: 0");
+                return false;
+            }
+
+            var url = $"{_baseUrl}/rest/v1/equipments?id=eq.{equipmentId}";
+
+            var existingEquipments = await GetAllAsync();
+            var equipment = existingEquipments.FirstOrDefault(eq => eq.Id == equipmentId);
+
+            if (equipment == null)
+            {
+                Console.WriteLine($"❌ Equipment with ID {equipmentId} not found.");
+                return false;
+            }
+
+            int updatedQuantity = equipment.Quantity + quantityToRestore;
+
+            var updateData = new { quantity = updatedQuantity };
+            var json = JsonSerializer.Serialize(updateData);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+            var response = await _httpClient.PatchAsync(url, content);
+            if (response.IsSuccessStatusCode)
+            {
+                Console.WriteLine($"✅ Restored {quantityToRestore} to Equipment ID {equipmentId}");
+                return true;
+            }
+
+            Console.WriteLine("❌ Failed to restore quantity.");
+            return false;
+        }
+
+
     }
 }

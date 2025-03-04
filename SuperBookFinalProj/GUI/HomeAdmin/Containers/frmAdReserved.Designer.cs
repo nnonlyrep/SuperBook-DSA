@@ -81,7 +81,7 @@
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(158, 29);
             btnCancel.TabIndex = 50;
-            btnCancel.Text = "Cancel Borrow";
+            btnCancel.Text = "Cancel Reservation";
             btnCancel.UseVisualStyleBackColor = false;
             btnCancel.Click += CnclResBtn_Click;
             // 

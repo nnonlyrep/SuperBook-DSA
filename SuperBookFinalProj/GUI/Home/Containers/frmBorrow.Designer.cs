@@ -32,9 +32,11 @@
             panel1 = new Panel();
             dataGridEq = new DataGridView();
             Borrow = new Button();
-            cncButton = new Button();
+            pBoxSearch = new PictureBox();
+            txtSearchBor = new TextBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridEq).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pBoxSearch).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -79,14 +81,22 @@
             Borrow.UseVisualStyleBackColor = true;
             Borrow.Click += Borrow_Click;
             // 
-            // cncButton
+            // pBoxSearch
             // 
-            cncButton.Location = new Point(607, 415);
-            cncButton.Name = "cncButton";
-            cncButton.Size = new Size(91, 23);
-            cncButton.TabIndex = 3;
-            cncButton.Text = "Cancel";
-            cncButton.UseVisualStyleBackColor = true;
+            pBoxSearch.Image = Properties.Resources.icons8_search_64;
+            pBoxSearch.Location = new Point(79, 19);
+            pBoxSearch.Name = "pBoxSearch";
+            pBoxSearch.Size = new Size(25, 23);
+            pBoxSearch.SizeMode = PictureBoxSizeMode.StretchImage;
+            pBoxSearch.TabIndex = 67;
+            pBoxSearch.TabStop = false;
+            // 
+            // txtSearchBor
+            // 
+            txtSearchBor.Location = new Point(110, 19);
+            txtSearchBor.Name = "txtSearchBor";
+            txtSearchBor.Size = new Size(181, 23);
+            txtSearchBor.TabIndex = 66;
             // 
             // frmBorrow
             // 
@@ -94,7 +104,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(21, 31, 40);
             ClientSize = new Size(850, 450);
-            Controls.Add(cncButton);
+            Controls.Add(pBoxSearch);
+            Controls.Add(txtSearchBor);
             Controls.Add(Borrow);
             Controls.Add(panel1);
             Controls.Add(label1);
@@ -104,6 +115,7 @@
             Load += frmBorrow_Load;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridEq).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pBoxSearch).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -113,7 +125,8 @@
         private Label label1;
         private Panel panel1;
         private Button Borrow;
-        private Button cncButton;
         private DataGridView dataGridEq;
+        private PictureBox pBoxSearch;
+        private TextBox txtSearchBor;
     }
 }
