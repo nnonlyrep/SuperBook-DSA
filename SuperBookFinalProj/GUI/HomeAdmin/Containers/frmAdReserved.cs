@@ -22,6 +22,8 @@ namespace SuperBookFinalProj.GUI.HomeAdmin.Containers
         private async void frmAdReserved_Load(object sender, EventArgs e)
         {
             await LoadReservationsAsync();
+            dgvReserved.CellFormatting += dgvReserved_CellFormatting;
+
         }
 
         private async Task LoadReservationsAsync()
@@ -125,5 +127,21 @@ namespace SuperBookFinalProj.GUI.HomeAdmin.Containers
                 }
             }
         }
+        private void dgvReserved_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.RowIndex >= 0) // Ensure it's a valid row
+            {
+                if (e.RowIndex % 2 == 0)
+                {
+                    dgvReserved.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightGreen; // Green for even rows
+                }
+                else
+                {
+                    dgvReserved.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightCoral; // Red for odd rows
+                }
+            }
+        }
+
+
     }
 }

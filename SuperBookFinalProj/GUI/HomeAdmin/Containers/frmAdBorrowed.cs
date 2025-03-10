@@ -51,7 +51,8 @@ namespace SuperBookFinalProj.GUI.HomeAdmin.Containers
                     BorrowDate = borrow.BorrowDate,
                     TimeSlot = borrow.time,
                     Purpose = borrow.Purpose,
-                    Quantity = borrow.Quantity
+                    Quantity = borrow.Quantity,
+                    Status = borrow.Status // ✅ Make sure Status is included
                 }).ToList();
 
                 _filteredBorrows = new List<BorrowView>(_allBorrows); // Copy for filtering
@@ -66,6 +67,7 @@ namespace SuperBookFinalProj.GUI.HomeAdmin.Containers
             }
         }
 
+
         private void BindDataToGrid()
         {
             dgvBorrowed.DataSource = null;
@@ -73,6 +75,12 @@ namespace SuperBookFinalProj.GUI.HomeAdmin.Containers
             dgvBorrowed.Refresh();
 
             dgvBorrowed.RowHeadersVisible = false;
+
+            // Ensure the Status column is visible
+            if (!dgvBorrowed.Columns.Contains("Status"))
+            {
+                dgvBorrowed.Columns.Add("Status", "Status");
+            }
         }
 
         // ✅ Search Function (Filters by BorrowedBy, Equipment Name, and Purpose)
@@ -107,7 +115,7 @@ namespace SuperBookFinalProj.GUI.HomeAdmin.Containers
         {
             if (dgvBorrowed.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Please select a borrowed item to delete.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please select a borrowed item to cancel.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -121,35 +129,36 @@ namespace SuperBookFinalProj.GUI.HomeAdmin.Containers
                 return;
             }
 
-            DialogResult confirmDelete = MessageBox.Show(
-                $"Are you sure you want to DELETE this borrow record?",
-                "Confirm Delete",
+            DialogResult confirmCancel = MessageBox.Show(
+                $"Are you sure you want to CANCEL this borrow record?",
+                "Confirm Cancellation",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Warning
             );
 
-            if (confirmDelete == DialogResult.Yes)
+            if (confirmCancel == DialogResult.Yes)
             {
                 try
                 {
-                    bool isDeleted = await _borrowRepo.DeleteAsync(borrowId);
+                    bool isCanceled = await _borrowRepo.CancelBorrowAsync(borrowId);
 
-                    if (isDeleted)
+                    if (isCanceled)
                     {
-                        MessageBox.Show("Borrow record successfully deleted.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Borrow record successfully canceled.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         await RefreshBorrowedData();
                     }
                     else
                     {
-                        MessageBox.Show("Failed to delete borrow record. It may have already been removed.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Failed to cancel borrow record. It may have already been removed.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"❌ Error deleting borrow record: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"❌ Error canceling borrow record: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
+
 
         private void btnCancel_Click(object sender, EventArgs e)
         {

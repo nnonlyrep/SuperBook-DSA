@@ -82,13 +82,14 @@ namespace SuperBookFinalProj.Repositories
         }
 
         // ----------------- CANCEL BORROW RECORD -----------------
-        public async Task<bool> DeleteAsync(int borrowId)
+        // ----------------- CANCEL BORROW RECORD (Update Status) -----------------
+        public async Task<bool> CancelBorrowAsync(int borrowId)
         {
             try
             {
                 var url = $"{_baseUrl}/rest/v1/borrows?id=eq.{borrowId}";
 
-                // ✅ Check if the borrow record exists before deleting
+                // ✅ Check if the borrow record exists before updating
                 var existingBorrow = await GetByIdAsync(borrowId);
                 if (existingBorrow == null)
                 {
@@ -96,30 +97,36 @@ namespace SuperBookFinalProj.Repositories
                     return false;
                 }
 
-                var request = new HttpRequestMessage(HttpMethod.Delete, url);
-                request.Headers.Add("apikey", _apiKey);
-                request.Headers.Add("Authorization", $"Bearer {_apiKey}");
+                // ✅ Update the status to "Canceled"
+                existingBorrow.Status = "Canceled";
 
-                var response = await _httpClient.SendAsync(request);
+                var json = JsonSerializer.Serialize(new { status = "Canceled" });
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+                _httpClient.DefaultRequestHeaders.Remove("Prefer");
+                _httpClient.DefaultRequestHeaders.Add("Prefer", "return=representation");
+
+                var response = await _httpClient.PatchAsync(url, content);
 
                 if (response.IsSuccessStatusCode)
                 {
-                    Debug.WriteLine($"✅ Successfully deleted borrow ID: {borrowId}");
+                    Debug.WriteLine($"✅ Successfully updated borrow ID {borrowId} to 'Canceled'.");
                     return true;
                 }
                 else
                 {
                     string errorResponse = await response.Content.ReadAsStringAsync();
-                    Debug.WriteLine($"❌ Error deleting borrow ID {borrowId}: {response.StatusCode}, {errorResponse}");
+                    Debug.WriteLine($"❌ Error updating borrow ID {borrowId}: {response.StatusCode}, {errorResponse}");
                     return false;
                 }
             }
             catch (Exception ex)
             {
-                Debug.WriteLine($"❌ Exception deleting borrow ID {borrowId}: {ex.Message}");
+                Debug.WriteLine($"❌ Exception updating borrow ID {borrowId}: {ex.Message}");
                 return false;
             }
         }
+
 
 
 
