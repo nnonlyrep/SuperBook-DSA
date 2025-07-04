@@ -108,13 +108,14 @@
             // lblTitle
             // 
             lblTitle.AutoSize = true;
-            lblTitle.Font = new Font("Work Sans Medium", 8.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTitle.Font = new Font("Microsoft Sans Serif", 8.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTitle.ForeColor = SystemColors.ButtonFace;
             lblTitle.Location = new Point(50, 9);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(134, 17);
+            lblTitle.Size = new Size(162, 15);
             lblTitle.TabIndex = 1;
-            lblTitle.Text = "SUPERBOOK | ADMIN";
+            lblTitle.Text = "FLEETCODERS | ADMIN";
+            lblTitle.Click += lblTitle_Click;
             // 
             // btnHam
             // 
@@ -156,7 +157,7 @@
             // btnHome
             // 
             btnHome.BackColor = Color.FromArgb(30, 48, 64);
-            btnHome.Font = new Font("Work Sans Medium", 8.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnHome.Font = new Font("Microsoft Sans Serif", 8.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnHome.ForeColor = SystemColors.ButtonFace;
             btnHome.Image = Properties.Resources.icons8_home_24;
             btnHome.ImageAlign = ContentAlignment.MiddleLeft;
@@ -181,7 +182,7 @@
             // btnBorrowed
             // 
             btnBorrowed.BackColor = Color.FromArgb(30, 48, 64);
-            btnBorrowed.Font = new Font("Work Sans Medium", 8.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnBorrowed.Font = new Font("Microsoft Sans Serif", 8.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnBorrowed.ForeColor = SystemColors.ButtonFace;
             btnBorrowed.Image = Properties.Resources.icons8_equipment_24__1_;
             btnBorrowed.ImageAlign = ContentAlignment.MiddleLeft;
@@ -206,7 +207,7 @@
             // btnReserved
             // 
             btnReserved.BackColor = Color.FromArgb(30, 48, 64);
-            btnReserved.Font = new Font("Work Sans Medium", 8.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnReserved.Font = new Font("Microsoft Sans Serif", 8.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnReserved.ForeColor = SystemColors.ButtonFace;
             btnReserved.Image = Properties.Resources.icons8_reservation_24;
             btnReserved.ImageAlign = ContentAlignment.MiddleLeft;
@@ -244,7 +245,7 @@
             // btnReserve
             // 
             btnReserve.BackColor = Color.FromArgb(30, 48, 64);
-            btnReserve.Font = new Font("Work Sans Medium", 8.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnReserve.Font = new Font("Microsoft Sans Serif", 8.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnReserve.ForeColor = SystemColors.ButtonFace;
             btnReserve.Image = Properties.Resources.icons8_edit_24;
             btnReserve.ImageAlign = ContentAlignment.MiddleLeft;
@@ -270,7 +271,7 @@
             // btnEdEquip
             // 
             btnEdEquip.BackColor = Color.FromArgb(30, 48, 64);
-            btnEdEquip.Font = new Font("Work Sans Medium", 8.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnEdEquip.Font = new Font("Microsoft Sans Serif", 8.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnEdEquip.ForeColor = SystemColors.ButtonFace;
             btnEdEquip.Image = Properties.Resources.icons8_equipment_24__1_1;
             btnEdEquip.ImageAlign = ContentAlignment.MiddleLeft;
@@ -295,7 +296,7 @@
             // btnEdRoom
             // 
             btnEdRoom.BackColor = Color.FromArgb(30, 48, 64);
-            btnEdRoom.Font = new Font("Work Sans Medium", 8.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnEdRoom.Font = new Font("Microsoft Sans Serif", 8.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnEdRoom.ForeColor = SystemColors.ButtonFace;
             btnEdRoom.Image = Properties.Resources.icons8_classroom_242;
             btnEdRoom.ImageAlign = ContentAlignment.MiddleLeft;
@@ -320,7 +321,7 @@
             // btnAccounts
             // 
             btnAccounts.BackColor = Color.FromArgb(30, 48, 64);
-            btnAccounts.Font = new Font("Work Sans Medium", 8.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAccounts.Font = new Font("Microsoft Sans Serif", 8.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAccounts.ForeColor = SystemColors.ButtonFace;
             btnAccounts.Image = Properties.Resources.icons8_account_24;
             btnAccounts.ImageAlign = ContentAlignment.MiddleLeft;
@@ -345,7 +346,7 @@
             // btnAbout
             // 
             btnAbout.BackColor = Color.FromArgb(30, 48, 64);
-            btnAbout.Font = new Font("Work Sans Medium", 8.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAbout.Font = new Font("Microsoft Sans Serif", 8.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAbout.ForeColor = SystemColors.ButtonFace;
             btnAbout.Image = Properties.Resources.icons8_about_24;
             btnAbout.ImageAlign = ContentAlignment.MiddleLeft;
@@ -370,7 +371,7 @@
             // btnLogOut
             // 
             btnLogOut.BackColor = Color.FromArgb(30, 48, 64);
-            btnLogOut.Font = new Font("Work Sans Medium", 8.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnLogOut.Font = new Font("Microsoft Sans Serif", 8.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnLogOut.ForeColor = SystemColors.ButtonFace;
             btnLogOut.Image = Properties.Resources.icons8_logout_241;
             btnLogOut.ImageAlign = ContentAlignment.MiddleLeft;
@@ -401,7 +402,7 @@
             ClientSize = new Size(969, 540);
             Controls.Add(flpSidebar);
             Controls.Add(panel1);
-            Font = new Font("Work Sans", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Font = new Font("Microsoft Sans Serif", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
             IsMdiContainer = true;
             Name = "HomeFrmAdmin";
