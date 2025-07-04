@@ -49,5 +49,10 @@ namespace SuperBookFinalProj.GUI.Home.Containers
             ppHome.ShowDialog();
 
         }
+
+        private void bigLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

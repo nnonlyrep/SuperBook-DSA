@@ -99,13 +99,13 @@
             // lblTitle
             // 
             lblTitle.AutoSize = true;
-            lblTitle.Font = new Font("Work Sans Medium", 8.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTitle.Font = new Font("Microsoft Sans Serif", 8.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTitle.ForeColor = SystemColors.ButtonFace;
             lblTitle.Location = new Point(50, 9);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(83, 17);
+            lblTitle.Size = new Size(106, 15);
             lblTitle.TabIndex = 1;
-            lblTitle.Text = "SUPERBOOK";
+            lblTitle.Text = "FLEETCODERS";
             // 
             // btnHam
             // 
@@ -145,7 +145,7 @@
             // btnHome
             // 
             btnHome.BackColor = Color.FromArgb(30, 48, 64);
-            btnHome.Font = new Font("Work Sans Medium", 8.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnHome.Font = new Font("Microsoft Sans Serif", 8.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnHome.ForeColor = SystemColors.ButtonFace;
             btnHome.Image = Properties.Resources.icons8_home_24;
             btnHome.ImageAlign = ContentAlignment.MiddleLeft;
@@ -182,7 +182,7 @@
             // btnReserve
             // 
             btnReserve.BackColor = Color.FromArgb(30, 48, 64);
-            btnReserve.Font = new Font("Work Sans Medium", 8.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnReserve.Font = new Font("Microsoft Sans Serif", 8.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnReserve.ForeColor = SystemColors.ButtonFace;
             btnReserve.Image = Properties.Resources.icons8_reservation_24;
             btnReserve.ImageAlign = ContentAlignment.MiddleLeft;
@@ -208,7 +208,7 @@
             // btnClassRoom
             // 
             btnClassRoom.BackColor = Color.FromArgb(30, 48, 64);
-            btnClassRoom.Font = new Font("Work Sans Medium", 8.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnClassRoom.Font = new Font("Microsoft Sans Serif", 8.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnClassRoom.ForeColor = SystemColors.ButtonFace;
             btnClassRoom.Image = Properties.Resources.icons8_classroom_24;
             btnClassRoom.ImageAlign = ContentAlignment.MiddleLeft;
@@ -234,7 +234,7 @@
             // btnBorrow
             // 
             btnBorrow.BackColor = Color.FromArgb(30, 48, 64);
-            btnBorrow.Font = new Font("Work Sans Medium", 8.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnBorrow.Font = new Font("Microsoft Sans Serif", 8.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnBorrow.ForeColor = SystemColors.ButtonFace;
             btnBorrow.Image = Properties.Resources.icons8_equipment_24__1_;
             btnBorrow.ImageAlign = ContentAlignment.MiddleLeft;
@@ -259,7 +259,7 @@
             // btnAbout
             // 
             btnAbout.BackColor = Color.FromArgb(30, 48, 64);
-            btnAbout.Font = new Font("Work Sans Medium", 8.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAbout.Font = new Font("Microsoft Sans Serif", 8.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAbout.ForeColor = SystemColors.ButtonFace;
             btnAbout.Image = Properties.Resources.icons8_about_24;
             btnAbout.ImageAlign = ContentAlignment.MiddleLeft;
@@ -284,7 +284,7 @@
             // btnLogOut
             // 
             btnLogOut.BackColor = Color.FromArgb(30, 48, 64);
-            btnLogOut.Font = new Font("Work Sans Medium", 8.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnLogOut.Font = new Font("Microsoft Sans Serif", 8.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnLogOut.ForeColor = SystemColors.ButtonFace;
             btnLogOut.Image = Properties.Resources.icons8_logout_241;
             btnLogOut.ImageAlign = ContentAlignment.MiddleLeft;
@@ -315,7 +315,7 @@
             ClientSize = new Size(969, 540);
             Controls.Add(flpSidebar);
             Controls.Add(panel1);
-            Font = new Font("Work Sans", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Font = new Font("Microsoft Sans Serif", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
             IsMdiContainer = true;
             Name = "HomeFrm";

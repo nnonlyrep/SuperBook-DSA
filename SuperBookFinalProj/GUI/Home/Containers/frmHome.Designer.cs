@@ -71,9 +71,10 @@
             bigLabel1.ForeColor = Color.FromArgb(191, 222, 240);
             bigLabel1.Location = new Point(12, 9);
             bigLabel1.Name = "bigLabel1";
-            bigLabel1.Size = new Size(160, 25);
+            bigLabel1.Size = new Size(185, 25);
             bigLabel1.TabIndex = 0;
-            bigLabel1.Text = "SUPER BOOK";
+            bigLabel1.Text = "FLEET CODERS";
+            bigLabel1.Click += bigLabel1_Click;
             // 
             // bigLabel3
             // 
@@ -96,7 +97,7 @@
             panel1.EdgeColor = Color.FromArgb(32, 41, 50);
             panel1.Location = new Point(23, 108);
             panel1.Name = "panel1";
-            panel1.Padding = new Padding(5, 5, 5, 5);
+            panel1.Padding = new Padding(5);
             panel1.Size = new Size(602, 129);
             panel1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             panel1.TabIndex = 3;
@@ -144,7 +145,7 @@
             panel2.EdgeColor = Color.FromArgb(32, 41, 50);
             panel2.Location = new Point(643, 108);
             panel2.Name = "panel2";
-            panel2.Padding = new Padding(5, 5, 5, 5);
+            panel2.Padding = new Padding(5);
             panel2.Size = new Size(249, 129);
             panel2.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             panel2.TabIndex = 4;
@@ -168,7 +169,7 @@
             panel3.EdgeColor = Color.FromArgb(32, 41, 50);
             panel3.Location = new Point(24, 291);
             panel3.Name = "panel3";
-            panel3.Padding = new Padding(5, 5, 5, 5);
+            panel3.Padding = new Padding(5);
             panel3.Size = new Size(146, 138);
             panel3.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             panel3.TabIndex = 4;
@@ -205,7 +206,7 @@
             panel4.EdgeColor = Color.FromArgb(32, 41, 50);
             panel4.Location = new Point(176, 291);
             panel4.Name = "panel4";
-            panel4.Padding = new Padding(5, 5, 5, 5);
+            panel4.Padding = new Padding(5);
             panel4.Size = new Size(146, 138);
             panel4.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             panel4.TabIndex = 5;
@@ -241,7 +242,7 @@
             panel5.EdgeColor = Color.FromArgb(32, 41, 50);
             panel5.Location = new Point(328, 291);
             panel5.Name = "panel5";
-            panel5.Padding = new Padding(5, 5, 5, 5);
+            panel5.Padding = new Padding(5);
             panel5.Size = new Size(146, 138);
             panel5.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             panel5.TabIndex = 6;
@@ -277,7 +278,7 @@
             panel6.EdgeColor = Color.FromArgb(32, 41, 50);
             panel6.Location = new Point(480, 291);
             panel6.Name = "panel6";
-            panel6.Padding = new Padding(5, 5, 5, 5);
+            panel6.Padding = new Padding(5);
             panel6.Size = new Size(412, 138);
             panel6.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             panel6.TabIndex = 7;

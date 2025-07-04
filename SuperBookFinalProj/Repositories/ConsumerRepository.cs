@@ -13,8 +13,8 @@ namespace SuperBookFinalProj.Repositories
     public class ConsumerRepository
     {
         private readonly HttpClient _httpClient;
-        private readonly string _baseUrl = "https://tgxxkstbeetnhetjcyen.supabase.co";
-        private readonly string _apiKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRneHhrc3RiZWV0bmhldGpjeWVuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDA0MDM5MjYsImV4cCI6MjA1NTk3OTkyNn0.lMBzLb9bR2Z0wDnIDfg38_VvtgELhNZgzz0UlYCAUSQ";
+        private readonly string _baseUrl = "https://sfmtzyrligymzdyhalll.supabase.co";
+        private readonly string _apiKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNmbXR6eXJsaWd5bXpkeWhhbGxsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTEzNzg0ODAsImV4cCI6MjA2Njk1NDQ4MH0.XpXKqFJSA84YsX4VxENRkuy6JO3-qwu10NrjkTkTN88";
         private readonly string _tableName = "consumers";
 
        
